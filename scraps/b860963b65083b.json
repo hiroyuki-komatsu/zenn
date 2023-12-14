@@ -1,0 +1,94 @@
+{
+  "title": "ICU で文節単位の改行をするための提案",
+  "closed": false,
+  "archived": false,
+  "created_at": "2021-08-12",
+  "comments": [
+    {
+      "author": "komatsuh",
+      "created_at": "2021-08-12",
+      "body_markdown": "# 2021-08-02\n\n提案書の初稿を作成\n[ICU 70 API proposal: line breaking for Japanese unit base breaking - Google Docs](https://docs.google.com/document/d/1il9KJH3MeSkghBZRD5XriGXk9gfxN3yrVXmRiiUR1q4/edit#heading=h.j38snjjn9duz)\n\n# 2021-08-03\n\nICU に提出\n[[ICU-21699] line breaking for Japanese unit base breaking - Unicode Consortium](https://unicode-org.atlassian.net/browse/ICU-21699)\n\n# 2021-08-10\n\nICU チームとミーティング、[フィードバックと宿題](https://docs.google.com/document/d/1il9KJH3MeSkghBZRD5XriGXk9gfxN3yrVXmRiiUR1q4/edit#) をいただく\n\n『@lb とは直交している概念なのでは？』　→　たしかにそう。\n\n\n# 2021-08-11\n\n今再確認しているもの\n* CSS Text Module Level 4 / word-bound-detection ([link](https://www.w3.org/TR/css-text-4/#word-boundary-detection))\n* Boundary Analysis - ICU Documentation ([link](https://unicode-org.github.io/icu/userguide/boundaryanalysis/#line-breaking-strictness-a-css-property))\n* tr35/#UnicodeDictionaryBreakExclusionIdentifier ([link](https://www.unicode.org/reports/tr35/#UnicodeDictionaryBreakExclusionIdentifier))\n\nCSS ではすでに必要な API はありそう。実装はまだ？要調査\n```css\n  h1:lang(ja) {\n    word-boundary-detection: auto(ja);\n    word-break: keep-all;\n  }\n```\n\n@lb (line-break) よりも word-bound-detection 相当の keyword を足す方が筋がよさそう。\nword-break 相当の keyword は @lw としてすでにある。 ([link](https://www.unicode.org/reports/tr35/#UnicodeLineBreakWordIdentifier))\n\n\n# 2021-08-12\n\n方針だけ夜のうちに伝えて、返事を待ちつつ、明日は提案書の更新をする\nhttps://unicode-org.atlassian.net/browse/ICU-21699?focusedCommentId=162188\n\n# 2021-08-13\n\n次のミーティングを 2021-08-17 08:15 からに設定。それまでに準備を終わらせる。\n",
+      "body_updated_at": "2021-08-15",
+      "children": [
+        {
+          "author": "komatsuh",
+          "created_at": "2021-08-16",
+          "body_markdown": "# 2021-08-15\nプロポーザルを更新。CSS4 word-boundary-detection  の定義を LDML および ICU でも使うように変更。ぎりぎりで申し訳ない。\n\n`ja@*ld=auto*;lw=keepall` が下記の CSS と同様の挙動としたい。\n\n```css\n  body:lang(ja) {\n    word-boundary-detection: auto(ja);\n    word-break: keep-all;\n  }\n```\n\n## 次の宿題\n文節の定義および日本語以外での等価的な定義の確認\n\nこのあたりを読んでおく\n* [Microsoft Word - ISO_DIS_24614-2__E__20100410.doc](http://unicode.org/L2/L2011/11108-dis24614-2-e.pdf)\n* [ISO - ISO 24614-2:2011 - Language resource management — Word segmentation of written texts — Part 2: Word segmentation for Chinese, Japanese and Korean](https://www.iso.org/standard/41666.html)\n* [Japanese grammar - Wikipedia](https://en.wikipedia.org/wiki/Japanese_grammar#Sentences,_phrases_and_words)\n* [(PDF) Word segmentation standard in Chinese, Japanese and Korean](https://www.researchgate.net/publication/228432934_Word_segmentation_standard_in_Chinese_Japanese_and_Korean)\n"
+        },
+        {
+          "author": "komatsuh",
+          "created_at": "2021-11-18",
+          "body_markdown": "# 2021-08-17\n\nプロポーザルを CSS4 word-boundary-detection の定義を LDML および ICU でも使うように変更した上で、 ICU に提案。\n\nCSS と定義を揃えることには合意を得るが、word-boundary-detection の定義自体についての不明点およびフィードバックをいただく。\n\n* word-break を常に keep-all にする必要があるのか？ (直交していないのでは)\n* auto(ja) のような言語指定を必要しない方法にできないか\n\n以上もふまえて、CSS ワーキンググループに、文節単位での改行を実現できる仕様の考案を依頼中\n\n* [[css-text-4] Add support for content-detection, phrase-based line breaking · Issue #6730 · w3c/csswg-drafts](https://github.com/w3c/csswg-drafts/issues/6730)\n\nCSS ワーキンググループからの返信を待つことに。"
+        },
+        {
+          "author": "komatsuh",
+          "created_at": "2021-11-18",
+          "body_markdown": "# 2021-11-11\n\nひさしぶりに ICU のミーティングに出席。定例ミーティングに出席したため、日本時間は午前 3:30 からのミーティング。出張するより気持ちはラク。\n\n挨拶および現状の報告と確認。\n* スケジュール: 最短で ICU 71 (feature freeze: 2022-02-23)\n* API: W3C CSS WG からの返信待ち\n* 実装: 実装中 (cjdict.txt ベースでの単語分割を拡張予定) / 将来的には機械学習ベースへの変更も検討中\n* [プロポーザル](https://docs.google.com/document/d/1il9KJH3MeSkghBZRD5XriGXk9gfxN3yrVXmRiiUR1q4/edit#) も現状を踏まえた内容に更新\n\n次回のミーティングは 2021-11-18。日本からでも参加しやすい時間を用意してもらいました。\n\n参照\n* [CLDR + ICU detailed schedule - Google Sheets](https://docs.google.com/spreadsheets/d/1N6inI5R84UoYlRwuCNPBOAP7ri4q2CmJmh8DC5g-S6c/edit#gid=0)\n* [[css-text-4] Add support for content-detection, phrase-based line breaking · Issue #6730 · w3c/csswg-drafts](https://github.com/w3c/csswg-drafts/issues/6730)"
+        },
+        {
+          "author": "komatsuh",
+          "created_at": "2022-01-15",
+          "body_markdown": "# 2022-01-15\n\nC++ ICU に必要な PR がマージされました。\n* https://github.com/unicode-org/icu/pull/1953\n* https://github.com/unicode-org/icu/pull/1957\n* https://github.com/unicode-org/icu/pull/1936\n\n`lw=phrase` を指定すると使用できる。\n"
+        },
+        {
+          "author": "komatsuh",
+          "created_at": "2022-01-28",
+          "body_markdown": "# 2022-01-27\n\n結合するべき単語列を追加\n* [ICU-21699 Add Japanese particle by allensu05 · Pull Request #1964 · unicode-org/icu](https://github.com/unicode-org/icu/pull/1964)\n\ncjdict.txt ベースで単語を分割したのち、このリストに含まれる単語 (cjdict.txt のサブセット) は前の単語と結合される。別のロジックで、ひらがなカタカナ1文字も結合される。\n\nもとの文字列\n* 今日はいい天気です。\n\ncjdict.txt に基づく分割 (概念)\n* 今日_は_いい_天気_です_。\n\nja.txt に \"です\" が含まれていた場合の結合 (概念)\n* 今日_は_いい_天気です_。\n\nかな1文字の結合\n* 今日は_いい_天気です。\n\n\n\n"
+        },
+        {
+          "author": "komatsuh",
+          "created_at": "2022-02-02",
+          "body_markdown": "# 2022-02-01\n\n上記 PR の続き\nhttps://github.com/unicode-org/icu/pull/1964/files\n\n助詞として足されたものと、ICU の実装の都合上足されたものがあるので、今後のために区別しておいて欲しいとのフィードバックをいただく。おっしゃる通りですね。\n\n全部見直してカテゴリー分けをする。ついでに追加するテストケースも提案\n[ICU-21699 icu/pull/1964 - Google スプレッドシート](https://docs.google.com/spreadsheets/d/1MYvDEuXqDeDSUM-EmS3d4DZytMF3aBfu6YTuU_wzDkQ/edit#gid=0)\n\n見直した際に、間違って追加されていたエントリーを見つけたのはボーナスでした。よかった。"
+        },
+        {
+          "author": "komatsuh",
+          "created_at": "2022-02-03",
+          "body_markdown": "# 2022-02-02\n\n[PR#1970](https://github.com/unicode-org/icu/pull/1970#issuecomment-1027105800) で、長音 (ー U+30FC) 以外に前の文字と接続するべき文字はあるかというコメントが出る。\n\n[日本語組版処理の要件の文字クラス](https://www.w3.org/TR/jlreq/#cl-09) を参照して、まとめたものを返信する。\nhttps://docs.google.com/spreadsheets/d/1MYvDEuXqDeDSUM-EmS3d4DZytMF3aBfu6YTuU_wzDkQ/edit#gid=29114612\n",
+          "body_updated_at": "2022-02-03"
+        },
+        {
+          "author": "komatsuh",
+          "created_at": "2022-02-09",
+          "body_markdown": "# 2022-02-09\n\nhttps://github.com/unicode-org/icu/pull/1970\n\n全角英数が一文字ごとに切れてしまわないようするなど、文字単位での制御を行う PR。(Ａ＿Ｂ＿Ｃ → ＡＢＣ) 確認を求められたので LGTM する。\n\nhttps://github.com/unicode-org/icu/pull/1964#pullrequestreview-877102048\n\n[data/brkitr/ja.txt](https://github.com/unicode-org/icu/blob/main/icu4c/source/data/brkitr/ja.txt) に直接書いていたデータを適切な場所に移すための議論。\n\n選択肢として、CLDR と ICU がある。\n1. CLDR: [common/segments/ja.xml](https://github.com/unicode-org/cldr/blob/main/common/segments/ja.xml)\n2. ICU: [data/xml/brkitr/ja.xml](https://github.com/unicode-org/icu/blob/main/icu4c/source/data/xml/brkitr/ja.xml)\n\nCLDR 側を提案されたけれど、[cjdict.txt](https://github.com/unicode-org/icu/blob/main/icu4c/source/data/brkitr/dictionaries/cjdict.txt) にべったりの実装なので、ICU 側に残すことに。（というのが僕の今の理解）\n"
+        },
+        {
+          "author": "komatsuh",
+          "created_at": "2022-02-11",
+          "body_markdown": "# 2022-02-11\n\n提案していた最後の PR が ICU にマージされました。おつかれさまでした。\n\nhttps://github.com/unicode-org/icu/pull/1964"
+        },
+        {
+          "author": "komatsuh",
+          "created_at": "2022-02-14",
+          "body_markdown": "# 2022-02-14\n\n余談:\n文節区切りとは別の話として、分かち書きに使われている cjdict.txt には改善の余地があるよね？という新しいチケット。\n\nhttps://unicode-org.atlassian.net/browse/ICU-21915\n\n今回の実装は、 cjdict.txt による制約を回避するためのものも少なくはないので、元から改善できるのは願ったりかなったり。"
+        },
+        {
+          "author": "komatsuh",
+          "created_at": "2022-02-18",
+          "body_markdown": "# 2022-02-17\n\n文節区切りの精度を上げるための追加 PR を作成\nhttps://github.com/unicode-org/icu/pull/1983\n\ncjdict.txt のデータに強く依存しているので限界はあるけれど、多少なりともよくなるはず。\n\n例えば「使われる」が以下のように改善される。\n* 変更前: 使_われる\n* 変更後: 使われる\n\n文節区切りの評価は、[BudouX](https://github.com/google/budoux) と同様に [KNBC コーパス](https://nlp.ist.i.kyoto-u.ac.jp/kuntt/) を使用しています。\n"
+        }
+      ]
+    },
+    {
+      "author": "komatsuh",
+      "created_at": "2021-08-12",
+      "body_markdown": "# CLDR の keyword について\n\n3 案\n1. @lb に \"unit\" / \"term\" 等を追加する。初期案\n2. @lw=keepall の動作を変更する。提案書へのコメントより\n3. CSS4 word-boundary-detection 相当の keyword を追加する\n\n案2 が簡潔で好きだけれど、案3 の方が CSS と挙動がそろう\n\n\n\n",
+      "children": [
+        {
+          "author": "komatsuh",
+          "created_at": "2021-08-16",
+          "body_markdown": "手堅く 案3 にする。"
+        },
+        {
+          "author": "komatsuh",
+          "created_at": "2021-11-18",
+          "body_markdown": "案3 (word-boundry-detection) を提案したところ、「CSS と挙動はそろえたいが、案3 の CSS ドラフトでの不明な点を解決したい」というフィードバックをいただく。\n\n不明な点\n* word-break を常に keep-all にする必要があるのか？ (直交していないのでは)\n* auto(ja) のような言語指定を必要しない方法にできないか\n\n以上もふまえて、CSS ワーキンググループに、文節単位での改行を実現できる仕様の考案を依頼中\n\n* [[css-text-4] Add support for content-detection, phrase-based line breaking · Issue #6730 · w3c/csswg-drafts](https://github.com/w3c/csswg-drafts/issues/6730)\n"
+        }
+      ]
+    },
+    {
+      "author": "komatsuh",
+      "created_at": "2021-08-16",
+      "body_markdown": "# 文節の定義および日本語以外での等価的な定義の確認\n\n下記の疑問への答えを用意する\n* 『文節区切り』ってどう実装すればいいの？\n*  日本語以外ではどういう定義（実装）なの？\n*  英語の particles (接続詞, 前置詞など) はどういう扱いなの？\n\n<br/>\nまずはこのあたりを読む。「xx を参照」で解決すれば一番ありがたい。\n\n* [Microsoft Word - ISO_DIS_24614-2__E__20100410.doc](http://unicode.org/L2/L2011/11108-dis24614-2-e.pdf)\n* [ISO - ISO 24614-2:2011 - Language resource management — Word segmentation of written texts — Part 2: Word segmentation for Chinese, Japanese and Korean](https://www.iso.org/standard/41666.html)\n* [Japanese grammar - Wikipedia](https://en.wikipedia.org/wiki/Japanese_grammar#Sentences,_phrases_and_words)\n* [(PDF) Word segmentation standard in Chinese, Japanese and Korean](https://www.researchgate.net/publication/228432934_Word_segmentation_standard_in_Chinese_Japanese_and_Korean)\n"
+    }
+  ]
+}

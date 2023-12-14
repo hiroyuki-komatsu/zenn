@@ -1,0 +1,13 @@
+{
+  "title": "Mac IPC のメモ",
+  "closed": false,
+  "archived": false,
+  "created_at": "2023-01-16",
+  "comments": [
+    {
+      "author": "komatsuh",
+      "created_at": "2023-01-16",
+      "body_markdown": "https://opensource.apple.com/source/launchd/launchd-842.92.1/liblaunch/bootstrap.h.auto.html\n\nhttps://chromium.googlesource.com/chromium/src/+/HEAD/chrome/updater/prefs_mac.mm\n\nhttps://github.com/google/mozc/blob/master/src/ipc/mach_ipc.cc"
+    }
+  ]
+}

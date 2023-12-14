@@ -1,0 +1,14 @@
+{
+  "title": "kksmart CT-1 メモ",
+  "closed": false,
+  "archived": false,
+  "created_at": "2023-11-27",
+  "comments": [
+    {
+      "author": "komatsuh",
+      "created_at": "2023-11-27",
+      "body_markdown": "![](https://storage.googleapis.com/zenn-user-upload/0d988b7a3026-20231127.png)\n\nhttps://www.amazon.co.jp/gp/product/B0B2WLQS39\n\n# ディスプレイ設定\n\n左側のボタンを長押しで設定メニューを出せる\n\n* 明るさ 100 → 60\n* BlackLevel 50 → 45\n\n# タッチパネル\n\nmacOS で複数モニターの場合、フォーカスしているモニター内でタッチイベントが発生する。\n\n例: 別モニターにマウスカーソルがあり、この CT-1 の右下をタップすると、別モニター内の右下にカーソルが移動する。\n\n:::details 履歴\n## 2023-11-27\n\n下記は間違い。\n\nmacOS のディスプレイ設定で `Use as` を `Main display` にしないとタッチ位置がずれる。\n\n![](https://storage.googleapis.com/zenn-user-upload/46c86ded4e76-20231127.png)\n:::\n\n\n# Karabiner との連携\n\nKarabiner で CT-1 のマウスデバイスを有効にすると、マウスのタッチイベントがずれるようになる。\n原因の調査はしていない。キーボードデバイスはなにに使っているのだろう？\n\n![](https://storage.googleapis.com/zenn-user-upload/6a98084d1bcc-20231127.png)\n\n\n",
+      "body_updated_at": "2023-11-27"
+    }
+  ]
+}

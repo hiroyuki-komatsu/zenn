@@ -1,0 +1,14 @@
+{
+  "title": "Dell U3223QZ メモ",
+  "closed": false,
+  "archived": false,
+  "created_at": "2023-11-25",
+  "comments": [
+    {
+      "author": "komatsuh",
+      "created_at": "2023-11-25",
+      "body_markdown": "Dell U3223QZ の設定メモ\n\n# HDMI 出力 (Nintendo SWITCH) の音量調整\n\nUSB-C 接続の MacBook の音声出力を `U3223QZ USB` にすると、ディスプレイ左下のタッチパネルから設定可能になる。\n\n独立して設定する必要はないものか…\n\n# スピーカーからチリチリというノイズが出る\n\n電源のアースの問題？\n\n# DP のデイジーチェーン (MST) ができていない\n\n正確には、一度ミラーリングで表示されていたのだけれど、できなくなってしまった\n\nミラーリングで表示されていた時は、USB ハブ機能が動作しなくなってしまっていた。\nMacBook の再起動で解決したので、macOS の問題かもしれない。\n\n接続先を違うモニターにしたら、ミラーリングでの表示はできるようになった。\nしかしミラーリングではない追加ディスプレイとしての表示はできていない。\n調べると macOS/MacBook の制限という記事をいくつか見つける。\n\n# DDPM (for macOS) がとても重い？\n\nMisson Control や IME が非常に遅くなってしまう問題があったのだが、 DDPM を終了したら実用的な動作に戻った。DDPM が直接の原因なのかは不明。\n\n* [‎U2720Q, DDPM, MacBook Pro (2018), slow | DELL Technologies](https://www.dell.com/community/en/conversations/monitors/u2720q-ddpm-macbook-pro-2018-slow/647f9e6ef4ccf8a8de302da3)\n* [‎FAQ Dell monitor and Apple | DELL Technologies](https://www.dell.com/community/en/conversations/monitors/faq-dell-monitor-and-apple/647f9fc4f4ccf8a8de4ad5fd)",
+      "body_updated_at": "2023-11-27"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "title": "macOS の InputMethodKit で、カーソルを移動する方法の調査",
+  "closed": false,
+  "archived": false,
+  "created_at": "2023-02-04",
+  "comments": [
+    {
+      "author": "komatsuh",
+      "created_at": "2023-02-04",
+      "body_markdown": "# やりたいこと\n\nIMKit で入力文字をコミットしたあとカーソル位置を移動させたい。\nたとえば「あいう」をコミットしたあとで「い」と「う」の間にカーソルを移動させたい。\n\n# 現状\n\n* すっきりとした方法は見つかっていない\n* TextEdit のみで動作する方法は見つかった\n* Accessibility Permission が必要な方法は見つかった\n"
+    },
+    {
+      "author": "komatsuh",
+      "created_at": "2023-02-04",
+      "body_markdown": "# iOS との比較\n\niOS では [adjustTextPositionByCharacterOffset](https://developer.apple.com/documentation/uikit/uitextdocumentproxy/1618194-adjusttextpositionbycharacteroff) を使えば実現できる機能だが、\nmacOS 用の [IMKTextInput](https://developer.apple.com/documentation/inputmethodkit/imkinputcontroller/1385490-client?language=objc) には同等の機能がないように見える。\n\nそもそも IMKTextInput の資料がとても限られている。\nmacOS でも IMKTextInput を使わないで実装する方法はあるのだろうか。"
+    },
+    {
+      "author": "komatsuh",
+      "created_at": "2023-02-05",
+      "body_markdown": "# TextEdit のみで動作する方法\n\n`setMarkedText` には空ではない文字列、`selectionRange` には空の範囲、replacementRange には移動させたい位置を指定することによって、カーソルを移動できる。\n\n```objc\n- (BOOL)handleEvent:(NSEvent *)event client:(id)sender {\n  ...\n  NSRange range = [sender selectedRange];\n  [sender setMarkedText:@\"!\"\n         selectionRange:NSMakeRange(0, 0)\n       replacementRange:NSMakeRange(range.location - 1, 0)];\n```\n\nTextEdit 以外では動作しないし、TextEdit でも意図した動作とは考えにくい。"
+    },
+    {
+      "author": "komatsuh",
+      "created_at": "2023-02-05",
+      "body_markdown": "# Accessibility Permission が必要な方法\n\n[`CGEventPost`](https://developer.apple.com/documentation/coregraphics/1456527-cgeventpost) を使ってキーイベントをアプリケーションに送ることができる。\nこの方法は macOS 10.14 以降ではアクセシビリティ用のパーミッションが必要になった。\n\n```objc\nCGEventRef key_down = CGEventCreateKeyboardEvent(nullptr, kVK_LeftArrow, true);\nCGEventPost(kCGHIDEventTap, key_down);\nCFRelease(key_down);\nCGEventRef key_up = CGEventCreateKeyboardEvent(nullptr, kVK_LeftArrow, false);\nCGEventPost(kCGHIDEventTap, key_up);\nCFRelease(key_up);\n```\n\nユーザーからパーミッションの取得が必要であり、カーソルキーの入力が必ずしもカーソル移動になることも保証されてはいない。\n\nとはいえ、現時点では一番現実的な方法ではある。"
+    }
+  ]
+}

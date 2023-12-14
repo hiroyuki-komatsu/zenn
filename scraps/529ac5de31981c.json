@@ -1,0 +1,29 @@
+{
+  "title": "Google のインフラ",
+  "closed": false,
+  "archived": false,
+  "created_at": "2021-11-07",
+  "comments": [
+    {
+      "author": "komatsuh",
+      "created_at": "2021-11-07",
+      "body_markdown": "どこまで話していいかのメモ帳"
+    },
+    {
+      "author": "komatsuh",
+      "created_at": "2021-11-07",
+      "body_markdown": "# Kokoro\n\nBuild & sing non-standard Google projects.\n\n* [2016-jenkins-world-jenkins_inside_google.pdf](https://assets.ctfassets.net/vtn4rfaw6n2j/2016-jenkins-world-jenkinsinsidegooglepdf/1c94f65f5624b9420e6c0cc519d6e8ad/2016-jenkins-world-jenkins_inside_google.pdf)\n* [tink/kokoro at master · google/tink](https://github.com/google/tink/tree/master/kokoro)\n* [google-cloud-ruby/KOKORO.md at main · googleapis/google-cloud-ruby](https://github.com/googleapis/google-cloud-ruby/blob/main/KOKORO.md)"
+    },
+    {
+      "author": "komatsuh",
+      "created_at": "2021-11-07",
+      "body_markdown": "# Google Issue Tracker\n\n* https://issuetracker.google.com/\n* [Google Issue Tracker  |  Google Developers](https://developers.google.com/issue-tracker)\n\n"
+    },
+    {
+      "author": "komatsuh",
+      "created_at": "2022-07-30",
+      "body_markdown": "# Piper, CitC, Critique, CodeSearch, Tricorder, Rosie\n\n* [Why Google Stores Billions of Lines of Code in a Single Repository | July 2016 | Communications of the ACM](https://cacm.acm.org/magazines/2016/7/204032-why-google-stores-billions-of-lines-of-code-in-a-single-repository/fulltext)",
+      "body_updated_at": "2022-07-30"
+    }
+  ]
+}

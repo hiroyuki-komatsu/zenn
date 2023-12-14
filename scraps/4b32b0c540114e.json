@@ -1,0 +1,13 @@
+{
+  "title": "都道府県の並び順 (JIS X 0401 / ISO 3166-2:JP / CLDR subdivisions jp)",
+  "closed": false,
+  "archived": false,
+  "created_at": "2022-06-08",
+  "comments": [
+    {
+      "author": "komatsuh",
+      "created_at": "2022-06-08",
+      "body_markdown": "都道府県の並び順は JIS X 0401 (全国地方公共団体コード) で定義されている\n\n* [全国地方公共団体コード - Wikipedia](https://ja.wikipedia.org/wiki/%E5%85%A8%E5%9B%BD%E5%9C%B0%E6%96%B9%E5%85%AC%E5%85%B1%E5%9B%A3%E4%BD%93%E3%82%B3%E3%83%BC%E3%83%89)\n\nこの規格は ISO 3166-2:JP としても定義されている\n\n* [ISO 3166-2:JP - Wikipedia](https://ja.wikipedia.org/wiki/ISO_3166-2:JP)\n* ISO 3166-1 は国名コード\n\nISO 3166-2 は CLDR の subdivisions として収録されているようにみえる\n\n* [cldr/common/subdivisions at main · unicode-org/cldr](https://github.com/unicode-org/cldr/tree/main/common/subdivisions)\n* [cldr/ja.xml at main · unicode-org/cldr](https://github.com/unicode-org/cldr/blob/main/common/subdivisions/ja.xml#L1953)\n"
+    }
+  ]
+}

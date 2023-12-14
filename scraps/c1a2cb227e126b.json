@@ -1,0 +1,18 @@
+{
+  "title": "VSCode の設定",
+  "closed": false,
+  "archived": false,
+  "created_at": "2023-10-30",
+  "comments": [
+    {
+      "author": "komatsuh",
+      "created_at": "2023-10-30",
+      "body_markdown": "自分用 VSCode の設定まとめ"
+    },
+    {
+      "author": "komatsuh",
+      "created_at": "2023-10-30",
+      "body_markdown": "# 括弧の自動補完を一部抑制する\n\n```\n  \"editor.autoClosingBrackets\": \"beforeWhitespace\",\n  \"editor.autoClosingQuotes\": \"beforeWhitespace\",\n```\n\n* [VS Codeの設定： 括弧と引用符の自動補完について #VSCode - Qiita](https://qiita.com/BlueSilverCat/items/c245bd098396dc2eb656)"
+    }
+  ]
+}

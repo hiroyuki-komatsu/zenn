@@ -1,0 +1,216 @@
+{
+  "title": "Tips",
+  "closed": false,
+  "archived": false,
+  "created_at": "2021-03-29",
+  "comments": [
+    {
+      "author": "komatsuh",
+      "created_at": "2021-03-29",
+      "body_markdown": "# Qt を使った macOS アプリで \"cocoa\" が見つからないというエラーが出る\n\nQt を同梱する macOS アプリで、下記の「\"cocoa\" が見つからない」というエラーが出る時の対応方法。\n```\nqt.qpa.plugin: Could not find the Qt platform plugin \"cocoa\" in \"\"\nThis application failed to start because no Qt platform plugin could be initialized. Reinstalling the application may fix this problem.\n```\n\nQtCore, QtGui, QtPrintSupport, QtWidgets の Frameworks に加えて、 qt.conf と libqcocoa.dylib を Resources に配置する必要がある。\n\n* MyApp.app/Contents/\n  * Frameworks/\n    * QtCore.framework/\n    * QtGui.framework/\n    * QtPrintSupport.framework/\n    * QtWidgets.framework/\n  * Resources/\n    * plugins/platforms/libqcocoa.dylib\n    * qt.conf\n\n```txt:qt.conf の中身\n[Paths]\nPlugins = Resources/plugins\n```\n\n\n"
+    },
+    {
+      "author": "komatsuh",
+      "created_at": "2021-04-10",
+      "body_markdown": "# C++ で桁数以上のビットシフトの返り値は、ゼロではなく不定\n\n```cpp\nstatic_cast<uint32_t>(1) << 31;  // 0b1000...0000 (0 が 31 個) 期待通り\nstatic_cast<uint32_t>(1) << 32;  // 0 にならない。不定\nstatic_cast<uint32_t>(1) << 33;  // 0 にならない。不定\nstatic_cast<uint64_t>(1) << 63;  // 0b1000...0000 (0 が 63個) 期待通り\nstatic_cast<uint64_t>(1) << 64;  // 0 にならない。不定\nstatic_cast<uint64_t>(1) << 65;  // 0 にならない。不定\n```\n\nColab の clang で試してみると不定の方は実行のたびに値が変わる。\n\nそのため下記のコードは期待通りに動かない。\n```cpp\n// index よりも小さい桁にあるビット数を数える意図の関数だが、\n// index = 0 の時の返り値が不定になるバグがある\nint PopCountRhs(uint64_t bitmap, int index) {\n  return popcount(bitmap << (64 - index));  // INVALID CODE\n}\n```\n\n参考:\n[c++ - Why doesn't left bit-shift, \"<<\", for 32-bit integers work as expected when used more than 32 times? - Stack Overflow](https://stackoverflow.com/questions/7401888/why-doesnt-left-bit-shift-for-32-bit-integers-work-as-expected-when-used/7401981)",
+      "body_updated_at": "2021-04-11"
+    },
+    {
+      "author": "komatsuh",
+      "created_at": "2021-05-05",
+      "body_markdown": "# Python で入出力を継続するコマンドをラップする方法\n\nシェルのような入力と出力を交互に繰り返すコマンドを、Python から制御するためのサンプルコード。\n\nStack overflow の [Timeout on subprocess readline in Python](https://stackoverflow.com/questions/10756383/timeout-on-subprocess-readline-in-python#34114767) を参考にした。\n\n```python\nimport asyncio\nimport sys\nfrom asyncio.subprocess import PIPE\n\nasync def run_shell():\n  process = await asyncio.create_subprocess_exec(\n    '/bin/sh', stdin=PIPE, stdout=PIPE)\n\n  while process.returncode is None:\n    command = input('> ')\n    process.stdin.write(command.encode('utf-8') + b'\\n')\n\n    while True:\n      try:\n        line = await asyncio.wait_for(process.stdout.readline(), timeout=0.1)\n      except asyncio.TimeoutError:\n        break\n\n      if not line:\n        break\n\n      print(line.decode('utf-8'), end='')\n\n  return await process.wait()\n\n\nif sys.platform == 'win32':\n  loop = asyncio.ProactorEventLoop()\n  asyncio.set_event_loop(loop)\nelse:\n  loop = asyncio.get_event_loop()\n\n\nreturncode = loop.run_until_complete(run_shell())\nloop.close()\n```\n\n0.1 秒間出力がない場合に、入力を受け取るようにしている。\n\nもっと正しい方法があるとは思う。\n"
+    },
+    {
+      "author": "komatsuh",
+      "created_at": "2021-05-06",
+      "body_markdown": "# Python でコマンドの出力を取得しつつ、エンターキーで終了する方法\n\n上記 [Python で入出力を継続するコマンドをラップする方法](https://zenn.dev/komatsuh/scraps/10a832e5acb696#comment-1070f515761f5b) から、非同期で標準入力を受け取れるように変更。\n\n```python\nimport asyncio\nimport concurrent.futures\nimport subprocess\nimport sys\nimport threading\nfrom asyncio.subprocess import PIPE\n\n\nis_terminate = threading.Event()\n\n\nasync def check_interuption(loop):\n  reader = asyncio.StreamReader()\n  protocol = asyncio.StreamReaderProtocol(reader)\n  await loop.connect_read_pipe(lambda: protocol, sys.stdin)\n\n  line = await reader.readline()\n  print('read:' + line.decode('utf-8'))\n  is_terminate.set()\n\n\nasync def run_command(args):\n  process = await asyncio.create_subprocess_exec(*args, stdout=PIPE)\n  output = []\n\n  while not is_terminate.is_set():\n    try:\n      line = await asyncio.wait_for(process.stdout.readline(), timeout=0.1)\n    except asyncio.TimeoutError:\n      continue\n\n    line = line.decode('utf-8')\n    output.append(line)\n    print(line, end='')\n\n  return ''.join(output)\n\n\ndef get_event_loop():\n  if sys.platform == 'win32':\n    loop = asyncio.ProactorEventLoop()\n    asyncio.set_event_loop(loop)\n  else:\n    loop = asyncio.get_event_loop()\n  return loop\n\n\nloop = get_event_loop()\n\nargs = ['/usr/local/bin/adb', 'shell', 'getevent', '/dev/input/event1']\nfutures = asyncio.gather(run_command(args), check_interuption(loop))\noutput = loop.run_until_complete(futures)[0]\n\nprint(output)\nloop.close()\n\n```\n\n参考: [python - Listen to keypress with asyncio - Stack Overflow](https://stackoverflow.com/questions/35223896/listen-to-keypress-with-asyncio/65909044#65909044)",
+      "body_updated_at": "2021-05-06"
+    },
+    {
+      "author": "komatsuh",
+      "created_at": "2021-05-07",
+      "body_markdown": "# Android の adb でスクリーンキャプチャ\n\n```shell\nadb exec-out screencap -p > image.png\n```\n\n参照: [android - Read binary stdout data from adb shell? - Stack Overflow](https://stackoverflow.com/questions/13578416/read-binary-stdout-data-from-adb-shell)"
+    },
+    {
+      "author": "komatsuh",
+      "created_at": "2021-05-21",
+      "body_markdown": "# Qt で最前面でフォーカスを取らない枠なしウインドウを作成する\n\n```cpp\n  QWidget window;\n  window.setWindowFlags(Qt::ToolTip |\n                        Qt::FramelessWindowHint |\n                        Qt::WindowStaysOnTopHint);\n```"
+    },
+    {
+      "author": "komatsuh",
+      "created_at": "2021-05-24",
+      "body_markdown": "# Git で改行コードを変更せずに clone する\n\nWindows でも改行コードを CRLF (\\r\\n) に変更しない方法\n\n```\ngit clone -c core.autocrlf=false https://github.com/<REPOSITORY>\n```\n\n参照: [git - Trying to clone a repository but the line endings are wrong - Stack Overflow](https://stackoverflow.com/questions/50974005/trying-to-clone-a-repository-but-the-line-endings-are-wrong/50974034#50974034)"
+    },
+    {
+      "author": "komatsuh",
+      "created_at": "2021-05-26",
+      "body_markdown": "# MSVC で \"cannot subtract incompatible string_view iterators.\" というエラーが出る\n\n`string_view` の `begin()` や `end()` で引き算をしているのが原因。 `data()` および `data() + size()` を使う。\n\n```cpp\nstd::string_view sv1(char_pointer);\nstd::string_view sv2(char_pointer + 5);\n\n// BAD\n// int offset = sv2.begin() - sv1.begin();\n\n// GOOD\nint offset = sv2.data() - sv1.data();\n```\n\n参照: [STL/xstring at main · microsoft/STL](https://github.com/microsoft/STL/blob/main/stl/inc/xstring)"
+    },
+    {
+      "author": "komatsuh",
+      "created_at": "2021-05-30",
+      "body_markdown": "# Git のサブモジュールを特定のタグに更新する\n\n```sh\ncd <submodule_dir>\ngit fetch --tags\ngit checkout tags/<tag_name>\ngit submodule update\n\ncd <main_dir>\ngit add <submodule_dir>\ngit commit\n```",
+      "body_updated_at": "2023-05-10",
+      "children": [
+        {
+          "author": "komatsuh",
+          "created_at": "2022-01-23",
+          "body_markdown": "サブモジュールが更新された remote_repo を local_repo へ pull したら、local_repo のサブモジュールをアップデートする必要がある。\n```sh\ngit submodule update\n```"
+        },
+        {
+          "author": "komatsuh",
+          "created_at": "2023-05-10",
+          "body_markdown": "サブモジュール内で使用しているサブモジュールを更新するために、\nサブモジュール内で `git checkout tags/<tag_name>` のあとに\n`git submodule update` をする必要がある。"
+        }
+      ]
+    },
+    {
+      "author": "komatsuh",
+      "created_at": "2021-06-06",
+      "body_markdown": "# Mac の Android Studio でエミュレーターが Not responding で起動しない。\n\nデータ消去 & 再インストールが確実らしい。…なるほど？\n\n1. AVD Manager から Virtual Devices をすべて消す\n2. [Android Studio] > [Preference...] > [Appearance & Behavior] > [System Settings] > [Android SDK] を選ぶ\n3. [SDK Tools] > [Android Emulator] の項目を外してアンインストールする\n4. Android Studio の再起動\n5. [SDK Tools] > [Android Emulator] の項目を加えて再インストールする\n6. AVD Manager に Virtual Devices を追加する\n\n参考 [Android Emulator not working on MAC - Stack Overflow](https://stackoverflow.com/a/47140422)"
+    },
+    {
+      "author": "komatsuh",
+      "created_at": "2021-06-12",
+      "body_markdown": "# Qt でスレッド間通信 (QThread + connect)\n\n```cpp:my_qt_thread.h\n#include <QtWidgets/QtWidgets>\n\nclass Receiver : public QObject {\n  Q_OBJECT\n\n public:\n  void HandleValue(int i);\n};\n\nclass Sender : public QObject {\n  Q_OBJECT\n\n public:\n  Sender(Receiver *receiver);\n\n  void RunLoop(int times);\n  void SetValue(int i);\n\n signals:\n  void EmitRunLoop(int times);\n  void EmitValue(int i);\n};\n```\n\n```cpp:my_qt_thread.cc\n#include \"my_qt_thread.h\"\n\n#include <unistd.h>\n#include <iostream>\n\nSender::Sender(Receiver *receiver) {\n  connect(this, &Sender::EmitValue, receiver, &Receiver::HandleValue);\n  connect(this, &Sender::EmitRunLoop, this, &Sender::RunLoop);\n}\n\nvoid Sender::RunLoop(int times) {\n  for (int i = 0; i < times; ++i) {\n    sleep(1);\n    SetValue(i);\n  }\n}\n\nvoid Sender::SetValue(int i) {\n  std::cout << \"Sender::SetValue: \" << i << std::endl;\n  emit EmitValue(i);\n}\n\nvoid Receiver::HandleValue(int i) {\n  std::cout << \"Receiver::HandleValue: \" << i << std::endl;\n}\n\nint main(int argc, char **argv) {\n  QApplication app(argc, argv);\n\n  Receiver receiver;\n\n  Sender sender1(&receiver);\n  QThread thread1;\n  sender1.moveToThread(&thread1);\n  thread1.start();\n  emit sender1.EmitRunLoop(10);\n\n  Sender sender2(&receiver);\n  QThread thread2;\n  sender2.moveToThread(&thread2);\n  thread2.start();\n  emit sender2.EmitRunLoop(3);\n\n  const int result = app.exec();\n  thread1.wait();\n  thread2.wait();\n  return result;\n}\n```\n\n",
+      "body_updated_at": "2021-06-12"
+    },
+    {
+      "author": "komatsuh",
+      "created_at": "2021-06-13",
+      "body_markdown": "# Astro A50 がファームウェアの更新に失敗する\n\n## 問題\n* ヘッドセットの電源が入らず、ハードリセット (Dolby + Game 長押し) をしても、ファームウェアの更新に失敗する\n* ベースステーションに置くように指示されるが、置いても反応しない\n\n## 解決方法\n1. Microsoft Store から Windows10 用の ASTRO COMMAND CENTER をインストールする\n2. ヘッドセットをハードリセットする (Dolby + Game 長押し)\n3. Windows10 用の ASTRO COMMAND CENTER から、ヘッドセットのファームウェアを最新版に自動更新する。\n\nサポートページから直接ダウンロードできる macOS 版や Windows 版の ASTRO COMMAND CENTER では解決しない。\n\n"
+    },
+    {
+      "author": "komatsuh",
+      "created_at": "2021-07-26",
+      "body_markdown": "# Android エミュレーターから、開発マシン上のサーバーへのアクセス\n\n`10.0.2.2` を使えばよい。\n\nエミュレーター上のウェブブラウザから、開発マシン上のウェブサーバーへアクセスするなら、`https://10.0.2.2/` でアクセス可能\n\n[Set up Android Emulator networking  |  Android Developers](https://developer.android.com/studio/run/emulator-networking.html)"
+    },
+    {
+      "author": "komatsuh",
+      "created_at": "2021-10-22",
+      "body_markdown": "# ファイルを改行単位で 10 分割するコマンドライン\n\n下記のコマンドラインで `data.txt` を `data00.txt` から `data09.txt` に分割できる\n\n```\nsplit -n l/10 -d --additional-suffix=.txt data.txt data\n```\n\n* `-n l/10` : 改行単位で 10 分割\n* `-d` : 分割後のファイルに数字をつける (`00` から`09` の部分)\n* `--additional-suffix=.txt` 分割後ファイルの接尾辞\n* `data.txt` 分割したいファイル\n* `data` 分割後ファイルの接頭辞\n\n`-n 10` とするとサイズが均等になるように (改行によらず) 10 分割される\n`-n l/10` なら、サイズをできるだけ均等にしたうえで改行単位で分割する\n",
+      "body_updated_at": "2021-10-22"
+    },
+    {
+      "author": "komatsuh",
+      "created_at": "2021-10-24",
+      "body_markdown": "# Git で特定のコミットメッセージを変更する\n\n以下は `abcd123` のコミットメッセージを変更する方法\n\n1. `git rebase -i abcd123^` でエディタが開く (最後に `^` が必要)\n2. `pick abcd123` とある行を `r abcd123` に変更して保存 (`r` は `reword` でもよい)\n3. コミットメッセージの編集画面が開くので、変更して保存\n\nabcd123 を含む以降のコミット ID はすべて変更される\n\n疑問\n* 2 の工程を飛ばして、1 から 3 に直接行く方法はないのだろうか？\n\n参考\n* [コミットメッセージの変更 - GitHub Docs](https://docs.github.com/ja/github/committing-changes-to-your-project/creating-and-editing-commits/changing-a-commit-message)\n* [git - How to modify a specified commit? - Stack Overflow](https://stackoverflow.com/questions/1186535/how-to-modify-a-specified-commit)",
+      "body_updated_at": "2021-10-24"
+    },
+    {
+      "author": "komatsuh",
+      "created_at": "2021-10-24",
+      "body_markdown": "# Git で特定のコミットで変更されたファイルを表示する\n\n以下は `abcd123` のコミットで変更されたファイルを確認する方法\n```\ngit diff-tree --name-only --no-commit-id -r abcd123\n```\n\n次の方法でもだいたい大丈夫\n* `git diff-tree -r abcd123`\n* `git diff abcd123 abcd123~`\n\n参考\n* [git - How do I list all of the files in a commit? - Stack Overflow](https://stackoverflow.com/questions/424071/how-do-i-list-all-of-the-files-in-a-commit)"
+    },
+    {
+      "author": "komatsuh",
+      "created_at": "2021-10-24",
+      "body_markdown": "# Git で特定のコミットからファイルを分離する\n\n以下は `abcd123` のコミットに含まれる `file.txt` を分離する方法。\n\n1. `git rebase -i abcd123^`\n2. `pick abcd123` を `e abcd123` に変更\n3. `git reset HEAD^ -- file.txt`\n4. `git commit --amend` (file.txt 以外の変更がコミットされる。コミットメッセージは保持される)\n5. `git add file.txt`\n6. `git commit`\n7. `git rebase --continue`\n\n参考\n[version control - How to split last commit into two in Git - Stack Overflow](https://stackoverflow.com/questions/1440050/how-to-split-last-commit-into-two-in-git/10096941#10096941)\n"
+    },
+    {
+      "author": "komatsuh",
+      "created_at": "2021-11-07",
+      "body_markdown": "# Python で SVG ファイルを標準ライブラリで編集する\n\nXML ファイルとして、[xml.dom.minidom](https://docs.python.org/ja/3/library/xml.dom.minidom.html) を使うのが手軽。\n\n参考\n* [xml - Python SVG parser - Stack Overflow](https://stackoverflow.com/questions/15857818/python-svg-parser)\n* [mozc/build_icons.py at master · google/mozc · GitHub](https://github.com/google/mozc/blob/master/src/unix/build_icons.py)"
+    },
+    {
+      "author": "komatsuh",
+      "created_at": "2022-01-10",
+      "body_markdown": "# Wikipedia で XML データの書き出し\n\n`special:export/` もしくは `特別:データ書き出し/` を URL の `wiki/` のあとに付与する。\n\n[https://ja.wikipedia.org/wiki/メインページ](https://ja.wikipedia.org/wiki/%E3%83%A1%E3%82%A4%E3%83%B3%E3%83%9A%E3%83%BC%E3%82%B8)\nなら、\n[https://ja.wikipedia.org/wiki/special:export/メインページ](https://ja.wikipedia.org/wiki/special:export/%E3%83%A1%E3%82%A4%E3%83%B3%E3%83%9A%E3%83%BC%E3%82%B8)\nとする。",
+      "body_updated_at": "2022-01-10"
+    },
+    {
+      "author": "komatsuh",
+      "created_at": "2022-01-12",
+      "body_markdown": "# 2 つのファイルを横に結合するコマンドライン\n\n`paste` を使う。\n\n```\n% cat a.txt\na\nb\nc\n% cat b.txt\n0\n1\n2\n% paste a.txt b.txt\na\t0\nb\t1\nc\t2\n```"
+    },
+    {
+      "author": "komatsuh",
+      "created_at": "2022-03-05",
+      "body_markdown": "# macOS の pkg ファイルの展開\n\n`pkgutil` に `--expand-full` というオプションがある。\n\n```\npkgutil --expand-full Application.pkg /tmp/extracted\n```\n\n参考:\n* [How to extract contents from 'Payload' file in a apple macOS update package? - Stack Overflow](https://stackoverflow.com/questions/41166805/how-to-extract-contents-from-payload-file-in-a-apple-macos-update-package)"
+    },
+    {
+      "author": "komatsuh",
+      "created_at": "2022-05-01",
+      "body_markdown": "# Python でシンボリックリンクに対応した zip ファイルの作成\n\n`shutil.make_archive` を素直に使うとシンボリックリンクは実ファイルに置き換えられてしまう。\n\n`zipfile.ZipFile` を `ZipInfo` と組み合わせて使えば、シンボリックリンクへの対応は可能。\n\n参考:\n* https://stackoverflow.com/a/65817451\n\nとはいえ、 zip コマンドを Python 内で呼び出すほうが分かりやすい気がする。\n```\ncd <base_dir>\nzip -ry archive.zip <target>\n```\n"
+    },
+    {
+      "author": "komatsuh",
+      "created_at": "2022-05-24",
+      "body_markdown": "# Chrome で PDF ファイルの URL にページを指定する\n\n\"#page=NN\" をつける。\n* https://unicode.org/charts/PDF/U1FB00.pdf#page=2"
+    },
+    {
+      "author": "komatsuh",
+      "created_at": "2022-05-25",
+      "body_markdown": "# macOS で PrintScreen を「形式なしのペースト」に割り当てる\n\nKarabiner-Elements の設定ファイルを書いて実現する。\n\n~/.config/karabiner/assets/complex_modifications ディレクトリに json 形式の設定ファイルを書く。\nファイル名は自由。\n\n下記のファイルでは Right-Option もコピーに割り当てている。\n\n```json:plain_paste.json\n{\n  \"title\": \"Right-Option/PrintScreen to copy/paste w/o format (Shift + Command + v)\",\n  \"rules\": [\n    {\n      \"description\": \"Right-Option/PrintScreen to copy/paste w/o format (Shift + Command + v).\",\n      \"manipulators\": [\n        {\n          \"type\": \"basic\",\n          \"from\": {\n            \"key_code\": \"right_option\"\n          },\n          \"to\": [\n            {\n              \"key_code\": \"c\",\n              \"modifiers\": [\n                \"left_command\"\n              ]\n            }\n          ]\n        },\n        {\n          \"type\": \"basic\",\n          \"from\": {\n            \"key_code\": \"print_screen\"\n          },\n          \"to\": [\n            {\n              \"key_code\": \"v\",\n              \"modifiers\": [\n                \"left_command\",\n                \"left_shift\"\n              ]\n            }\n          ]\n        }\n       ]\n    }\n  ]\n}\n```",
+      "body_updated_at": "2022-05-25"
+    },
+    {
+      "author": "komatsuh",
+      "created_at": "2022-05-28",
+      "body_markdown": "# macOS の .dmg ファイルのフォーマットを確認する\n\n`hdiutil` の `imageinfo` オプションを使う\n\n```\n% hdiutil imageinfo myimage.dmg\n```"
+    },
+    {
+      "author": "komatsuh",
+      "created_at": "2022-06-11",
+      "body_markdown": "# Google Spreadsheets で配列\n\n`INDEX` と `{}` を使う。1-origin なので、下記の場合は 100 が返り値になる\n\n```\n=INDEX({100, 200, 300}, 1)\n```\n"
+    },
+    {
+      "author": "komatsuh",
+      "created_at": "2022-06-26",
+      "body_markdown": "# Git で管理されているファイルの編集を無視する方法\n\n```\ngit update-index --assume-unchanged src/config.txt\n```\n\nもとに戻すには --no-assume-unchanged を使う\n```\ngit update-index --no-assume-unchanged src/config.txt\n```\n\n参考:\n* [git svn - Ignore modified (but not committed) files in git? - Stack Overflow](https://stackoverflow.com/questions/655243/ignore-modified-but-not-committed-files-in-git)"
+    },
+    {
+      "author": "komatsuh",
+      "created_at": "2022-07-03",
+      "body_markdown": "# Google Spreadsheet で GAS を使って、カタカナをひらがなに変換\n\nセルをまとめて変換する方が早くなる？\n\n```js\nfunction toHiragana(args) {\n  if (Array.isArray(args)) {\n    let output = [];\n    for (let arg of args) {\n      output.push(toHiragana(arg));\n    }\n    return output;\n  }\n\n  if (typeof args != \"string\") {\n    return \"\";\n  }\n\n  let codes = [];\n  for (let chr of args) {\n    const offset = ('ァ' <= chr && chr <= 'ヶ') ? -0x0060 : 0;\n    codes.push(chr.charCodeAt() + offset);\n  }\n  return String.fromCharCode(...codes);\n}\n```"
+    },
+    {
+      "author": "komatsuh",
+      "created_at": "2022-07-05",
+      "body_markdown": "# 2 つのファイルで共通する行を出力するコマンドライン\n\n```sh\ncomm -12 sorted_lines1.txt sorted_lines2.txt > common_lines.txt\n```\n\n`sorted_lines1.txt` と `sorted_lines2.txt` はソートされている前提\n\n参照:\n* [text processing - Common lines between two files - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/398142/common-lines-between-two-files)"
+    },
+    {
+      "author": "komatsuh",
+      "created_at": "2022-07-06",
+      "body_markdown": "# ファイルの各行に文字列を追加するコマンドライン\n\n```sh\nsed -e 's/^/prefix/' file.txt > prefixed_file.txt\n```\n\nそりゃまあ `sed` を使えばできるけど…それ以外にはないのかな?\n\n参照:\n* [linux - Add a prefix string to beginning of each line - Stack Overflow](https://stackoverflow.com/questions/2099471/add-a-prefix-string-to-beginning-of-each-line)",
+      "body_updated_at": "2022-07-06"
+    },
+    {
+      "author": "komatsuh",
+      "created_at": "2022-10-18",
+      "body_markdown": "# VSCode で .tsv ファイルではタブが入力できるようにする\n\nkeybindings.json に次のように設定する。\n\n```json:keybindings.json\n[\n  {\n    \"key\": \"tab\",\n    \"command\": \"type\",\n    \"args\": {\"text\": \"\\t\"},\n    \"when\": \"editorTextFocus && editorLangId == plaintext\"\n  }\n]\n```\n\n.tsv ファイルは plaintext として認識されるので、plaintext 全体が適用範囲にはなってしまう。 .tsv ファイルに限定するのは宿題。\n\n参照\n* [Visual Studio Code Key Bindings](https://code.visualstudio.com/docs/getstarted/keybindings#_how-can-i-add-a-key-binding-for-only-certain-file-types)"
+    },
+    {
+      "author": "komatsuh",
+      "created_at": "2022-10-23",
+      "body_markdown": "# git でタグをつけて公開する\n\n```sh\n% git tag -a {tag} {commit-id}\n% git push -u origin master {tag}\n```\n\n具体例\n```sh\n% git tag -a 2.26.4660.102 063c41f1d7c1a877f44c1f8caad6be1897350336\n% git push -u origin master 2.26.4660.102\n```\n"
+    },
+    {
+      "author": "komatsuh",
+      "created_at": "2022-11-24",
+      "body_markdown": "# svg から ico ファイルを作成するコマンドライン\n\nImageMagick の `convert` と Icoutils の `icotool` を使う\n\n```sh\nconvert -background none -density 1024 -resize 16x16 -extent 16x16 -gravity Center icon.svg icon_16.png\nconvert -background none -density 1024 -resize 24x24 -extent 24x24 -gravity Center icon.svg icon_24.png\nconvert -background none -density 1024 -resize 32x32 -extent 32x32 -gravity Center icon.svg icon_32.png\nicotool -c icon_16.png icon_24.png icon_32.png > icon.ico\n```\n\nシェルスクリプトでまとめての実行\n```sh\nfor n in icon1 icon2 icon3; do\n  PNGS=()\n  for s in 16 20 24 32 48 64 128 256; do\n    convert -background none -density 1024 -resize ${s}x${s} -extent ${s}x${s} -gravity Center ${n}.svg ${n}_${s}.png\n    PNGS+=${n}_${s}.png\n  done\n  icotool -c $PNGS[@] > ${n}.ico\ndone\n```\n\n\n"
+    },
+    {
+      "author": "komatsuh",
+      "created_at": "2023-06-28",
+      "body_markdown": "# macOS で CPU 温度を取得するコマンドライン\n\n```sh\nsudo powermetrics --samplers smc -n 1\n```\n\n一般ユーザーでは実行できないので、`sudo` が必要"
+    },
+    {
+      "author": "komatsuh",
+      "created_at": "2023-07-30",
+      "body_markdown": "# macOS でインストールされたパッケージの一覧を取得するコマンドライン\n\n```\npkgutil --pkgs\n```\n\nインストールされたファイルの一覧\n\n```\npkgutil --files [package_name]\n```\n\nインストールの記録を削除\n\n```\nsudo pkgutil --forget  [package_name]\n```",
+      "body_updated_at": "2023-07-30"
+    },
+    {
+      "author": "komatsuh",
+      "created_at": "2023-10-07",
+      "body_markdown": "# macOS でアプリケーションのウインドウを移動するコマンドライン\n\n```sh\nosascript \\\n    -e 'tell application \"Terminal\"' \\\n    -e 'set position of front window to {1, 1}' \\\n    -e 'end tell'\n```\n\nデスクトップの指定方法と複数ウインドウがある場合の指定方法も確認したい\n\n参照\n* [Move position of an application window from the command line on OSX - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/39900/move-position-of-an-application-window-from-the-command-line-on-osx)\n* [macos - Positioning a window with AppleScript using dual monitors - Stack Overflow](https://stackoverflow.com/questions/5865989/positioning-a-window-with-applescript-using-dual-monitors)",
+      "body_updated_at": "2023-10-07"
+    },
+    {
+      "author": "komatsuh",
+      "created_at": "2023-10-14",
+      "body_markdown": "# macOS で pkg ファイルをインストールするコマンドライン\n\n```\nsudo installer -pkg MyApp.pkg -target / \n```\n"
+    }
+  ]
+}

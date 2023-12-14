@@ -1,0 +1,38 @@
+{
+  "title": "HHKB Studio を 2 台使いするメモ",
+  "closed": false,
+  "archived": false,
+  "created_at": "2023-10-28",
+  "comments": [
+    {
+      "author": "komatsuh",
+      "created_at": "2023-10-28",
+      "body_markdown": "HHKB Stuido (日本語配列) を 2 台 1 組で分割キーボードとして使用しています。\n\nhttps://twitter.com/komatsuh/status/1717469449501258074\n\n感想やカスタマイズのメモ。\n\n# 雑感\n* 分割キーボードしては問題なく動作する\n  + 左右別のキーボードからでも同時押しとして認識する\n  + Karabiner-elements のおかげかもしれない \n* ポインティングデバイスも問題なく動作する\n",
+      "body_updated_at": "2023-10-29"
+    },
+    {
+      "author": "komatsuh",
+      "created_at": "2023-10-28",
+      "body_markdown": "# 使用環境\n\n* Intel macOS (Ventura 13.6.1) \n* Karabiner-elements を使用\n* Apple Magic trackpad2, Logcool Master MX3, XP-PEN ACK05 と併用\n\nhttps://zenn.dev/komatsuh/articles/6a0da36a5229d1\n\n\n# 以前のキーボード\n\n* Lenovo [ThinkPad トラックポイント キーボード II - 日本語](https://www.lenovo.com/jp/ja/p/accessories-and-software/keyboards-and-mice/keyboards/4y40x49522) の 2 台を分割キーボードとして使用\n\n",
+      "body_updated_at": "2023-10-29"
+    },
+    {
+      "author": "komatsuh",
+      "created_at": "2023-10-29",
+      "body_markdown": "# HHKB Studio Keymap Tool でのカスタマイズ\n\n* スペース下の中央キーを `Fn2` から `MB` (マウス中ボタン, `button3`) へ変更\n* 右 `Fn1` を `Ctrl R` へ変更\n  + `Ctrl + カーソル` でのデスクトップ移動するため\n* 左の `Win` と `Alt` を入れ替え\n  + macOS での `command` と `option` の並びに揃えるため\n\n![](https://storage.googleapis.com/zenn-user-upload/fe8041726b26-20231030.png)\n\nKeymap Tool (for macOS) が認識するキーボードは 1 台だけのようなので、設定が終わった方のキーボードはスイッチをオフにして、もう 1 台とあらためて接続する必要がある。\n\n:::details 履歴\n## 2023-10-29\n![](https://storage.googleapis.com/zenn-user-upload/bbdb87be2cb6-20231029.png)\n:::",
+      "body_updated_at": "2023-10-30"
+    },
+    {
+      "author": "komatsuh",
+      "created_at": "2023-10-29",
+      "body_markdown": "# Kabarinber-elements でのカスタマイズ\n\n* 日本語配列 HHKB Studio を英語配列として使用\n  + 英語配列がいいけれど、`かな` / `英数` キーも欲しいので\n* `|¥` キーを `grave_accent_and_tilde` に変更\n\n![](https://storage.googleapis.com/zenn-user-upload/248d19330c55-20231030.png)\n\n## complex modifications\n* `Shift + ESC` でチルダ `~` を入力できるように変更\n* `button3` (マウス中ボタン) とマウス操作でスクロールできるように変更\n\n:::details 履歴\n## 2023-10-29\n![](https://storage.googleapis.com/zenn-user-upload/c0ff093611f8-20231028.png)\n:::\n\n",
+      "body_updated_at": "2023-10-30"
+    },
+    {
+      "author": "komatsuh",
+      "created_at": "2023-10-29",
+      "body_markdown": "# 課題\n\n* バッククォート `` ` `` を入力するつもりで ESC を押してしまう\n* 右シフトキーを入力するつもりで上キー `↑` を押してしまう\n\n# やりたいこと\n\n* `_\\` キーが未使用なので活用したい\n  + Karabiner によって `international1` として定義されている\n  + `↑` キーの左なので、これを `↑` にして、 `↑` も `Shift` にするのもいいかも\n\n![](https://storage.googleapis.com/zenn-user-upload/4bcc8adfdf3f-20231029.png)\n\n* アプリケーション単位での画面拡大縮小がしたい\n  + トラックパッドのピンチインや、Master MX3 の横ホイール相当の動作\n  + ショートカットキーが不明なのでやり方が分からない\n  + [Safari: Any way to initiate pinch-to-zoom without trackpad? - Ask Different](https://apple.stackexchange.com/questions/235581/safari-any-way-to-initiate-pinch-to-zoom-without-trackpad)\n    * [Mac Mouse Fix - A simple way to make your mouse better.](https://mousefix.org/)\n    * [noah-nuebling/mac-mouse-fix: Mac Mouse Fix - A simple way to make your mouse better.](https://github.com/noah-nuebling/mac-mouse-fix)\n\n",
+      "body_updated_at": "2023-10-29"
+    }
+  ]
+}

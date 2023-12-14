@@ -1,0 +1,13 @@
+{
+  "title": "麻雀牌の中 (🀄 U+1F004) をテキストして描画したい",
+  "closed": false,
+  "archived": false,
+  "created_at": "2022-06-10",
+  "comments": [
+    {
+      "author": "komatsuh",
+      "created_at": "2022-06-10",
+      "body_markdown": "### 環境\n* Chrome: 102\n* macOS: 12.4 (Monterey)\n* Font: Hiragino Sans?\n\n![](https://storage.googleapis.com/zenn-user-upload/50d5b1e736d5-20220610.png)\n\n### 動作確認\n\n✅ デフォルトは絵文字として描画される\n![](https://storage.googleapis.com/zenn-user-upload/b557c732955d-20220610.png)\n\n❌ Text Presentation Selector (U+FE0E) を付けても、(なぜか) 絵文字として描画される\n![](https://storage.googleapis.com/zenn-user-upload/25fa8f6319c1-20220610.png)\n\n✅ Text Presentation Selector (U+FE0E) を付けて、かつ前の文字が（たぶん）Default Text Presentation な絵文字だと、テキストとして描画される\n![](https://storage.googleapis.com/zenn-user-upload/cd45e9daa3f4-20220610.png)\n\n✅ Text Presentation Selector (U+FE0E) を付けないと、絵文字として描画される\n![](https://storage.googleapis.com/zenn-user-upload/ac46c715d85d-20220610.png)\n\n❌ 前の文字が一般的な文字だと、Text Presentation Selector (U+FE0E) を付けても、(なぜか) 絵文字として描画される\n![](https://storage.googleapis.com/zenn-user-upload/4142a2f71a3c-20220610.png)\n\n### まとめ\nText Presentation Selector (U+FE0E) を付けても、(なぜか) 前の文字種の影響を受けているように見受けられる。\n\n上記画像の URL\nhttps://hiroyuki-komatsu.github.io/charcode/index.html?s=5&t0=%F0%9F%80%84&e0=utf32-u&t1=%F0%9F%80%84%EF%B8%8E&e1=utf32-u&t2=%F0%9F%80%80%F0%9F%80%84%EF%B8%8E&e2=utf32-u&t3=%F0%9F%80%80%F0%9F%80%84&e3=utf32-u&t4=_%F0%9F%80%84%EF%B8%8E&e4=utf32-u"
+    }
+  ]
+}

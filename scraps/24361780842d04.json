@@ -1,0 +1,14 @@
+{
+  "title": "Karabiner の設定",
+  "closed": false,
+  "archived": false,
+  "created_at": "2023-09-10",
+  "comments": [
+    {
+      "author": "komatsuh",
+      "created_at": "2023-09-10",
+      "body_markdown": "# 左右ボタン同時押しで画面をスクロールする\n\nDevices でマウスイベントを変更を有効にする必要もある\n\n```json\n{\n  \"title\": \"Scroll with left and right mouse buttons\",\n  \"rules\": [\n    {\n      \"description\": \"Scroll with left and right mouse buttons\",\n      \"manipulators\": [\n        {\n          \"type\": \"basic\",\n          \"from\": {\n            \"simultaneous\": [\n              {\n                \"pointing_button\": \"button1\"\n              },\n              {\n                \"pointing_button\": \"button2\"\n              }\n            ],\n            \"modifiers\": {\n              \"optional\": [\n                \"any\"\n              ]\n            }\n          },\n          \"to\": [\n            {\n              \"set_variable\": {\n                \"name\": \"enable_mouse_motion_to_scroll\",\n                \"value\": 1\n              }\n            }\n          ],\n          \"to_after_key_up\": [\n            {\n              \"set_variable\": {\n                \"name\": \"enable_mouse_motion_to_scroll\",\n                \"value\": 0\n              }\n            }\n          ]\n        },\n        {\n          \"type\": \"mouse_motion_to_scroll\",\n          \"from\": {\n            \"modifiers\": {\n              \"optional\": [\n                \"any\"\n              ]\n            }\n          },\n          \"conditions\": [\n            {\n              \"type\": \"variable_if\",\n              \"name\": \"enable_mouse_motion_to_scroll\",\n              \"value\": 1\n            }\n          ],\n          \"options\": {\n            \"momentum_scroll_enabled\": false,\n            \"speed_multiplier\": 2.5\n          }\n        }\n      ]\n    }\n  ]\n}\n```\n\n参考\n* [mouse_motion_to_scroll | Karabiner-Elements](https://karabiner-elements.pqrs.org/docs/json/complex-modifications-manipulator-definition/other-types/mouse-motion-to-scroll/)",
+      "body_updated_at": "2023-09-10"
+    }
+  ]
+}
