@@ -10,8 +10,7 @@ published: false
 ---
 
 初稿: 2023-12-16
-小松弘幸 ([@komatsuh:twitter](https://twitter.com/komatsuh),
-[@komatsuh:bsky](https://bsky.app/profile/komatsuh.bsky.social))
+小松弘幸 ([@komatsuh:twitter](https://twitter.com/komatsuh), [@komatsuh:bsky](https://bsky.app/profile/komatsuh.bsky.social))
 
 グループで自作キーボードを作りに行きました。とてもよい体験でしたので文章にまとめます。
 
@@ -64,7 +63,7 @@ https://shop.yushakobo.jp/products/dozen0
 
 もくもくとはんだ付けをする人、同じキーボードキットを購入して相談しながら組み立てる人、雑談をいれながらわいわい作業をする人、それぞれのやり方で楽しみながら作れます。作業はキットごとのビルドガイドや作成動画にしたがって進めていきます。
 
-https://github.com/yynmt/Dozen0/blob/master/docs/buildguide_jp.md
+[Dozen0 ビルドガイド](https://github.com/yynmt/Dozen0/blob/master/docs/buildguide_jp.md)
 
 
 工数が少ないキーボードを選んで早めにできてしまった人は、おかわりの2台目を作ったり、設定を自分好みに変更したりしていました。自分は最初に制作した6キーのマクロパッドに3時間、おかわりの12キーのマクロパッドは1時間で完成しました。個人差はありそうですが、未経験でも制作時間が5時間あればフルキーボードを完成させられるのではと思います。
