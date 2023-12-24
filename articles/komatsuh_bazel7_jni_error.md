@@ -109,15 +109,15 @@ https://github.com/bazelbuild/bazel/commit/05bea52ed3159aa5d15d967f5f56fc084a2b6
 
 ![diff of 05bea5](https://github.com/hiroyuki-komatsu/zenn/blob/main/articles/komatsuh_bazel7_jni_error_commitdiff.png?raw=true)
 
-変更内容にある通り `incompatible_enable_android_toolchain_resolution` オプションのデフォルト値が `true` に変更されたようです。そのために `--fat_apk_cpu` オプションを指定しているビルドではエラーになるようです。
+変更内容にある通り `incompatible_enable_android_toolchain_resolution` オプションのデフォルト値が `true` に変わりました。そのために `--fat_apk_cpu` オプションを指定しているビルドではエラーになるようです。
 
-とりあえずの解決方法としては、`incompatible_enable_android_toolchain_resolution` を `false` に戻せばよいようです。
+とりあえずの解決方法としては、`incompatible_enable_android_toolchain_resolution` を `false` に戻せばよさようです。
 
 ```shell
 USE_BAZEL_VERSION=7.0.0 bazelisk build (target_name) --incompatible_enable_android_toolchain_resolution=false
 ```
 
-上記コマンドでは期待通りビルドできることが確認できました。(自分の環境では `--fat_apk_cpu` オプションは `.bazelrc` にデフォルトオプションとして記載されています)
+上記コマンドでは Bazel 7 でも期待通りビルドできることが確認できました。(自分の環境では `--fat_apk_cpu` オプションは `.bazelrc` にデフォルトオプションとして記載されています)
 
 なおコミットメッセージにもあるとおり、将来的には `--fat_apk_cpu` の代わりに `--android_platforms` の使用が推奨されています。
 
