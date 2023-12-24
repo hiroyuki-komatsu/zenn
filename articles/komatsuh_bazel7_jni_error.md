@@ -1,6 +1,6 @@
 ---
-title: "Bazel 7 での jni.h: No such file というエラーへの対応"
-emoji: "⌨️"
+title: "Bazel 7 での jni.h: No such file というエラーへの対応 (bazelisk --bisect)"
+emoji: "💚"
 type: "tech"
 topics:
   - "Bazel"
@@ -10,7 +10,7 @@ published: true
 published_at: "2023-12-24 13:00"
 ---
 
-初稿: 2023-12-23
+初稿: 2023-12-24
 小松弘幸 ([@komatsuh:twitter](https://twitter.com/komatsuh), [@komatsuh:bsky](https://bsky.app/profile/komatsuh.bsky.social))
 
 ## 概要
@@ -34,9 +34,7 @@ compilation terminated.
 
 経験上 Bazel のバージョンが更新されるとこのようなエラーが起きることが多いので、Bazel 関連の変更を確認します。
 
-GitHub Actions 環境の更新履歴を確認して、Bazel のバージョンが 7.0.0 へ更新されていることを確認しました。
-
-https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2204-Readme.md
+[GitHub Actions の環境](https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2204-Readme.md)の更新履歴を確認して、Bazel のバージョンが 7.0.0 へ更新されていることを確認しました。
 
 https://github.com/actions/runner-images/commit/28be760bba37289f8f7361bbb84c3d0527e804c3
 
@@ -65,13 +63,13 @@ Bazel のバージョンによる問題であることは分かりましたの�
 
 https://git-scm.com/docs/git-bisect
 
-Bazelisk でのバイセクトは次のようにします。
+Bazelisk でのバイセクトは次のようにします。バージョン 6.0.0 から 7.0.0 の間でビルドの成否が変わる場所を見つけられます。
 
 ```shell
 bazelisk --bisect=6.0.0..7.0.0 build (target_name)
 ```
 
-あとは結果を確認するば完了のはずでしたが、バイセクトが途中で止まってしまいました。
+あとは結果を確認すれば完了のはずでしたが、バイセクトが途中で止まってしまいました。
 
 ```
 --- Succeeded at 78db9ae9a545a9586dbb02d7831f5302594e01cb
@@ -89,7 +87,7 @@ bazelisk --bisect=6.0.0..7.0.0 build (target_name)
 理由は調べていませんが、途中のコミットが取得できないようです。それでも 6 コミットまでは絞り込めました。ここからは、判明しているコミットを指定してみます。
 
 ```shell
-bazelisk --bisect=78db9ae9a545a9586dbb02d7831f5302594e01cb..05bea52ed3159aa5d15d967f5f56fc084a2b6c73 
+bazelisk --bisect=78db9ae9a545a9586dbb02d7831f5302594e01cb..05bea52ed3159aa5d15d967f5f56fc084a2b6c73 build (target_name)
 ```
 
 今回は期待通り、原因の変更を確認できました。もし同じエラーが起きたとしても、6 コミットであれば全部確認すればよいでしょう。
@@ -128,7 +126,7 @@ USE_BAZEL_VERSION=7.0.0 bazelisk build (target_name) --incompatible_enable_andro
 * GitHub Actions で `jni.h: No such file or directory` というエラーが起きました。
 * GitHub Actions のビルド環境が Bazel が更新されたことを確認しました。
 * Bazelisk --bisect によって、原因となる変更を特定しました。
-* 変更履歴から `--fat_apk_cpu` を使うには `--incompatible_enable_android_toolchain_resolution=false` が必要だと分かりました。
+* 変更履歴から Bazel 7 で `--fat_apk_cpu` を使うには `--incompatible_enable_android_toolchain_resolution=false` が必要だと分かりました。
 
 ### 具体例
 
