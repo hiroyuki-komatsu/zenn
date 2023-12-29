@@ -3,16 +3,17 @@ title: "作業用デスク環境のまとめ 2023"
 emoji: "🪑"
 type: "idea"
 topics:
-  - ""
-  - ""
-  - ""
+  - "デスク環境"
 published: false
 ---
 
-初稿: 2023-12-25
+初稿: 2023-12-29
 小松弘幸 ([@komatsuh:twitter](https://twitter.com/komatsuh), [@komatsuh:bsky](https://bsky.app/profile/komatsuh.bsky.social))
 
 自分の作業用のデスク環境をまとめました。 2023 年版
+
+![概観1](komatsuh_desk_2023_overview1.png))
+![概観2](komatsuh_desk_2023_overview2.png)
 
 ## PC
 
@@ -85,6 +86,7 @@ https://www.amazon.co.jp/gp/product/B00MIBN71I/
 ### キーボード: PFU HHKB Studio x2
 https://happyhackingkb.com/jp/products/studio/
 https://zenn.dev/komatsuh/scraps/46d525ad138069
+https://twitter.com/komatsuh/status/1717469449501258074
 
 今年買いました。とても満足しています。
 * 右手用左手用の 2 台構成で、分割キーボードとして使っています
@@ -104,17 +106,19 @@ https://www.logicool.co.jp/ja-jp/products/mice/mx-master-3s.910-006567.html
 ### マクロパッド: XPPen ACK05
 https://www.xp-pen.jp/product/1369.html
 https://zenn.dev/komatsuh/articles/6a0da36a5229d1
+https://twitter.com/komatsuh/status/1680966093463252992
 
 今年買いました。とても満足しています。
 * 純正アプリではなく、Karabiner-Elements と組み合わせて使っています
 * 音量設定・スクリーンロック・映像音声切り替えなどに使っています
+
 
 ### マクロパッド: yynmt Dozen0
 https://shop.yushakobo.jp/products/dozen0
 https://github.com/yynmt/Dozen0/blob/master/docs/buildguide_jp.md
 https://zenn.dev/komatsuh/articles/komatsuh_keyboard_offsite
 
-今年作りました。自作キーボードです。
+今年作りました。開発キットを購入して、自分ではんだ付けをしました。
 * Karabiner-Elements と組み合わせてアプリランチャーとして使っています
 
 ### トラックパッド: Apple Magic Pad
@@ -130,9 +134,9 @@ https://www.apple.com/jp/shop/product/MK2D3ZA/A/
 ### ヘッドセット: logicool Astro A50
 https://gaming.logicool.co.jp/ja-jp/products/gaming-audio/a50-gen-4.939-001678.html
 
-充電スタンド付きワイヤレスヘッドセットは便利です。
+充電スタンド付きワイヤレスヘッドセットです。
 * 通話しながらスプラトゥーンができるワイヤレスヘッドセットという条件で選びました
-* まれに動作停止して、出荷時への初期化が必要になるのがとても悩ましいです
+* まれに動作停止して、出荷時への初期化が必要になるのがとても悩ましいです。その場合 Windows PC での初期化が必要です
 * 光端子 (S/PDIF) に対応しているので、ループノイズと無縁になのがよいです
 * 逆に NINTENDO SWITCH の音声を光端子に変換する必要があります
 
@@ -156,6 +160,14 @@ https://gaming.logicool.co.jp/ja-jp/products/streaming-gear/compass-boom-microph
 * ロゴがもっと小さいとさらにうれしくはあります。
 
 
+## 周辺機器
+
+### USB ハブ: LENTION 6in1 USB Type C ハブ ケーブル長さ1ｍ
+https://www.amazon.co.jp/gp/product/B07T2CVH23/
+
+机に下に配置したかったので、ケーブルが長い USB ハブを使っています
+
+
 ## モバイルデバイス
 
 ### スマートフォン: Google Pixel 8
@@ -173,7 +185,7 @@ https://www.lenovo.com/jp/ja/p/tablets/android-tablets/tablets-p-series/lenovo-t
 
 机以外の場所で使うことが多いです。ゲームもしてます。
 
-タブレット: NEC LAVIE T11
+### タブレット: NEC LAVIE T11
 https://www.nec-lavie.jp/products/tablet/lavie/laviet11/
 
 防水タブレットです。風呂でも使っています。
@@ -250,16 +262,6 @@ https://twitter.com/komatsuh/status/1685292808054448128
 https://www.amazon.co.jp/gp/product/B07P46LPHG/
 
 天板にケーブルをはわせるために使っています。
-
-
-## その他
-
-### USB ハブ: LENTION 6in1 USB Type C ハブ ケーブル長さ1ｍ
-https://www.amazon.co.jp/gp/product/B07T2CVH23/
-
-### キャプチャーボード: ロジテック Nintendo Switch専用ビデオキャプチャー
-https://www.amazon.co.jp/gp/product/B0CN8QD7JR/
-
 
 
 ## 変遷
