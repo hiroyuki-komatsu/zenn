@@ -4,7 +4,8 @@ emoji: "🪑"
 type: "idea"
 topics:
   - "デスク環境"
-published: false
+published: true
+published_at: "2023-12-29 23:30"
 ---
 
 初稿: 2023-12-29
