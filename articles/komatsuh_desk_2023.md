@@ -202,11 +202,42 @@ https://connectinternationalone.co.jp/cioproduct/cable/silicon/cio-sll30000-cc-1
 
 ## 家具/収納
 
+### 机: オカムラ Swift
+https://www.okamura.co.jp/product/desk_table/swift/s
+https://twitter.com/komatsuh/status/1320364894932221953
+
+昇降デスクです。
+* 立って作業をするだけでなく、高さの微調整ができるのもありがたいです
+* 一番大きいサイズを選びました (180cm x 80cm)
+* Bluetooth でも操作できるのですが、直接操作した方が早いです。マクロに組み込むとかわるかな
+
+
+### 椅子: オカムラ Contessa II
+https://product.okamura.co.jp/ext/DispCate.do?volumeName=00001&lv0=%E3%83%81%E3%82%A7%E3%82%A2%EF%BC%8F%E3%82%BD%E3%83%95%E3%82%A1&lv2=%E3%82%BF%E3%82%B9%E3%82%AF%E3%83%81%E3%82%A7%E3%82%A2&lv3=%E3%82%B3%E3%83%B3%E3%83%86%E3%83%83%E3%82%B5+%E3%82%BB%E3%82%B3%E3%83%B3%E3%83%80
+
+はたして正しい座り方ができているのか自信がないです。
+
+
+### チェアマット
+https://www.amazon.co.jp/gp/product/B07YWST6H8/
+
+床を保護するためのペラペラなシートです。もっと大きいサイズでもよかったです。
+
+
+### スタンディング用マット: Ergodriven Topo
+https://ergodriven.com/
+https://twitter.com/komatsuh/status/1401934371884437509
+
+立って作業する時にはこの上に乗ります。
+* 凹凸がついているので自然に足が動きます
+
+
 ### コントローラーホルダー: cobalt planet ゲームコントローラーホルダー
 https://www.amazon.co.jp/gp/product/B0BDTZBT1V/
 https://bsky.app/profile/komatsuh.bsky.social/post/3k6ftgmbnfa2u
 
 SWITCH 用コントローラーの置き場所です。
+
 
 ### ティッシュケース
 https://www.amazon.co.jp/gp/product/B0B8NNCX2V/
@@ -214,20 +245,31 @@ https://twitter.com/komatsuh/status/1685292808054448128
 
 天板に磁石で貼り付けて使っています。すっきりした反面、ティッシュはひっくり返して使うように設計されていないので、残り枚数が多いと引き出しにくいです。
 
+
 ### ケーブルクリップ
 https://www.amazon.co.jp/gp/product/B07P46LPHG/
 
 天板にケーブルをはわせるために使っています。
 
-### デスクごとチェアマット
-https://www.amazon.co.jp/gp/product/B07YWST6H8/
-
-床を保護するためのペラペラなシートです。もっと大きいサイズでもよかったです。
 
 ## その他
 
-キャプチャーボード: ロジテック Nintendo Switch専用ビデオキャプチャー
+### USB ハブ: LENTION 6in1 USB Type C ハブ ケーブル長さ1ｍ
+https://www.amazon.co.jp/gp/product/B07T2CVH23/
+
+### キャプチャーボード: ロジテック Nintendo Switch専用ビデオキャプチャー
 https://www.amazon.co.jp/gp/product/B0CN8QD7JR/
 
-USB ハブ: LENTION 6in1 USB Type C ハブ ケーブル長さ1ｍ
-https://www.amazon.co.jp/gp/product/B07T2CVH23/
+
+
+## 変遷
+
+https://twitter.com/komatsuh/status/1317873881143652352
+
+https://twitter.com/komatsuh/status/1320364894932221953
+
+https://twitter.com/komatsuh/status/1454480913518133254
+
+https://twitter.com/komatsuh/status/1575165577655906305
+
+https://twitter.com/komatsuh/status/1728802570678706462
