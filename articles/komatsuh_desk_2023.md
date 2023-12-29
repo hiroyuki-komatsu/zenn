@@ -12,8 +12,8 @@ published: false
 
 自分の作業用のデスク環境をまとめました。 2023 年版
 
-![概観1](komatsuh_desk_2023_overview1.png))
-![概観2](komatsuh_desk_2023_overview2.png)
+![概観1](https://github.com/hiroyuki-komatsu/zenn/blob/main/articles/komatsuh_desk_2023_overview1.png?raw=true)
+![概観2](https://github.com/hiroyuki-komatsu/zenn/blob/main/articles/komatsuh_desk_2023_overview2.png?raw=true)
 
 ## PC
 
