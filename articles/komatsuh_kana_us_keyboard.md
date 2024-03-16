@@ -3,7 +3,9 @@ title: "かな入力の英語キーボードでの配列の IME ごとの違い"
 emoji: "⌨"
 type: "idea"
 topics:
-  - "keyboard", "Mozc"
+  - "keyboard"
+  - "ime"
+  - "Mozc"
 published: false
 published_at: "2024-03-16 23:00"
 ---
