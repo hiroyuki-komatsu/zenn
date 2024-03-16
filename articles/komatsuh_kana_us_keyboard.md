@@ -7,7 +7,6 @@ topics:
   - "ime"
   - "Mozc"
 published: false
-published_at: "2024-03-16 23:00"
 ---
 
 初稿: 2024-03-16
