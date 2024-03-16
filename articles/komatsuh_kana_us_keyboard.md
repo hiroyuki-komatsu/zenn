@@ -6,7 +6,8 @@ topics:
   - "keyboard"
   - "ime"
   - "Mozc"
-published: false
+published: true
+published_at: "2024-03-16 23:50"
 ---
 
 初稿: 2024-03-16
@@ -28,7 +29,7 @@ published: false
 ![かな入力(日本語キーボード)](https://github.com/hiroyuki-komatsu/keyboard_layouts/raw/main/data/kana_highlight.png)
 ![英語キーボード](https://github.com/hiroyuki-komatsu/keyboard_layouts/raw/main/data/ANSI_61.png)
 
-そのため、`ー` `む` `ろ` の位置を英語キーボード用に配置する必要があります。この調整の仕方は IME ごとに異なっています。
+英語キーボード用に `ー` `む` `ろ` の位置を配置する必要がありますが、この調整の仕方は IME ごとに異なっています。Mozc、Windows と macOS の標準 IME での配置の違いを紹介します。
 
 ### Mozc
 
@@ -36,7 +37,7 @@ published: false
 ![かな入力(日本語キーボード)](https://github.com/hiroyuki-komatsu/keyboard_layouts/raw/main/data/kana_highlight.png)
 *Mozc でのかな入力 (英語キーボードと日本語キーボード)*
 
-Mozc は、調整が必要なキーのみを英語キーボードで利用できるキーに当てはめています。後述する Windows と同様の調整をしていますが、日本語キーボードとできるだけ同じ配置になるようにしています。Google 日本語入力でも同様です。
+Mozc は調整が必要なキーのみを英語キーボードで利用できるキーに当てはめています。後述する Windows に近い調整をしていますが、日本語キーボードとできるだけ同じ配置になるようにしています。Google 日本語入力でも同様です。
 
 ### Windows の標準 IME
 
