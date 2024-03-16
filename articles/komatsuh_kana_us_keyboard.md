@@ -1,6 +1,6 @@
 ---
 title: "かな入力の英語キーボードでの配列の IME ごとの違い"
-emoji: "⌨"
+emoji: "⌨️"
 type: "idea"
 topics:
   - "keyboard"
