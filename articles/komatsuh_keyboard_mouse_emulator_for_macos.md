@@ -11,7 +11,7 @@ published_at: "2024-05-05 23:30"
 ---
 
 初稿: 2024-05-05
-小松弘幸 ([@komatsuh:bsky](https://bsky.app/profile/komatsuh.bsky.social)), [@komatsuh:twitter](https://twitter.com/komatsuh)
+小松弘幸 ([@komatsuh:bsky](https://bsky.app/profile/komatsuh.bsky.social), [@komatsuh:twitter](https://twitter.com/komatsuh))
 
 「キーボード／マウス エミュレーター」というデバイスを macOS の Python で動作させる方法のメモです。
 
