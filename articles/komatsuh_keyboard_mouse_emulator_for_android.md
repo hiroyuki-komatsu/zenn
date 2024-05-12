@@ -72,10 +72,10 @@ Android では USB で接続した機器と、シリアル通信でやりとり�
 
 https://github.com/mik3y/usb-serial-for-android
 
-;;;message
+:::message
 * Android でも機種によっては USB によるシリアル通信に対応していないものもあります。
 * iOS では USB によるシリアル通信には対応していないようです。 (2024-05-12 現在)
-;;;
+:::
 
 #### `usb-serial-for-android` の設定 (Kotlin 用)
 
@@ -215,9 +215,9 @@ CH9329 の制御は、下記のフォーマットのパケットを送受信す�
 * コマンド: キーボードやマウスなどのイベントの分類
 * チェックサム: 全データ合計値を 0xFF でマスクした値
 
-;;;message
+:::message
 CH9329 の仕様では、アドレスを示す 0x00 は別の値を使うことも可能です。詳しくは、解説書や仕様書を参照してください。
-;;;
+:::
 
 #### マウスカーソル操作の制御コード送受信
 
@@ -254,9 +254,9 @@ port.write(packet, WRITE_WAIT_MILLIS)
 
 `byteArrayOf` のデータで `0x80` 以上の値には `toByte()` を付与する必要があります。これは Kotlin の Byte 型には符号があり、0 〜 255 ではなく -128 〜 127 が値の範囲だからです。
 
-;;;message
+:::message
 Kotlin 1.5 からは符号のない UByte 型もありますが、`use-serial-for-android` は Byte 型のみを受け付けます。
-;;;
+:::
 
 上記のパケットを送信したのち、今度は返信用のパケットを受信します。
 
