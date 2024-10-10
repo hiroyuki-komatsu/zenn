@@ -213,7 +213,7 @@ Mozc の問題の報告や機能の要望等は、GitHub の [Issues](https://gi
 
 "U+3099" を変換するか、ひらがな一文字を変換すると濁点付きが候補として表示されます
 
-![濁点つき「あ」の変換候補ウインドウ](komatsuh_mozc_updates_from_2023_10_voiced.png)
+![濁点つき「あ」の変換候補ウインドウ](https://github.com/hiroyuki-komatsu/zenn/blob/main/articles/komatsuh_mozc_updates_from_2023_10_voiced.png?raw=true)
 
 
 ### US 配列とかな入力
