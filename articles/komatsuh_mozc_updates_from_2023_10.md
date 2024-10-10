@@ -132,14 +132,14 @@ Mozc の問題の報告や機能の要望等は、GitHub の [Issues](https://gi
 
 ## ビルド関連の変更
 
-* Android 用の Docker 環境を更新
-* Linux 用の Docker 環境を Ubuntu 24.04 へ更新 ([#924](https://github.com/google/mozc/issues/924))
-* Bazel ビルドで dictionary_manual/ 以下のデータを利用するように変更 ([47eb877](https://github.com/google/mozc/commit/47eb87752c1d8e2e0730a44df022f6bc18c8da16))
-* Windows でビルド手順の簡略化 (vcvars への依存を解消) ([#923](https://github.com/google/mozc/issues/923))
+* C++20 への対応 ([#783](https://github.com/google/mozc/issues/783))
 * 変換データの追加方法を簡略化。dictionary_manual/words.tsv を導入 ([8d3a297](https://github.com/google/mozc/commit/8d3a2970014f03cdddf7291b71d632999563f0b6))
 * Qt6 のバイナリサイズを削減 ([#822](https://github.com/google/mozc/issues/822))
+* Bazel ビルドで dictionary_manual/ 以下のデータを利用するように変更 ([47eb877](https://github.com/google/mozc/commit/47eb87752c1d8e2e0730a44df022f6bc18c8da16))
+* Linux 用の Docker 環境を Ubuntu 24.04 へ更新 ([#924](https://github.com/google/mozc/issues/924))
+* Android 用の Docker 環境を更新
 * Android ライブラリが動作しない問題を解決 ([#840](https://github.com/google/mozc/issues/840))
-* C++20 への対応 ([#783](https://github.com/google/mozc/issues/783))
+* Windows でビルド手順の簡略化 (vcvars への依存を解消) ([#923](https://github.com/google/mozc/issues/923))
 
 
 ### GitHub 関連
@@ -151,11 +151,11 @@ Mozc の問題の報告や機能の要望等は、GitHub の [Issues](https://gi
 ### Bazel 関連
 
 * Bazel 7 に対応
+* Windows への対応
+* macOS で .dmg ファイルの作成に対応
 * WORKSPACE から Bzlmod へ移行
 * `--config=release_build` オプションの追加 ([9fd8739](https://github.com/google/mozc/commit/9fd87395671693e1670f63e61ac1320fd803dc19))
 * ビルドの安定性の向上 ([#843](https://github.com/google/mozc/issues/843), [#844](https://github.com/google/mozc/issues/844))
-* macOS で .dmg ファイルの作成に対応
-* Windows への対応
 
 
 ### GYP 関連
@@ -175,10 +175,10 @@ Mozc の問題の報告や機能の要望等は、GitHub の [Issues](https://gi
 
 ### 依存ライブラリの更新
 
-* Qt:  6.5.2 → 6.7.3
-* Protocol Buffers: v24.2 → v27.3
 * Abseil: 20230125.3 → 20240722.0
 * Google Test: release-1.12.1 → v1.15.2
+* Protocol Buffers: v24.2 → v27.3
+* Qt:  6.5.2 → 6.7.3
 * WiX: v3.14 → v5.0.2
 
 
@@ -192,9 +192,8 @@ Mozc の問題の報告や機能の要望等は、GitHub の [Issues](https://gi
 
 * Clang のビルドクリーナーを適用
 * Abseil 等を活用したコードの最適化 (例: `const vector<T>&` → `absl::Span<const T>`)
-* ログを独自実装から Abseil のログへ移行
+* ログを独自実装から Abseil のログへ移行 ([c77285e](https://github.com/google/mozc/commit/c77285efa096e6e400cacffbcded980d24c5b17f))
 * macOS: GitHub からApplied suggestions from code scanning alerts ([b955086](https://github.com/google/mozc/commit/b955086d471c9e32174ea9eb39c7dd067aba4542))
-* Rebase Mozc onto Abseil logging library. ([c77285e](https://github.com/google/mozc/commit/c77285efa096e6e400cacffbcded980d24c5b17f))
 * テスト用のセッションコマンドに `UPDATE_COMPOSITION` を追加
 
 
