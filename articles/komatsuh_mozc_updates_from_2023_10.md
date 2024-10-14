@@ -146,6 +146,8 @@ Mozc の問題の報告や機能の要望等は、GitHub の [Issues](https://gi
 
 * GitHub Actions の生成物をリリースビルド変更 ([07c5f89](https://github.com/google/mozc/commit/07c5f89f716e520c98a796ee7ed1204581686192))
 * GitHub Actions の Linux 環境を Ubuntu 24.04 へ更新 ([#924](https://github.com/google/mozc/issues/924))
+* Issues で 2020-01-01 以前から更新のない 33 件を `obsolete` としてクローズ ([#800](https://github.com/google/mozc/issues/800))
+* Issues のテンプレートを Markdown から YAML のフォーム形式に変更 ([efc4337](https://github.com/google/mozc/commit/efc4337c018fd9e62c429f569d78499abb2a5889))
 
 
 ### Bazel 関連
