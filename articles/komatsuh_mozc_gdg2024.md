@@ -41,7 +41,16 @@ Mozc で使用しているかな漢字変換の仕組みを非常に単純化す
 
 TRIE は、各単語の先頭部分で共通する文字を同じノードとして共有します。
 
-次の図は、t, the, this, thin, think, thinks, tv, to, too から構成される TRIE です。
+次の図は、t, the, this, thin, think, thinks, tv, to, too から構成される TRIE です。各単語に対応しているノードがハイライトされています。
 
-![TRIE の例](https://github.com/hiroyuki-komatsu/zenn/blob/main/articles/komatsuh_mozc_gdg2024/trie.svg?raw=true)
+![TRIE の例](https://github.com/hiroyuki-komatsu/zenn/blob/main/articles/komatsuh_mozc_gdg2024/trie.svg?raw=true =250x)
+
+ここで "thinkso" という文字列から、取りうる単語の組み合わせを列挙してみます。上記の TRIE を t,h,i... と一文字ずつ巡っていくと、s までたどり着きます。今度は s から上に向かいつつハイライトされているノードを取得していきます。すると、thinks, think, thin, t が取得されました。これで、"thinkso" という文字列から取りうる単語を列挙できます。
+
+![TRIE に thinkso を適用](https://github.com/hiroyuki-komatsu/zenn/blob/main/articles/komatsuh_mozc_gdg2024/trie_thinkso.svg?raw=true =250x)
+
+同様にして、"hinkso", "inkso", ... と繰り返せばすべての単語を列挙できます。
+
+![ithinkso の列挙](https://github.com/hiroyuki-komatsu/zenn/blob/main/articles/komatsuh_mozc_gdg2024/lattice_thinkso.png?raw=true)
+
 
