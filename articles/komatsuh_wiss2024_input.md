@@ -25,6 +25,8 @@ https://www.wiss.org/WISS2024/program.html
 
 ![Whisphone: ささやき声で入力できるイヤホン](https://github.com/hiroyuki-komatsu/zenn/blob/main/articles/komatsuh_wiss2024_input/05.png?raw=true)
 
+https://www.wiss.org/WISS2024Proceedings/data/paper/5.mp4
+
 https://www.wiss.org/WISS2024Proceedings/data/paper/5.pdf
 
 ## 眼鏡の鼻あてに搭載した圧力センサを用いた耳ぴく入力と身体活動検出手法 [09] [2-A04]
@@ -32,6 +34,8 @@ https://www.wiss.org/WISS2024Proceedings/data/paper/5.pdf
 耳をぴくぴく動かす動作を読み取って入力として活用するための装置の提案。耳ぴくだけではなく、瞬き、歩行、脈拍もそれぞれ同時に取得できている。
 
 ![眼鏡の鼻あてに搭載した圧力センサを用いた耳ぴく入力と身体活動検出手法](https://github.com/hiroyuki-komatsu/zenn/blob/main/articles/komatsuh_wiss2024_input/09.png?raw=true)
+
+https://www.wiss.org/WISS2024Proceedings/data/paper/9.mp4
 
 https://www.wiss.org/WISS2024Proceedings/data/international/9.pdf
 
@@ -41,6 +45,8 @@ https://www.wiss.org/WISS2024Proceedings/data/international/9.pdf
 
 ![母音，子音の順に選択を行う間接タッチ用かな文字入力手法](https://github.com/hiroyuki-komatsu/zenn/blob/main/articles/komatsuh_wiss2024_input/10.png?raw=true)
 
+https://www.wiss.org/WISS2024Proceedings/data/paper/10.mp4
+
 https://www.wiss.org/WISS2024Proceedings/data/international/10.pdf
 
 ## picoRing: battery-free rings for subtle thumb-to-index input [24]
@@ -48,6 +54,8 @@ https://www.wiss.org/WISS2024Proceedings/data/international/10.pdf
 電池が不要な指輪型デバイスの提案。リストバンドデバイスと協調し、それぞれがセンサーコイルとリーダーコイルとして働いている。
 
 ![picoRing: battery-free rings for subtle thumb-to-index input](https://github.com/hiroyuki-komatsu/zenn/blob/main/articles/komatsuh_wiss2024_input/24.png?raw=true)
+
+https://www.youtube.com/watch?v=5C7E6-VBkt0
 
 https://www.wiss.org/WISS2024Proceedings/data/international/24.pdf
 
@@ -65,6 +73,8 @@ https://www.wiss.org/WISS2024Proceedings/data/demo/1-A03.pdf
 
 ![HMKとアイポインティングを組み合わせたマルチモーダルな入力手法](https://github.com/hiroyuki-komatsu/zenn/blob/main/articles/komatsuh_wiss2024_input/1-A10.png?raw=true)
 
+https://www.wiss.org/WISS2024Proceedings/data/demo/1-A10.mp4
+
 https://www.wiss.org/WISS2024Proceedings/data/demo/1-A10.pdf
 
 ## LensTouch+: スマートグラスのレンズ面を使った入力手法の拡張 [1-B11]
@@ -72,6 +82,8 @@ https://www.wiss.org/WISS2024Proceedings/data/demo/1-A10.pdf
 AR グラスのレンズ面をタッチパネルとして活用する LensTouch の発展型。現実の物体への操作などの手法の提案。
 
 ![LensTouch+: スマートグラスのレンズ面を使った入力手法の拡張](https://github.com/hiroyuki-komatsu/zenn/blob/main/articles/komatsuh_wiss2024_input/1-B11.png?raw=true)
+
+https://www.wiss.org/WISS2024Proceedings/data/demo/1-B11.mp4
 
 https://www.wiss.org/WISS2024Proceedings/data/demo/1-B11.pdf
 
@@ -98,3 +110,8 @@ https://www.wiss.org/WISS2024Proceedings/data/demo/2-B19.pdf
 ![入力途中の文字列をリアルタイム共有する同期的なグループチャットシステム](https://github.com/hiroyuki-komatsu/zenn/blob/main/articles/komatsuh_wiss2024_input/3-B15.png?raw=true)
 
 https://www.wiss.org/WISS2024Proceedings/data/demo/3-B15.pdf
+
+## WISS 2024 配信動画
+
+https://www.youtube.com/watch?v=vT2G7aPXncY
+https://www.youtube.com/watch?v=puPlhGNkUWo
