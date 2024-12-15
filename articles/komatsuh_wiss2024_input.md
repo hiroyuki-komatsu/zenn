@@ -1,5 +1,5 @@
 ---
-title: "WISS 2024 文字入力関連の発表"
+title: "WISS 2024 入力関連の発表"
 emoji: "📜"
 type: "idea"
 topics:
@@ -11,7 +11,7 @@ published_at: "2024-12-16 01:00"
 初稿: 2024-12-15
 小松弘幸 ([@komatsuh:bsky](https://bsky.app/profile/komatsuh.bsky.social), [@komatsuh:twitter](https://twitter.com/komatsuh))
 
-[WISS 2024](https://www.wiss.org/WISS2024/program.html) で聴講した文字入力関連の発表です。発表してくださった方々ありがとうございます。
+[WISS 2024](https://www.wiss.org/WISS2024/program.html) で聴講した入力関連の発表です。発表してくださった方々ありがとうございます。
 
 関連
 * [WISS 2023 文字入力関連の発表](https://zenn.dev/komatsuh/articles/komatsuh_wiss2023_input)
