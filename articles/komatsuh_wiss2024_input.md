@@ -21,59 +21,59 @@ https://www.wiss.org/WISS2024/program.html
 
 ## Whisphone: ささやき声で入力できるイヤホン [05] [1-B03]
 
-https://www.wiss.org/WISS2024Proceedings/data/paper/5.pdf
-
 ささやき声でも音声入力が可能な手法。自分の声は骨伝導によって耳の内部にも伝わるので、ノイズキャンセリングホンの内側についているマイクを活用して集音する。市販のノイズキャンセリングホンでもファームウェアが書き換えられれば実現可能。特許は取得していないので自由に利用可能。
 
 ![Whisphone: ささやき声で入力できるイヤホン](https://github.com/hiroyuki-komatsu/zenn/blob/main/articles/komatsuh_wiss2024_input/05.png?raw=true)
 
-## 眼鏡の鼻あてに搭載した圧力センサを用いた耳ぴく入力と身体活動検出手法 [09] [2-A04]
+https://www.wiss.org/WISS2024Proceedings/data/paper/5.pdf
 
-https://www.wiss.org/WISS2024Proceedings/data/international/9.pdf
+## 眼鏡の鼻あてに搭載した圧力センサを用いた耳ぴく入力と身体活動検出手法 [09] [2-A04]
 
 耳をぴくぴく動かす動作を読み取って入力として活用するための装置の提案。耳ぴくだけではなく、瞬き、歩行、脈拍もそれぞれ同時に取得できている。
 
 ![眼鏡の鼻あてに搭載した圧力センサを用いた耳ぴく入力と身体活動検出手法](https://github.com/hiroyuki-komatsu/zenn/blob/main/articles/komatsuh_wiss2024_input/09.png?raw=true)
 
-## 母音，子音の順に選択を行う間接タッチ用かな文字入力手法 [10] [2-A11]
+https://www.wiss.org/WISS2024Proceedings/data/international/9.pdf
 
-https://www.wiss.org/WISS2024Proceedings/data/international/10.pdf
+## 母音，子音の順に選択を行う間接タッチ用かな文字入力手法 [10] [2-A11]
 
 スマートウォッチを活用した文字入力手法。ベゼルを活用してスライドインすることによって、フリック入力に近い母音入力を実現している。そのために、フリック入力とは逆に母音→子音という順番での入力になっている。(例: 「に」の入力 = 左からスライドイン + 中央でタッチアップ)
 
 ![母音，子音の順に選択を行う間接タッチ用かな文字入力手法](https://github.com/hiroyuki-komatsu/zenn/blob/main/articles/komatsuh_wiss2024_input/10.png?raw=true)
 
-## picoRing: battery-free rings for subtle thumb-to-index input [24]
+https://www.wiss.org/WISS2024Proceedings/data/international/10.pdf
 
-https://www.wiss.org/WISS2024Proceedings/data/international/24.pdf
+## picoRing: battery-free rings for subtle thumb-to-index input [24]
 
 電池が不要な指輪型デバイスの提案。リストバンドデバイスと協調し、それぞれがセンサーコイルとリーダーコイルとして働いている。
 
 ![picoRing: battery-free rings for subtle thumb-to-index input](https://github.com/hiroyuki-komatsu/zenn/blob/main/articles/komatsuh_wiss2024_input/24.png?raw=true)
 
-## 近距離無線通信を用いた形状自在キーボードシステム [1-A03]
+https://www.wiss.org/WISS2024Proceedings/data/international/24.pdf
 
-https://www.wiss.org/WISS2024Proceedings/data/demo/1-A03.pdf
+## 近距離無線通信を用いた形状自在キーボードシステム [1-A03]
 
 キーボードでキーを自由に配置できる仕組みの提案。キーのそれぞれに NFC タグを設置する。ボード側にはコイルがあり、NFC への無線給電と信号の読み取りを行っている。
 
 ![近距離無線通信を用いた形状自在キーボードシステム](https://github.com/hiroyuki-komatsu/zenn/blob/main/articles/komatsuh_wiss2024_input/1-A03.png?raw=true)
 
-## HMKとアイポインティングを組み合わせたマルチモーダルな入力手法 [1-A10]
+https://www.wiss.org/WISS2024Proceedings/data/demo/1-A03.pdf
 
-https://www.wiss.org/WISS2024Proceedings/data/demo/1-A10.pdf
+## HMKとアイポインティングを組み合わせたマルチモーダルな入力手法 [1-A10]
 
 ヘッドマウントディスプレイの横側にキーボードを配置した HMK (ヘッドマウントキーボード) の発展型。HMK と視線によるポインティングを組み合わせた手法の提案。
 
 ![HMKとアイポインティングを組み合わせたマルチモーダルな入力手法](https://github.com/hiroyuki-komatsu/zenn/blob/main/articles/komatsuh_wiss2024_input/1-A10.png?raw=true)
 
-## LensTouch+: スマートグラスのレンズ面を使った入力手法の拡張 [1-B11]
+https://www.wiss.org/WISS2024Proceedings/data/demo/1-A10.pdf
 
-https://www.wiss.org/WISS2024Proceedings/data/demo/1-B11.pdf
+## LensTouch+: スマートグラスのレンズ面を使った入力手法の拡張 [1-B11]
 
 AR グラスのレンズ面をタッチパネルとして活用する LensTouch の発展型。現実の物体への操作などの手法の提案。
 
 ![LensTouch+: スマートグラスのレンズ面を使った入力手法の拡張](https://github.com/hiroyuki-komatsu/zenn/blob/main/articles/komatsuh_wiss2024_input/1-B11.png?raw=true)
+
+https://www.wiss.org/WISS2024Proceedings/data/demo/1-B11.pdf
 
 ## 導電性／強磁性を併せ持つ毛状の入力インタフェースの提案 [2-B18]
 
@@ -81,19 +81,20 @@ AR グラスのレンズ面をタッチパネルとして活用する LensTouch 
 
 ![導電性／強磁性を併せ持つ毛状の入力インタフェースの提案](https://github.com/hiroyuki-komatsu/zenn/blob/main/articles/komatsuh_wiss2024_input/2-B18.png?raw=true)
 
-## ハンドヘルド円筒面タッチインタフェースの提案 [2-B19]
+https://www.wiss.org/WISS2024Proceedings/data/demo/2-B18.pdf
 
-https://www.wiss.org/WISS2024Proceedings/data/demo/2-B19.pdf
+## ハンドヘルド円筒面タッチインタフェースの提案 [2-B19]
 
 円筒型のタッチパッドの提案。縦持ちや横持ち、環状のドラッグ操作や、右手左手それぞれの回転操作などが可能。
 
 ![ハンドヘルド円筒面タッチインタフェースの提案](https://github.com/hiroyuki-komatsu/zenn/blob/main/articles/komatsuh_wiss2024_input/2-B19.png?raw=true)
 
-## 入力途中の文字列をリアルタイム共有する同期的なグループチャットシステム [3-B15]
+https://www.wiss.org/WISS2024Proceedings/data/demo/2-B19.pdf
 
-https://www.wiss.org/WISS2024Proceedings/data/demo/3-B15.pdf
+## 入力途中の文字列をリアルタイム共有する同期的なグループチャットシステム [3-B15]
 
 チャットへの送信前の入力中の文字入力もリアルタイムで表示するシステムの提案。複数人が同時に入力している際にどのように表示すべきかを議論している。
 
 ![入力途中の文字列をリアルタイム共有する同期的なグループチャットシステム](https://github.com/hiroyuki-komatsu/zenn/blob/main/articles/komatsuh_wiss2024_input/3-B15.png?raw=true)
 
+https://www.wiss.org/WISS2024Proceedings/data/demo/3-B15.pdf
