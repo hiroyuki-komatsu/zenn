@@ -5,7 +5,7 @@ type: "idea"
 topics:
   - "デスク環境"
 published: true
-published_at: "2024-12-30 3:00"
+published_at: "2024-12-30 03:00"
 ---
 
 初稿: 2024-12-29
