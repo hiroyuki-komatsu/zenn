@@ -5,7 +5,7 @@ type: "idea"
 topics:
   - "デスク環境"
 published: true
-published_at: "2024-12-30 03:00"
+published_at: "2024-12-30 02:00"
 ---
 
 初稿: 2024-12-29
@@ -13,15 +13,12 @@ published_at: "2024-12-30 03:00"
 
 自分の作業用のデスク環境をまとめました。 2024 年版
 
-![概観1](https://github.com/hiroyuki-komatsu/zenn/blob/main/articles/komatsuh_desk_2023_overview1.png?raw=true)
-![概観2](https://github.com/hiroyuki-komatsu/zenn/blob/main/articles/komatsuh_desk_2023_overview2.png?raw=true)
-
 2023 年版
 https://zenn.dev/komatsuh/articles/komatsuh_desk_2023
 
 ## PC
 
-### NEW! メインマシン: MacBook Pro 2021 (Apple Silicon)
+### 🆕 メインマシン: MacBook Pro 2021 (Apple Silicon)
 
 https://support.apple.com/ja-jp/111901
 https://zenn.dev/komatsuh/scraps/38bf4225c82d21
@@ -37,7 +34,7 @@ Intel CPU と違い Apple Silicon はモニターの数に制約があります�
 * Storage: SSD 512GB
 
 
-### NEW! DisplayLink デバイス: UGREEN Revodok Pro 312
+### 🆕 DisplayLink デバイス: UGREEN Revodok Pro 312
 
 https://storage.googleapis.com/zenn-user-upload/4760fe632151-20240610.png
 
@@ -92,7 +89,7 @@ https://zenn.dev/komatsuh/scraps/774284e3f52d0c
 * タッチパネル付きにしましたが、まだあまり活用できていないです
 * できがよくてとても気に入っています
 
-### NEW! Mini HDMI アダプター: YFFSFDC
+### 🆕 Mini HDMI アダプター: YFFSFDC
 https://www.amazon.co.jp/dp/B0CR32BMCK
 
 DisplayLink デバイスとモニターの一部は HDMI 端子で接続する必要があります。これまではフロントモニターの kksmater CT-1 の Mini HDMI 端子と接続するために導入しました。
@@ -117,7 +114,7 @@ https://twitter.com/komatsuh/status/1717469449501258074
 * カスタマイズが進めばもっと使いこなせるようになれると思っています
 
 
-### NEW! マウス: logicool MX Master 3S
+### 🆕 マウス: logicool MX Master 3S
 https://www.logicool.co.jp/ja-jp/products/mice/mx-master-3s.910-006567.html
 https://zenn.dev/komatsuh/scraps/ad8ad926b8f55c
 
@@ -139,7 +136,7 @@ https://twitter.com/komatsuh/status/1680966093463252992
 * 純正アプリではなく、Karabiner-Elements と組み合わせて使っています
 * 音量設定・スクリーンロック・映像音声切り替えなどに使っています
 
-### NEW! スタイラスペン: Penoval USI2.0
+### 🆕 スタイラスペン: Penoval USI2.0
 https://k-tai.watch.impress.co.jp/docs/column/todays_goods/1517510.html
 https://zenn.dev/komatsuh/scraps/78c56c409c6e55
 
@@ -148,7 +145,7 @@ Pixel Tablet 用のスタイラスペン。ペンならではの使い方はま�
 
 ## 音声画像
 
-### NEW! HDMI ビデオキャプチャー: AVerMedia AVT-C878 Plus
+### 🆕 HDMI ビデオキャプチャー: AVerMedia AVT-C878 Plus
 https://www.avermedia.co.jp/product-detail/GC513
 
 以前使っていた HDMI ビデオキャプチャーデバイスを今年からまた使うようになりました。
@@ -168,7 +165,7 @@ https://gaming.logicool.co.jp/ja-jp/products/gaming-audio/a50-gen-4.939-001678.h
 * 去年までは光端子 (S/PDIF) を使っていたのでノイズが乗らなかったのですが、今年からオーディオ端子にしたのでノイズの解決が必要でした (後述)。
 
 
-### NEW! グランドループアイソレーター: AUKEY GI-L1
+### 🆕 グランドループアイソレーター: AUKEY GI-L1
 https://jp.aukey.com/products/ground-loop-noise-isolator-for-car-stereo-systems-gi-l1
 
 SWITCH の音声を光端子からオーディオ端子に切り替えたことによって、グラウンドループノイズが起きるようになってしまいました。
@@ -177,7 +174,7 @@ SWITCH の音声を光端子からオーディオ端子に切り替えたこと�
 本格的な解決は、SWITCH2 の仕様が判明してからにします。
 
 
-### NEW! イヤホン: Google Pixel Buds Pro 2
+### 🆕 イヤホン: Google Pixel Buds Pro 2
 https://store.google.com/jp/product/pixel_buds_pro_2?hl=ja
 
 ノイズキャンセリングイヤホン。去年は初代 Pixel Buds Pro を使っていました。ノイズキャンセリング機能が強化されましたが、自分の用途では違いを感じる場面はあまりないです。
@@ -198,7 +195,7 @@ https://gaming.logicool.co.jp/ja-jp/products/streaming-gear/compass-boom-microph
 
 ## 周辺機器
 
-### NEW! ドキュメントスキャナー: PFU ScanSnap iX 1600
+### 🆕 ドキュメントスキャナー: PFU ScanSnap iX 1600
 https://www.pfu.ricoh.com/scansnap/products/ix1600/
 
 書類やパンフレットの整理用に購入。データを自動的にクラウド上にアップロードしてくれます。とりあえずスキャンして後で考えるという運用ができて便利です。
@@ -206,7 +203,7 @@ https://www.pfu.ricoh.com/scansnap/products/ix1600/
 
 ## モバイルデバイス
 
-### NEW! スマートフォン: Google Pixel 9 Pro
+### 🆕 スマートフォン: Google Pixel 9 Pro
 https://store.google.com/jp/product/pixel_9_pro?hl=ja
 
 仕事用としても使っています。
@@ -237,7 +234,7 @@ https://twitter.com/komatsuh/status/1679853690700824576
 今年買いました。最初は発熱にびっくりしましたが、正常な動作のようです。
 
 
-### NEW! 電源タップ: スタイルド 10個口電源タップ
+### 🆕 電源タップ: スタイルド 10個口電源タップ
 https://www.amazon.co.jp/dp/B096FGKRJF
 
 磁石で固定できるので机の天板につけて使っています。コンセントの数が足らなくなったので 10 個口のものに更新しました。
@@ -289,13 +286,13 @@ https://twitter.com/komatsuh/status/1685292808054448128
 天板に磁石で貼り付けて使っています。すっきりした反面、ティッシュはひっくり返して使うように設計されていないので、残り枚数が多いと引き出しにくいです。
 
 
-### NEW! USB ケーブル収納 (ティッシュケース)
+### 🆕 USB ケーブル収納 (ティッシュケース)
 https://www.amazon.co.jp/dp/B0B8NVSTZH
 
 上記ティッシュケースの薄型版です。ティッシュではなく USB ケーブル等を天板下に収納するために使っています。
 
 
-### NEW! 電源ケーブル収納: 無印良品 スチールタップ収納箱 
+### 🆕 電源ケーブル収納: 無印良品 スチールタップ収納箱 
 https://www.amazon.co.jp/dp/B0CPSHQM2Y
 
 床に生えている電源ケーブル類をまとめるために。見た目がすっきりしてかなりよかったです。
