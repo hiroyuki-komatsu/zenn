@@ -11,7 +11,9 @@ published_at: "2024-12-30 02:00"
 初稿: 2024-12-29
 小松弘幸 ([@komatsuh:bsky](https://bsky.app/profile/komatsuh.bsky.social), [@komatsuh:twitter](https://twitter.com/komatsuh))
 
-自分の作業用のデスク環境をまとめました。 2024 年版
+自分の作業用のデスク環境をまとめました。 2024 年版です。
+
+![デスク環境概観](https://github.com/hiroyuki-komatsu/zenn/blob/main/articles/komatsuh_desk_2024.png?raw=true)
 
 2023 年版
 https://zenn.dev/komatsuh/articles/komatsuh_desk_2023
@@ -23,7 +25,7 @@ https://zenn.dev/komatsuh/articles/komatsuh_desk_2023
 https://support.apple.com/ja-jp/111901
 https://zenn.dev/komatsuh/scraps/38bf4225c82d21
 
-メインマシン。今年 2024 年の 6 月に更新。これまでのメインマシンと比べて、ノート PC だけれど蓋は閉じて使用しています。
+メインマシン。今年 2024 年の 6 月に更新しました。これまでのメインマシンと比べて、ノート PC だけれど蓋は閉じて使用しています。
 
 速度と温度そして排気音量が段違いによくなりました。今年一番の改善点です。
 
@@ -36,13 +38,12 @@ Intel CPU と違い Apple Silicon はモニターの数に制約があります�
 
 ### 🆕 DisplayLink デバイス: UGREEN Revodok Pro 312
 
-https://storage.googleapis.com/zenn-user-upload/4760fe632151-20240610.png
+https://www.amazon.co.jp/dp/B0C3LT2BW9
+https://zenn.dev/komatsuh/scraps/edb4dfa066234b
 
-Apple Silicon でのモニター数の制限を超えて、モニターを増設できるようになるデバイス。メインマシンの更新に合わせて、今年 2024 年 6 月に導入しました。USB ハブとしても機能します。
+Apple Silicon でのモニター数の制限を超えて、モニターを増設できるようになるデバイスです。メインマシンの更新に合わせて、今年 2024 年 6 月に導入しました。USB ハブとしても機能します。
 
 Amazon Prime ビデオ等で動画が表示されなくなる制約があるけれど、Chrome 等の設定で解決できます。
-
-https://zenn.dev/komatsuh/scraps/edb4dfa066234b
 
 
 ### サブマシン: Mac Mini M1
@@ -60,10 +61,10 @@ https://support.apple.com/kb/SP823?locale=ja_JP
 https://www.dell.com/ja-jp/shop/dell-32-4k-%E3%83%93%E3%83%87%E3%82%AA%E4%BC%9A%E8%AD%B0%E7%94%A8%E3%83%A2%E3%83%8B%E3%82%BF%E3%83%BC-u3223qz/apd/210-beil/
 https://zenn.dev/komatsuh/scraps/7f18ea4b489354
 
-去年 2023 年に購入。カメラ・マイク・USB ハブが内蔵されている。DisplayLink との相性なのかカメラの接続が不安定で、外付けカメラを使うことが多いのが残念。
-DDPM (Dell Display Peripheral Manager) を使うとキーボード操作やコマンドラインでモニター設定を切り替えられるのは便利。しかし、しばらくすると動作が止まるのでまめに DDPM を再起動する必要があるのがとても残念。
+去年 2023 年に購入。カメラ・マイク・USB ハブが内蔵されている。DisplayLink との相性なのかカメラの接続が不安定で、外付けカメラを使うことが多いのが残念です。
+DDPM (Dell Display Peripheral Manager) を使うとキーボード操作やコマンドラインでモニター設定を切り替えられるのは便利です。しかし、しばらくすると動作が止まるのでまめに DDPM を再起動する必要があるのがとても残念。
 
-スペックの性能を引き出せていないのが現状。
+スペックの性能を引き出せていないのが現状です。
 
 ### 32 インチ 4K (3840 x 2160): BenQ EW3280U
 https://www.benq.com/ja-jp/monitor/entertainment/ew3280u.html
@@ -77,7 +78,7 @@ Dell U3223QZ 以前のメインモニター。リモコンで操作できるの�
 https://support.hp.com/jp-ja/product/setup-user-guides/hp-zr2440w-24-inch-led-backlit-ips-monitor/5163690
 
 長い付き合いのモニター。コンポジット入力などもあり重宝しています。
-* 今年から縦向きに設置しています。
+* 縦向きに設置しています。
 
 
 ### 15.6 インチ 1080p (1920 x 1080): kksmart CT-1
@@ -118,13 +119,13 @@ https://twitter.com/komatsuh/status/1717469449501258074
 https://www.logicool.co.jp/ja-jp/products/mice/mx-master-3s.910-006567.html
 https://zenn.dev/komatsuh/scraps/ad8ad926b8f55c
 
-今年 2024 年 11 月に購入。これまでの Master 3 が経年劣化で本体がベタついたり、滑りが悪くなってきたので更新。
+今年 2024 年 11 月に購入。これまでの Master 3 が経年劣化で本体がベタついたり、滑りが悪くなってきたので更新しました。
 今回は S が付いた Master 3S で、メインの左右ボタンの音は静かになりました。親指ボタンの音は変わっていません。
 
 * 多ボタンマウスにショートカットキーを当てて使っています
 * サイドローラーのズーム機能はトラックパッドでのズーム動作で使いやすいです。（ショートカットキーで実現する方法が見つかりません）
-* これまでの Master 3 はクリックやホイールの質感がとてもよかったのですが、今回の Master 3S はホイールの空回りすることが多いです。個体差なのかもしれません。
-* 今回も経年劣化で本体がベタついてしまうのではと心配しています。
+* これまでの Master 3 はクリックやホイールの質感がとてもよかったのですが、今回の Master 3S はホイールの空回りすることが多いです。個体差なのかもしれません
+* 今回も経年劣化で本体がベタついてしまうのではと心配しています
 
 
 ### マクロパッド: XPPen ACK05
@@ -143,7 +144,7 @@ https://zenn.dev/komatsuh/scraps/78c56c409c6e55
 Pixel Tablet 用のスタイラスペン。ペンならではの使い方はまだできていません。
 
 
-## 音声画像
+## 映像音声
 
 ### 🆕 HDMI ビデオキャプチャー: AVerMedia AVT-C878 Plus
 https://www.avermedia.co.jp/product-detail/GC513
@@ -153,8 +154,6 @@ https://www.avermedia.co.jp/product-detail/GC513
 スプラトゥーン 2 の録画用として使っていましたが、スプラトゥーン 3 からは録画しなくてもゲーム内で試合が記録されるようになったのでしばらく使っていませんでした。
 
 ヘッドセットへの音声引き込みと、PC のモニター内でゲーム画面を確認するために使っています。
-
-## 音声
 
 ### ヘッドセット: logicool Astro A50
 https://gaming.logicool.co.jp/ja-jp/products/gaming-audio/a50-gen-4.939-001678.html
@@ -304,12 +303,22 @@ https://www.amazon.co.jp/gp/product/B07P46LPHG/
 天板にケーブルをはわせるために使っています。
 
 
+## モバイルデバイス立て: 無印良品 ステンレスキッチンスタンド
+https://www.muji.com/jp/ja/store/cmdty/detail/4550344902394
+
+スマートフォンやタブレットを複数扱っているので、立てて収納するために使っています。
+
+
 ## 変更を検討しているもの
 
-* モニター: メインモニターと縦置きモニターを湾曲ワイドディスプレイ (5K2K) 1台と交換するのはどうだろうかと考えています。サイズが大きいものなので躊躇しています。
-* 防水タブレット: 現在のタブレットでは最近の重たいアプリが辛くなってきたので。
-* ヘッドセット: NINTENDO SWITCH2 待ち
-* HDMI キャプチャー: NINTENDO SWITCH2 待ち
+* モニター
+  + メインモニターと縦置きモニターを湾曲ワイドディスプレイ (5K2K) 1台と交換するのはどうだろうかと考えています。サイズが大きいものなので躊躇しています
+* 防水タブレット
+  + 現在のタブレットでは最近の重たいアプリが辛くなってきたので
+* ヘッドセット
+  + NINTENDO SWITCH2 の仕様に合わせて更新します
+* HDMI キャプチャー
+  + NINTENDO SWITCH2 の仕様に合わせて更新します
 
 ## 使わなくなったもの
 
