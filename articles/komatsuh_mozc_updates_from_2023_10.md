@@ -79,7 +79,7 @@ Mozc の問題の報告や機能の要望等は、GitHub の [Issues](https://gi
 * [b0b37db](https://github.com/google/mozc/commit/b0b37db046cb8a2f075a463d0c71926f744cfcb6) / [9c53503](https://github.com/google/mozc/commit/9c53503e501a045e9f7a8566d59481f593f7dde8) / [ad8a2be](https://github.com/google/mozc/commit/ad8a2be763376675df256fef3cb68d41ede2e566) / [456284e](https://github.com/google/mozc/commit/456284ec02696ed6444a8b09610f4746a2714100) / [f518d3d](https://github.com/google/mozc/commit/f518d3d6be4ebc938a1db0df914d54c34ba86213) / [d0d1bc8](https://github.com/google/mozc/commit/d0d1bc86aaaa2eae14ea9113b2f8261ec40ca24a) / [2ea9504](https://github.com/google/mozc/commit/2ea95041d8ac33ceb6523a008b9c57be56819415) / [d6a55d2](https://github.com/google/mozc/commit/d6a55d2b35440dae4c26baf420bb02cedaf2ab37)
 
 
-## 換用データの更新と変換機能の調整
+## 変換用データの更新と変換機能の調整
 
 * 郵便番号データの更新 ([#1063](https://github.com/google/mozc/issues/1063))
 * 辞書データの更新 ([#1068](https://github.com/google/mozc/issues/1068), [#1069](https://github.com/google/mozc/issues/1069), [#928](https://github.com/google/mozc/issues/928), [6af6a25](https://github.com/google/mozc/commit/6af6a25e580ec46c438677e50303d137db230bd1), [4f03239](https://github.com/google/mozc/commit/4f03239c829c2a986f077b0d21b0a7702aabc508))
@@ -144,7 +144,7 @@ Mozc の問題の報告や機能の要望等は、GitHub の [Issues](https://gi
 
 ### GitHub 関連
 
-* GitHub Actions の生成物をリリースビルド変更 ([07c5f89](https://github.com/google/mozc/commit/07c5f89f716e520c98a796ee7ed1204581686192))
+* GitHub Actions の生成物をリリースビルドに変更 ([07c5f89](https://github.com/google/mozc/commit/07c5f89f716e520c98a796ee7ed1204581686192))
 * GitHub Actions の Linux 環境を Ubuntu 24.04 へ更新 ([#924](https://github.com/google/mozc/issues/924))
 * Issues で 2020-01-01 以前から更新のない 33 件を `obsolete` としてクローズ ([#800](https://github.com/google/mozc/issues/800))
 * Issues のテンプレートを Markdown から YAML のフォーム形式に変更 ([efc4337](https://github.com/google/mozc/commit/efc4337c018fd9e62c429f569d78499abb2a5889))
