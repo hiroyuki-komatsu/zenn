@@ -40,7 +40,7 @@ Mozc の問題の報告や機能の要望等は、GitHub の [Issues](https://gi
 
 * コミット数: 920 (前回: 825)
 * クローズした issue の数: 112 ([Issues · google/mozc](https://github.com/google/mozc/issues?q=is%3Aissue+is%3Aclosed++closed%3A2024-10-11..2025-10-10)) (前回: 232)
-* マージしたプルリクエスト数: 114 ([Pull requests · google/mozc](https://github.com/google/mozc/pulls?q=is%3Apr+is%3Amerged+updated%3A2024-10-11..2025-10-10+)) (前回: 16)
+* マージしたプルリクエスト数: 144 ([Pull requests · google/mozc](https://github.com/google/mozc/pulls?q=is%3Apr+is%3Amerged+updated%3A2024-10-11..2025-10-10+)) (前回: 16)
 
 クローズした数の減少は、変換内容に関する報告を別フォームに移行したことが影響しています。
 
@@ -174,7 +174,7 @@ GYP はビルドツールのひとつで、現在は Bazel に変更されてい
 * ARM64 ビルドへの対応 ([#1130](https://github.com/google/mozc/issues/1130))
 * Bazel をデフォルトビルド環境に
 * Bazel でのユニットテストに対応
-* Bazel のコンパイラーで clang-cl に対応
+* Bazel で使用するコンパイラーを clang-cl に変更
 
 
 ### 依存ライブラリの更新
