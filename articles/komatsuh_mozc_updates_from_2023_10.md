@@ -22,6 +22,8 @@ Mozc の問題の報告や機能の要望等は、GitHub の [Issues](https://gi
 
 ## 関連記事
 
+* [2024 年 10 月から 2025 年 10 月までの Mozc に対する主な変更](https://zenn.dev/komatsuh/articles/komatsuh_mozc_updates_from_2024_10) 
+* [2023 年 10 月以降の Mozc に対する主な変更](https://zenn.dev/komatsuh/articles/komatsuh_mozc_updates_from_2023_10) : この記事
 * [2022 年 10 月以降の Mozc に対する主な変更](https://zenn.dev/komatsuh/articles/9b88d84c0590f6) 
 * [2021 年 10 月以降の Mozc に対する主な変更](https://zenn.dev/komatsuh/articles/9821ea8be015f0)
 * [2020 年以降の Mozc に対する主な変更](https://zenn.dev/komatsuh/articles/d6844edd398402)
