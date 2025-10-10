@@ -64,16 +64,6 @@ Mozc の問題の報告や機能の要望等は、GitHub の [Issues](https://gi
 * NSFW な表現等の報告フォームの追加
 
 
-## NSFW (not safe for work) な表現等の報告フォームの追加
-
-職場等、公共の場では控えたい表現等を報告するためのフォームを新しく作成しました。一般の誤変換レポートと違い、報告内容等は公開されません。
-
-* https://forms.gle/4wwwhkqsXtiDgPcYA (NSFW な表現用)
-
-一般的な誤変換等については、次のフォームから報告できます。
-
-* https://forms.gle/oXgwbqzvSyVHNBSc7 (一般的な誤変換用)
-
 ## 変換・機能の変更点
 
 ### 変換関連
@@ -81,11 +71,10 @@ Mozc の問題の報告や機能の要望等は、GitHub の [Issues](https://gi
 * 変換用データの更新 ([11a5dc3](https://github.com/google/mozc/commit/11a5dc3), etc.)
 * 郵便番号データを 2025-08-30 時点のものに更新 ([53e6db7](https://github.com/google/mozc/commit/53e6db7))
 * 絵文字データを CLDR 46 (Emoji 16.0) に更新 ([12f8892](https://github.com/google/mozc/commit/12f8892))
-* 辞書ツールのファイル読込で、 .tsv ファイルをデフォルトで選択可能に
 * 入力用データの更新 ([#1074](https://github.com/google/mozc/issues/1074), [#1100](https://github.com/google/mozc/issues/1100), [#1165](https://github.com/google/mozc/issues/1165), [#1331](https://github.com/google/mozc/issues/1331), [#1351](https://github.com/google/mozc/issues/1351), [#1360](https://github.com/google/mozc/issues/1360), [#1374](https://github.com/google/mozc/issues/1374), etc.)
 * 予測入力の手法の改善 ([9d7332c](https://github.com/google/mozc/commit/9d7332c), [22adec5](https://github.com/google/mozc/commit/22adec5))
 * 誤変換報告フォームでの内容に対応 ([#1056](https://github.com/google/mozc/issues/1056))
-  + 家系(いえけい), 一意(いちい), 舵輪(だりん), ヒエログリフ(ひえろぐりふ) などが追加されました
+  + 家系(いえけい), 一意(いちい), 舵輪(だりん), ヒエログリフ(ひえろぐりふ) などを追加しました
 * 数字変換での候補の改善 ([#1274](https://github.com/google/mozc/issues/1274))
   + "ゆり" で "百合" にくわえて "100合" が候補になる問題を改善しました
 * 同じ読みでより長い候補がある場合に、短い候補が除外される問題の修正 ([1dfd91b](https://github.com/google/mozc/commit/1dfd91b))
@@ -98,8 +87,15 @@ Mozc の問題の報告や機能の要望等は、GitHub の [Issues](https://gi
 ### 機能関連
 
 * 入力学習用のデータを 62 日間後の削除から、10,000 件以降の削除へ変更 ([12f6d98](https://github.com/google/mozc/commit/12f6d98))
-* Windows: バージョン更新時に既存の変換エンジン等のプロセスを終了するように変更 ([#1093](https://github.com/google/mozc/issues/1093))
-* Windows: 入力場所周辺の文字列を変換に活用できる機能に対応するアプリケーションの拡充 ([#1289](https://github.com/google/mozc/issues/1289), [#1293](https://github.com/google/mozc/issues/1293))
+  + 3ヶ月ぶりに入力したい単語を覚えていてくれていない、という問題が改善されます
+* 辞書ツールのファイル読込で、 .tsv ファイルをデフォルトで選択可能に
+
+#### Windows 用機能関連
+
+* バージョン更新時に既存の変換エンジン等のプロセスを終了するように変更 ([#1093](https://github.com/google/mozc/issues/1093))
+* 入力場所周辺の文字列を変換に活用できる機能に対応するアプリケーションの拡充 ([#1289](https://github.com/google/mozc/issues/1289), [#1293](https://github.com/google/mozc/issues/1293))
+  + Chromium 系のアプリケーションや Sakura Editor などのアプリケーションに対応しました
+* インストール時に OS のビルド番号のチェックに対応 ([#1329](https://github.com/google/mozc/issues/1329))
 
 ### バグ修正
 
@@ -110,7 +106,9 @@ Mozc の問題の報告や機能の要望等は、GitHub の [Issues](https://gi
 * Linux: ibus_config.textproto の設定例の誤りを修正 ([#1237](https://github.com/google/mozc/issues/1237))
 * macOS: macOS 26 (Tahoe) でインストール時にクラッシュする問題の修正 ([018d8d9](https://github.com/google/mozc/commit/018d8d9))
 * Windows: 特定のアプリケーション (searchhost.exe 等) でフリーズする問題の修正 ([#1077](https://github.com/google/mozc/issues/1077), [#856](https://github.com/google/mozc/issues/856))
+  + スタートメニューの検索窓などのアプリケーションに対応しました
 * Windows: GUI ツールで表示言語の優先順位が反映されない問題の修正 ([#1110](https://github.com/google/mozc/issues/1110))
+  + 日本語にくわえて英語も使用言語に選択している場合の問題に対応しました
 
 #### 2024年10月以降に発生したバグの修正
 
@@ -142,6 +140,8 @@ Mozc をライブラリとして使用する場合に関する変更点です
 
 ### Bazel 関連
 
+Bazel はビルドツールのひとつで、Make, CMake 等に相当するツールです。Mozc では Bazel を採用しています。
+
 * Bazel のバージョンを 7 から 8.4.1 へ更新 ([#1118](https://github.com/google/mozc/issues/1118))
 * バージョン番号を指定するコマンドラインオプションに対応 ([4f48688](https://github.com/google/mozc/commit/4f48688))
   + `bazel build package --action_env=MOZC_VERSION="2.32.5981.102"`
@@ -149,6 +149,8 @@ Mozc をライブラリとして使用する場合に関する変更点です
   + bzlmod へ移行しました
 
 ### GYP 関連
+
+GYP はビルドツールのひとつで、現在は Bazel に変更されています。GYP は今後非対応、関連ファイルの削除を予定しています。
 
 * Windows と macOS でメンテナンスモードへ
   + Linux では既に対応を終了 (deprecated)
@@ -178,12 +180,13 @@ Mozc をライブラリとして使用する場合に関する変更点です
 ### 依存ライブラリの更新
 
 * Abseil: 20240722.0 → 20250814.0
-* Google Test: v1.15.2 → v1.17.0
 * Protocol Buffers: v27.3 → v32.0
+* Google Test: v1.15.2 → v1.17.0
 * Qt:  6.7.3 → 6.9.1
 
 
 ### GitHub 関連
+
 * GitHub Actions の macOS 環境を macos-14 から macos-15 に更新
 * GitHub Actions の Windows 環境を windows-2022 から windows-2025 に更新
 
@@ -196,12 +199,16 @@ Mozc をライブラリとして使用する場合に関する変更点です
 
 
 ### デバッグ関連
-* 変換処理の内部構造可視化ツール (Lattice Viewer) の追加 ([3c62c59](https://github.com/google/mozc/commit/3c62c59))
+
 * `session_handler_main` ツールに `--test` オプションの追加 ([e1c2bec](https://github.com/google/mozc/commit/e1c2bec))
+* 変換処理の内部構造可視化ツール (Lattice Viewer) の追加 ([3c62c59](https://github.com/google/mozc/commit/3c62c59))
 * Windows: TIP DLL 用のデバッグシンボルをパッケージに同梱 ([#1081](https://github.com/google/mozc/issues/1081))
 
 
 ### リファクタリング関連
+
+コミットの多くの割合がリファクタリング関連です
+
 * `ConversionRequest` を immutable なオブジェクトに
 * `Converter` の実装のリファクタリング
 * `SessionConverter` を `EngineConverter` に変更
@@ -212,16 +219,11 @@ Mozc をライブラリとして使用する場合に関する変更点です
 * 不要なコードとデータの削除
 
 
-## 今後の予定
-
-* GYP の非対応、GYP 関連のファイルの削除
-
-
 ## そのほか
 
 ### コミット数
 
-コミット数が 5,000 を超えました。以前は上流での変更を一定期間内でまとめて 1 コミットとしていましたので、数週間から数カ月の変更が 1 コミットになっていました。現在は 1:1 の対応になっていますので、コミット数が大幅に増加しているという背景もあります。
+コミット数が 5,000 を超えました。以前は上流での変更を一定期間内でまとめて 1 コミットとしていましたので、数週間から数カ月の変更が 1 コミットになっていました。現在は 1:1 の対応になったのでコミット数が大幅に増加した、という背景もあります。
 
 ### ビルド番号
 
@@ -229,7 +231,7 @@ Mozc をライブラリとして使用する場合に関する変更点です
 
 ### 日付のカスタマイズ
 
-日付の表示形式は、ユーザー辞書への登録でカスタマイズできます。次のように登録すると「きょう」などの変換で `2025.01.31` といった形式になります。
+日付の表示形式は、ユーザー辞書への登録でカスタマイズできます。次のように登録すると「きょう」などの変換で "2025.01.31" といった形式になります。
 
 | よみ         | 変換                  | 品詞   |
 | ----------- | --------------------- | ----- |
@@ -244,6 +246,8 @@ Mozc をライブラリとして使用する場合に関する変更点です
 
 内容に応じて、報告先を選択してください。使い方の質問に関してはユーザー間での相互的にやり取りをしていただけるととてもうれしいです。
 
+新しく、公共の場では控えたい表現等を報告するためのフォームを作成しました。一般の誤変換レポートと違い、報告内容等は公開されません。
+
 * 使い方の質問: Discussions > [Q&A](https://github.com/google/mozc/discussions/categories/q-a)
 * 機能追加の要望: Discussions > [Ideas](https://github.com/google/mozc/discussions/categories/ideas)
 * 誤変換や語彙の要望: [Typing issue for Mozc](https://forms.gle/oXgwbqzvSyVHNBSc7)
@@ -253,4 +257,4 @@ Mozc をライブラリとして使用する場合に関する変更点です
 
 ## さいごに
 
-コミットや誤変換の報告等、数多くの方々からのご協力に感謝しています。どうもありがとうございます。前回からの繰り返しですが、Mozc にかぎらず IME に関心を持っていたり、実際に開発に取り組んでいる方がいらっしゃることもとてもうれしく思っています。また、プロジェクトの現在を多くの方々が認識してくださるのはとても心強いことです。これからも応援をよろしくお願いいたします。
+コミットや誤変換の報告等、数多くの方々からのご協力に感謝しています。どうもありがとうございます。前回からの繰り返しですが、Mozc にかぎらず IME に関心を持っていたり、実際に開発に取り組んでいる方がいらっしゃることもとてもうれしく思っています。また、
