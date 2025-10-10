@@ -57,63 +57,68 @@ Mozc の問題の報告や機能の要望等は、GitHub の [Issues](https://gi
 ## 主要な変更点
 
 * バージョンを 2.32 に更新
-* 変換用データとロジックの更新
-* NSFW な表現等の報告フォームの追加
+* 変換用データと手法の更新
 * ARM 用ビルドへの対応 (macOS, Windows)
-* すべての環境でビルドシステムを Bazel へ移行
 * macOS の対応バージョンを 12 以降へ変更
-
+* すべての環境でビルドシステムを Bazel へ移行
+* NSFW な表現等の報告フォームの追加
 
 
 ## NSFW (not safe for work) な表現等の報告フォームの追加
 
 職場等、公共の場では控えたい表現等を報告するためのフォームを新しく作成しました。一般の誤変換レポートと違い、報告内容等は公開されません。
 
-* https://forms.gle/4wwwhkqsXtiDgPcYA
+* https://forms.gle/4wwwhkqsXtiDgPcYA (NSFW な表現用)
 
+一般的な誤変換等については、次のフォームから報告できます。
+
+* https://forms.gle/oXgwbqzvSyVHNBSc7 (一般的な誤変換用)
 
 ## 変換・機能の変更点
 
 ### 変換関連
 
-* 変換用データの更新 (11a5dc3)
-* 郵便番号データを 2025-08-30 時点のものに更新 (53e6db7)
-* 絵文字データを CLDR 46 (Emoji 16.0) に更新 (12f8892)
+* 変換用データの更新 ([11a5dc3](https://github.com/google/mozc/commit/11a5dc3), etc.)
+* 郵便番号データを 2025-08-30 時点のものに更新 ([53e6db7](https://github.com/google/mozc/commit/53e6db7))
+* 絵文字データを CLDR 46 (Emoji 16.0) に更新 ([12f8892](https://github.com/google/mozc/commit/12f8892))
 * 辞書ツールのファイル読込で、 .tsv ファイルをデフォルトで選択可能に
-* 入力用データの更新 (#1074, #1100, #1165, #1331, #1351, #1360, #1374)
-* 予測入力の手法の改善 (9d7332c, 22adec5)
-* 誤変換報告フォームでの内容に対応
+* 入力用データの更新 ([#1074](https://github.com/google/mozc/issues/1074), [#1100](https://github.com/google/mozc/issues/1100), [#1165](https://github.com/google/mozc/issues/1165), [#1331](https://github.com/google/mozc/issues/1331), [#1351](https://github.com/google/mozc/issues/1351), [#1360](https://github.com/google/mozc/issues/1360), [#1374](https://github.com/google/mozc/issues/1374), etc.)
+* 予測入力の手法の改善 ([9d7332c](https://github.com/google/mozc/commit/9d7332c), [22adec5](https://github.com/google/mozc/commit/22adec5))
+* 誤変換報告フォームでの内容に対応 ([#1056](https://github.com/google/mozc/issues/1056))
+  + 家系(いえけい), 一意(いちい), 舵輪(だりん), ヒエログリフ(ひえろぐりふ) などが追加されました
+* 数字変換での候補の改善 ([#1274](https://github.com/google/mozc/issues/1274))
+  + "ゆり" で "百合" にくわえて "100合" が候補になる問題を改善しました
+* 同じ読みでより長い候補がある場合に、短い候補が除外される問題の修正 ([1dfd91b](https://github.com/google/mozc/commit/1dfd91b))
+  + "さかい" で "堺井" だけが候補となり "堺" が除外される問題を修正しました
 * ローマ字入力ルールに "tch" → "っch" を追加
   + "itchou" で "いっちょう" になります
-* 予測入力候補に句読点をつけないように変更 (cb0b430)
+* 予測入力候補に句読点をつけないように変更 ([cb0b430](https://github.com/google/mozc/commit/cb0b430))
   + "お疲れ様です" + "。" と入力したあと、"お疲れ様です。" が予測入力の候補にならないようになります
-* 数字変換での候補の改善 (#1274)
-  + "ゆり" で "百合" にくわえて "100合" が候補になる問題を改善しました
-* 同じ読みでより長い候補がある場合に、短い候補が除外される問題の修正 (1dfd91b)
-  + "さかい" で "堺井" だけが候補となり "堺" が除外される問題を修正しました
 
 ### 機能関連
 
-* 入力学習用のデータを 62 日間後の削除から、10,000 件以降の削除へ変更 (12f6d98)
-* Windows: バージョン更新時に既存の変換エンジン等のプロセスを終了するように変更 (#1093)
-* Windows: 入力場所周辺の文字列を変換に活用できる機能に対応するアプリケーションの拡充 (#1289, #1293)
+* 入力学習用のデータを 62 日間後の削除から、10,000 件以降の削除へ変更 ([12f6d98](https://github.com/google/mozc/commit/12f6d98))
+* Windows: バージョン更新時に既存の変換エンジン等のプロセスを終了するように変更 ([#1093](https://github.com/google/mozc/issues/1093))
+* Windows: 入力場所周辺の文字列を変換に活用できる機能に対応するアプリケーションの拡充 ([#1289](https://github.com/google/mozc/issues/1289), [#1293](https://github.com/google/mozc/issues/1293))
 
 ### バグ修正
 
-* Linux: _SC_GETPW_R_SIZE_MAX に未対応の Linux 環境でクラッシュする問題の修正 (#1318)
-* Linux: 削除した文字が再入力されてしまうアプリケーションがある問題の修正 (#1174)
-* Linux: ibus_config.textproto の設定例の誤りを修正 (#1237)
-* macOS: macOS 26 (Tahoe) でインストール時にクラッシュする問題の修正 (018d8d9)
-* Windows: 特定のアプリケーション (searchhost.exe 等) でフリーズする問題の修正 (#1077, #856)
-* Windows: GUI ツールで表示言語の優先順位が反映されない問題の修正 (#1110)
+* Linux: 特定の Linux 環境でクラッシュする問題の修正 ([#1318](https://github.com/google/mozc/issues/1318))
+  + _SC_GETPW_R_SIZE_MAX に未対応の環境での問題に対応しました
+* Linux: 削除した文字が再入力されてしまうアプリケーションがある問題の修正 ([#1174](https://github.com/google/mozc/issues/1174))
+  + Anki などでのアプリケーション上の問題に対応しました
+* Linux: ibus_config.textproto の設定例の誤りを修正 ([#1237](https://github.com/google/mozc/issues/1237))
+* macOS: macOS 26 (Tahoe) でインストール時にクラッシュする問題の修正 ([018d8d9](https://github.com/google/mozc/commit/018d8d9))
+* Windows: 特定のアプリケーション (searchhost.exe 等) でフリーズする問題の修正 ([#1077](https://github.com/google/mozc/issues/1077), [#856](https://github.com/google/mozc/issues/856))
+* Windows: GUI ツールで表示言語の優先順位が反映されない問題の修正 ([#1110](https://github.com/google/mozc/issues/1110))
 
 #### 2024年10月以降に発生したバグの修正
 
-* 無変換キーによるひらがな・カタカナ変換が動作しない問題の修正 (#1188)
+* 無変換キーによるひらがな・カタカナ変換が動作しない問題の修正 ([#1188](https://github.com/google/mozc/issues/1188))
   + 2.30.5618 で発生
-* Linux: テキストを選択すると文字が消去されてしまう問題の修正 (#1278)
+* Linux: テキストを選択すると文字が消去されてしまう問題の修正 ([#1278](https://github.com/google/mozc/issues/1278))
   + 2.31.5851 で発生
-* Windows: 候補ウインドウがマウスで選択できない問題の修正 (#1372)
+* Windows: 候補ウインドウがマウスで選択できない問題の修正 ([#1372](https://github.com/google/mozc/issues/1372))
   + 2.31.5851 で発生
 
 
@@ -121,26 +126,26 @@ Mozc の問題の報告や機能の要望等は、GitHub の [Issues](https://gi
 
 Mozc をライブラリとして使用する場合に関する変更点です
 
-* Android: `libmozc.so` を 16KB ページサイズに対応 (#1364)
-* Android: 109A キーボード用の KCM ファイルの削除 (5d3ce6f)
+* Android: 109A キーボード用の KCM ファイルの削除 ([5d3ce6f](https://github.com/google/mozc/commit/5d3ce6f))
+* Android: `libmozc.so` を 16KB ページサイズに対応 ([#1364](https://github.com/google/mozc/issues/1364))
 * `is_incognito_mode` フィールドを `Request` protocol buffer メッセージに追加
 * Protocol Buffer の `Candidates` を `CandidateWindow` に変更
 
 
 ## ビルドの変更点
 
-* Bazelisk によるビルドを推奨方法に (#1272)
-  + Bazelisk は Bazel の設定を制御するためのラッパーです
 * Docker でのビルドを終了 (deprecated)
-* Python 3.14 でのビルドに対応 (#1084)
+* Bazelisk によるビルドを推奨方法に ([#1272](https://github.com/google/mozc/issues/1272))
+  + Bazelisk は Bazel の設定を制御するためのラッパーです
+* Python 3.14 でのビルドに対応 ([#1084](https://github.com/google/mozc/issues/1084))
   + Python 3.9 以降でビルド可能です
 
 ### Bazel 関連
 
-* Bazel のバージョンを 7 から 8.4.1 へ更新 (#1118)
-* バージョン番号を指定するコマンドラインオプションに対応 (4f48688)
+* Bazel のバージョンを 7 から 8.4.1 へ更新 ([#1118](https://github.com/google/mozc/issues/1118))
+* バージョン番号を指定するコマンドラインオプションに対応 ([4f48688](https://github.com/google/mozc/commit/4f48688))
   + `bazel build package --action_env=MOZC_VERSION="2.32.5981.102"`
-* WORKSPACE の削除 (#1115)
+* WORKSPACE の削除 ([#1115](https://github.com/google/mozc/issues/1115))
   + bzlmod へ移行しました
 
 ### GYP 関連
@@ -150,23 +155,25 @@ Mozc をライブラリとして使用する場合に関する変更点です
 
 ### Linux 用ビルド関連
 
-* gcc-14.1.1 でのビルドに対応 (#927)
+* gcc-14.1.1 でのビルドに対応 ([#927](https://github.com/google/mozc/issues/927))
 
 
 ### macOS 用ビルド関連
 
 * 署名付き .dmg ファイルの作成に対応
   + GitHub Actions での生成物に署名はされていません
-* 対応バージョンを macOS 12 以降へ変更 (macOS 11 以降から)
+* 対応バージョンを macOS 12 以降へ変更
+  + これまでは macOS 11 以降での対応でした
 * Xcode の必要バージョンを 16.0 (macOS SDK 15.0) 以降に変更
 
 
 ### Windows 用ビルド関連
 
-* ARM64 ビルドへの対応 (#1130)
+* ARM64 ビルドへの対応 ([#1130](https://github.com/google/mozc/issues/1130))
 * Bazel をデフォルトビルド環境に
 * Bazel でのユニットテストに対応
 * Bazel のコンパイラーで clang-cl に対応
+
 
 ### 依存ライブラリの更新
 
@@ -185,13 +192,13 @@ Mozc をライブラリとして使用する場合に関する変更点です
 
 * C++20 へ対応
 * コーディングスタイルの更新 (例 "string &s" → "string& s")
-* Bazel 用のスタイルチェッカーを導入 (#1089)
+* Bazel 用のスタイルチェッカーを導入 ([#1089](https://github.com/google/mozc/issues/1089))
 
 
 ### デバッグ関連
-* 変換処理の内部構造可視化ツール (Lattice Viewer) の追加 (3c62c59)
-* `session_handler_main` ツールに `--test` オプションの追加 (e1c2bec)
-* Windows: TIP DLL 用のデバッグシンボルをパッケージに同梱 (#1081)
+* 変換処理の内部構造可視化ツール (Lattice Viewer) の追加 ([3c62c59](https://github.com/google/mozc/commit/3c62c59))
+* `session_handler_main` ツールに `--test` オプションの追加 ([e1c2bec](https://github.com/google/mozc/commit/e1c2bec))
+* Windows: TIP DLL 用のデバッグシンボルをパッケージに同梱 ([#1081](https://github.com/google/mozc/issues/1081))
 
 
 ### リファクタリング関連
@@ -212,5 +219,38 @@ Mozc をライブラリとして使用する場合に関する変更点です
 
 ## そのほか
 
+### コミット数
+
+コミット数が 5,000 を超えました。以前は上流での変更を一定期間内でまとめて 1 コミットとしていましたので、数週間から数カ月の変更が 1 コミットになっていました。現在は 1:1 の対応になっていますので、コミット数が大幅に増加しているという背景もあります。
+
+### ビルド番号
+
+バージョン番号の 3 番目の数字はビルド番号で、バージョンをつけ始めてからの経過日数です。この番号が 5000 なら 2023 年 1 月ごろのバージョンだと分かります。現在は 5981 で、そろそろ 6000 番台です。
+
+### 日付のカスタマイズ
+
+日付の表示形式は、ユーザー辞書への登録でカスタマイズできます。次のように登録すると「きょう」などの変換で `2025.01.31` といった形式になります。
+
+| よみ         | 変換                  | 品詞   |
+| ----------- | --------------------- | ----- |
+| DATE_FORMAT | {YEAR}.{MONTH}.{DATE} | 名詞   |
+
+この機能は 2021 年に実験的機能として実装されました。実験的機能ですので、今後や変更・削除がされることもあります。
+
+* https://github.com/google/mozc/blob/master/docs/configurations.md
+
+
+### 報告の方法
+
+内容に応じて、報告先を選択してください。使い方の質問に関してはユーザー間での相互的にやり取りをしていただけるととてもうれしいです。
+
+* 使い方の質問: Discussions > [Q&A](https://github.com/google/mozc/discussions/categories/q-a)
+* 機能追加の要望: Discussions > [Ideas](https://github.com/google/mozc/discussions/categories/ideas)
+* 誤変換や語彙の要望: [Typing issue for Mozc](https://forms.gle/oXgwbqzvSyVHNBSc7)
+* 公共の場では控えたい表現の報告: [NSFW issue for Mozc](https://forms.gle/4wwwhkqsXtiDgPcYA)
+* 不具合報告: [Issues](https://github.com/google/mozc/issues)
+
+
 ## さいごに
 
+コミットや誤変換の報告等、数多くの方々からのご協力に感謝しています。どうもありがとうございます。前回からの繰り返しですが、Mozc にかぎらず IME に関心を持っていたり、実際に開発に取り組んでいる方がいらっしゃることもとてもうれしく思っています。また、プロジェクトの現在を多くの方々が認識してくださるのはとても心強いことです。これからも応援をよろしくお願いいたします。
