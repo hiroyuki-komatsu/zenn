@@ -99,6 +99,8 @@ Mozc の問題の報告や機能の要望等は、GitHub の [Issues](https://gi
 
 ### バグ修正
 
+* F10 等での英数字への変換で文字種が循環しない問題の修正 ([#1280](https://github.com/google/mozc/issues/1280))
+  + "pya" と入力後の F10 で、"pya" → "PYA" → "Pya" → "pya" と循環しない問題を修正しました
 * Linux: 特定の Linux 環境でクラッシュする問題の修正 ([#1318](https://github.com/google/mozc/issues/1318))
   + _SC_GETPW_R_SIZE_MAX に未対応の環境での問題に対応しました
 * Linux: 削除した文字が再入力されてしまうアプリケーションがある問題の修正 ([#1174](https://github.com/google/mozc/issues/1174))
@@ -202,7 +204,6 @@ GYP はビルドツールのひとつで、現在は Bazel に変更されてい
 
 * `session_handler_main` ツールに `--test` オプションの追加 ([e1c2bec](https://github.com/google/mozc/commit/e1c2bec))
 * 変換処理の内部構造可視化ツール (Lattice Viewer) の追加 ([3c62c59](https://github.com/google/mozc/commit/3c62c59))
-* Windows: TIP DLL 用のデバッグシンボルをパッケージに同梱 ([#1081](https://github.com/google/mozc/issues/1081))
 
 
 ### リファクタリング関連
