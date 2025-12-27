@@ -1,3 +1,4 @@
+---
 title: "GitHub Pages を独自ドメインで運用するための Squarespace での設定方法"
 emoji: "📄"
 type: "idea"
