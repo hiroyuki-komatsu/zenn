@@ -10,6 +10,7 @@ published_at: "2026-02-08 01:00"
 ---
 
 初稿: 2026-02-07
+更新: 2026-02-09
 小松弘幸 ([@komatsuh:bsky](https://bsky.app/profile/komatsuh.bsky.social), [@komatsuh:twitter](https://twitter.com/komatsuh))
 
 
@@ -84,8 +85,21 @@ https://play.google.com/apps/testing/com.charulab.physkeys
 
 ### ひらがな手書きキーボードがリリース
 
+https://x.com/KazumaN1172/status/2016037889696493605
 https://play.google.com/store/apps/details?id=com.kazumaproject.hiraganahandwritekeyboard
 https://github.com/KazumaProject/Hiragana-Hand-Writting-Keyboard
+
+### Akaza が v0.2.1 に
+
+Rust で書かれた日本語 IME の Akaza が v0.2.1 に
+
+https://github.com/akaza-im/akaza/releases/tag/v0.2.1
+
+### IBus-PSKK がアップデート
+
+ 『IME として最低限必要な機能を実装できた』と作者によるコメント
+
+ https://github.com/kirameister/ibus-pskk
 
 
 ## IME 関連の技術記事
