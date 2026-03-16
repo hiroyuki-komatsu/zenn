@@ -193,9 +193,8 @@ https://x.com/KazumaN1172/status/2018786119467573555
 
 Linux 用 IME、Akaza が v2026.218.1 に更新。助数詞回り、共起関係の改善、高速化など
 
-> 自作IM Akaza 0.2.3 を出した。 - tokuhirom's blogXユーザーのKazuma.Nさん: 「Sumire 日本語キーボード v1.6.5 をリリースしました。 設定のバックアップやタイピングミスを考慮した入力を zenz にも渡す設計に修正しました。 ぜひお試しください。 https://t.co/bFY2PC6wRF」 / X
+> 自作IM Akaza 0.2.3 を出した。 - tokuhirom's blog
 
-https://x.com/KazumaN1172/status/2028219094109917378
 https://blog.64p.org/entry/2026/02/05/220823
 
 > skip-bigramを入れた akaza 0.5.0 が出た - tokuhirom's blog
@@ -412,7 +411,7 @@ https://blazechariot.netlify.app/blog/fcitx5-settings-2026/
 
 https://zenn.dev/ykbone/articles/60bfd2e045b347
 
-### azookey
+### azooKey
 
 > azooKey：iPadで速く書くための小鳥遊配列 - Jazzと読書の日々
 
@@ -464,6 +463,6 @@ https://zenn.dev/hqb/articles/2026-02-let-us-skk
 * かわせみ
 * Gboard
 * Mozc
-* azookey
+* azooKey
 * ニンジャマイルズ
 * SKK
