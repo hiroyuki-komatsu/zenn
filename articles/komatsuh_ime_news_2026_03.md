@@ -133,6 +133,21 @@ https://blogs.windows.com/japan/2026/03/24/copilot-keyboard-now-supports-japanes
 https://blogs.windows.com/japan/2026/03/02/copilot-keyboard-has-been-updated-february/
 
 
+### Mozc
+
+3.33.6133 に更新。変換用辞書の更新や、候補の表示順の調整、日時の書式カスタマイズなど
+
+> Release 3.33.6089 → 3.33.6133 · google/mozc
+
+https://github.com/google/mozc/releases/tag/3.33.6133
+
+
+> @komatsuh.bsky.socialによる投稿 — Bluesky: 「Mozc の Tags にバージョン 3.33.6133 を追加しました。 変換用辞書の更新や、候補の表示順の調整、日時の書式カスタマイズなどが追加されています。 ビルドシステムから GYP が削除されて Bazel へ完全に移行しました。」
+
+https://bsky.app/profile/komatsuh.bsky.social/post/3mi7cbz6poc2y
+
+
+
 ### azooKey
 
 v0.1.4-beta.1に更新。試験的な機能としての予測入力と誤入力訂正を導入など
