@@ -85,6 +85,20 @@ https://github.com/KazumaProject/Sumire-Desktop/blob/main/README.ja.md
 https://note.com/witty_liger9147/n/nd924ba186b1d
 
 
+### SwiftyGyaim
+
+macOS 用の予測入力 IME。Gyaim の Swift 実装版
+
+> tanabe1478/SwiftyGyaim: SwiftyGyaim — macOS用 日本語IME (InputMethodKit)
+
+https://github.com/tanabe1478/SwiftyGyaim
+
+
+> Xユーザーのtanabe1478さん: 「出来てきた https://t.co/eASgybfWvl https://t.co/i3fhHPLPij」 / X
+
+https://x.com/t__nabe1478/status/2032052319777669211
+
+
 ### VOCHAT BOXX (ぼちゃぼ)
 
 VR 用のテキスト入力を音声に変換するツールが公開。フリック入力やキーボード入力に対応
@@ -181,6 +195,21 @@ https://github.com/oktopus1959/AyaoriHIME/releases
 > かなちゃん - かな入力キーボードアプリ - App Store
 
 https://apps.apple.com/jp/app/%E3%81%8B%E3%81%AA%E3%81%A1%E3%82%83%E3%82%93-%E3%81%8B%E3%81%AA%E5%85%A5%E5%8A%9B%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89/id6758237369
+
+
+### CSKK
+
+v3.3.0 に更新。バグの修正とコマンドの追加など。
+
+> Release v3.3.0 · naokiri/cskk
+
+https://github.com/naokiri/cskk/releases/tag/v3.3.0
+
+
+> XユーザーのAkkyさん: 「CSKK v3.3.0 をリリースしました いくつかのバグ修正とデフォルトルールでabbreviation時にもC-gでAbortするコマンドが追加されています。 https://t.co/mJnxVP57mo」 / X
+
+https://x.com/naokiri344/status/2037718502300373075
+
 
 
 ## 開発中の IME
@@ -301,7 +330,12 @@ https://retropcnews.com/archives/2126
 https://business.nikkei.com/atcl/gen/19/00562/030500132/
 
 
- ### ATOK
+> インタラクション 2026 入力関連の発表
+
+https://zenn.dev/komatsuh/articles/komatsuh_interaction2026_input
+
+
+### ATOK
 
 > 「ATOKクラウド推測変換」の単語を拡充 | お知らせ |【公式】ATOK.com
 
@@ -596,6 +630,11 @@ https://note.com/shiro_sun2025/n/n9a20e8596d56
 https://note.com/m_fujiharu/n/n6b99c6d84389
 
 
+> 花咲く言葉 - Hanasaku Words (HSW配列) | 言葉を咲かせる、新しい指先の魔法
+
+https://in-fata-credo.github.io/hana-saku-words/
+
+
 ### IME 関連ツール
 
 > IME Control for AutoHotkey v2｜mottono
@@ -629,6 +668,7 @@ https://note.com/keitaro_aigc/n/n5b7f5083e52e
 * Simeji
 * Akaza
 * Sumire
+* SwiftyGyaim
 * VOCHAT BOXX
 * Copilot Keyboard
 * azooKey
@@ -636,6 +676,7 @@ https://note.com/keitaro_aigc/n/n5b7f5083e52e
 * KanchokuWS
 * AyaoriHIME (漢織媛)
 * かなちゃん
+* CSKK
 * rtry
 * Mozc
 * 日本語入力アプリ by scopedptr
@@ -653,4 +694,3 @@ https://note.com/keitaro_aigc/n/n5b7f5083e52e
 * TUT-code
 * タクトキーボード
 * 片手キーボードPRO
-
