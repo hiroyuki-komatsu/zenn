@@ -142,10 +142,9 @@ https://blogs.windows.com/japan/2026/03/02/copilot-keyboard-has-been-updated-feb
 https://github.com/google/mozc/releases/tag/3.33.6133
 
 
-> @komatsuh.bsky.socialによる投稿 — Bluesky: 「Mozc の Tags にバージョン 3.33.6133 を追加しました。 変換用辞書の更新や、候補の表示順の調整、日時の書式カスタマイズなどが追加されています。 ビルドシステムから GYP が削除されて Bazel へ完全に移行しました。」
+> XユーザーのHiroyuki Komatsuさん: 「Mozc の Tags にバージョン 3.33.6133 を追加しました。 変換用辞書の更新や、候補の表示順の調整、日時の書式カスタマイズなどが追加されています。 ビルドシステムから GYP が削除されて Bazel へ完全に移行しました。 https://t.co/USM7PYE0Ct」 / X
 
-https://bsky.app/profile/komatsuh.bsky.social/post/3mi7cbz6poc2y
-
+https://x.com/komatsuh/status/2038253179658555844
 
 
 ### azooKey
