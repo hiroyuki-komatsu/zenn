@@ -13,6 +13,7 @@ published_at: "2026-03-14 22:30"
 小松弘幸 ([@komatsuh:bsky](https://bsky.app/profile/komatsuh.bsky.social), [@komatsuh:twitter](https://twitter.com/komatsuh))
 
 * [2026年1月分](https://zenn.dev/komatsuh/articles/komatsuh_ime_news_2026_01)
+* [2026年3月分](https://zenn.dev/komatsuh/articles/komatsuh_ime_news_2026_03)
 
 ## 主なニュース
 ### Google 日本語入力が 3.33 に。macOS版で Apple Silicon に対応
