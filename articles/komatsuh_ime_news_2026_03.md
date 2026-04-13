@@ -99,6 +99,19 @@ https://github.com/tanabe1478/SwiftyGyaim
 https://x.com/t__nabe1478/status/2032052319777669211
 
 
+### UniDic-to-Mozc
+
+Mozc (Google 日本語入力) を最適化するためのユーザー辞書、およびそのシステム
+
+> jassdack/UniDic-to-Mozc: UniDic → Mozc user dictionary integration
+
+https://github.com/jassdack/UniDic-to-Mozc
+
+> 解析辞書を入力辞書へ：UniDic to Mozcっていうツールと辞書を公開した背景
+
+https://zenn.dev/jassdack/articles/385503ea3b4ef8
+
+
 ### VOCHAT BOXX (ぼちゃぼ)
 
 VR 用のテキスト入力を音声に変換するツールが公開。フリック入力やキーボード入力に対応
@@ -381,6 +394,13 @@ https://note.com/wise_tulip6598/n/n399de6ee1aa9
 https://note.com/woodiestsaza/n/n8b4a4c1015f3
 
 
+### iOS 標準キーボード
+
+> iOS 26.4でキーボード入力漏れを修正へ。日本語予測変換の問題は依然放置
+
+https://gazlog.jp/entry/ios26-keyboard-ghost-tap-fix/
+
+
 ### macOS 標準キーボード
 
 > Macの初期設定 #03｜Macの日本語入力をWindows風にする設定3選｜macOS 26 （Tahoe）｜イシザキ シン
@@ -410,6 +430,11 @@ https://ath575h.hatenablog.com/entry/2026/03/07/215830
 https://note.com/takao19791012/n/n267ec5da9358
 
 
+> 【完全版】ChromebookのLinuxでAntigravityに日本語入力（fcitx5 + Mozc）を設定する方法 | 定年後のスローライフブログ
+
+https://yanai-ke.com/chromebook-linux-antigravity-fcitx5-mozc/
+
+
 > Surface pro 12inch arm64版がGoogle日本語入力使えないのでMozcをビルドしようとしたけどarm64 winではできなかった｜物欲名古屋人／サラリーマンYoutuber
 
 https://note.com/nagoyajin/n/n93272a50ed59
@@ -418,6 +443,11 @@ https://note.com/nagoyajin/n/n93272a50ed59
 > mozc-modelessに「アンビエント変換」を搭載：変換キーを叩かない入力体験へ
 
 https://zenn.dev/kiyoka/articles/mozc-modeless-2
+
+
+> UbuntuからMozcが消えるかもしれなかった話 - あれこれ備忘録@はてなブログ
+
+https://arekorebibouroku.hateblo.jp/entry/2026/03/26/042308
 
 
 
@@ -445,6 +475,11 @@ https://note.com/yau_keyboard/n/n24fb857fdc14
 > macOS15 Sequoia@MacMini2012にGoogle 日本語入力インストールメモ｜motoharu
 
 https://note.com/motoharu/n/n448e82fb5a9b
+
+
+> macOSの日本語入力はどれが良い？Google日本語入力を選んだ理由と設定手順 - おのおののひとりごと
+
+https://www.onoono.jp/entry/2026/03/31/084605
 
 
 ### ChromeOS 標準キーボード
@@ -602,14 +637,18 @@ https://note.com/frontier_coba/n/n5679af878afd
 https://note.com/lush_curlew7788/n/na25fc2855296
 
 
-
-
 ### 片手キーボードPRO
 
 > まいふれんず「片手キーボードPRO」〜携帯キーボード〜｜mi-ya
 
 https://note.com/tender_viola40/n/nc80407f730a3
 
+
+### FUTO Voice Input
+
+> Android上でWhisperによる日本語音声入力を実現する「FUTO Voice Input」 - GIGAZINE
+
+https://gigazine.net/news/20260328-voiceinput/
 
 
 ### キー配列関連
@@ -682,6 +721,7 @@ https://note.com/keitaro_aigc/n/n5b7f5083e52e
 * Simeji
 * Akaza
 * Sumire
+* Mo
 * SwiftyGyaim
 * VOCHAT BOXX
 * Copilot Keyboard
@@ -692,7 +732,7 @@ https://note.com/keitaro_aigc/n/n5b7f5083e52e
 * かなちゃん
 * CSKK
 * rtry
-* Mozc
+* UniDic-to-Mozc
 * 日本語入力アプリ by scopedptr
 * ひともじ
 * シベリア
@@ -708,3 +748,4 @@ https://note.com/keitaro_aigc/n/n5b7f5083e52e
 * TUT-code
 * タクトキーボード
 * 片手キーボードPRO
+* FUTO Voice Input
