@@ -99,6 +99,20 @@ https://github.com/tanabe1478/SwiftyGyaim
 https://x.com/t__nabe1478/status/2032052319777669211
 
 
+ ### rakukan
+
+Windows 用の IME。karukan の変換エンジンを使い、azooKey-Windows の実装を参考に実装した rakukan が公開。
+
+> fukuyori/rakukan: ローカルLLMを利用した、Windows 向け日本語 IME
+
+https://github.com/fukuyori/rakukan
+
+
+> Xユーザーのspumoniさん: 「Windows用IME RAKUKANも、ライブ変換ができるようになって、ちょっと見栄えが良くなってきたように思います。まだ安定運用には程遠いようですが。 @togatoga_ https://t.co/SP4O5jHFQX https://t.co/WxIcvKP7mG」 / X
+
+https://x.com/Spumo/status/2037838283091378406
+
+
 ### UniDic-to-Mozc
 
 Mozc (Google 日本語入力) を最適化するためのユーザー辞書、およびそのシステム
@@ -482,6 +496,11 @@ https://note.com/motoharu/n/n448e82fb5a9b
 https://www.onoono.jp/entry/2026/03/31/084605
 
 
+> Mac OS 26.4にアップデートしたら、日本語だけ打てなくなった（Macの変換白抜け問題解決とGoogle日本語入力）｜脳狂(脳業狂同組合)
+
+https://note.com/k_mundus/n/n33fedb81a8fc
+
+
 ### ChromeOS 標準キーボード
 > Chromebook　文字入力の裏技　Ctrl で文字種変換｜ななし
 
@@ -721,8 +740,9 @@ https://note.com/keitaro_aigc/n/n5b7f5083e52e
 * Simeji
 * Akaza
 * Sumire
-* Mo
 * SwiftyGyaim
+* rakukan
+* UniDic-to-Mozc
 * VOCHAT BOXX
 * Copilot Keyboard
 * azooKey
@@ -732,12 +752,12 @@ https://note.com/keitaro_aigc/n/n5b7f5083e52e
 * かなちゃん
 * CSKK
 * rtry
-* UniDic-to-Mozc
 * 日本語入力アプリ by scopedptr
 * ひともじ
 * シベリア
 * ぜるかなボード
 * macOS 標準キーボード
+* Mozc
 * Google 日本語入力
 * ChromeOS 標準キーボード
 * Gboard

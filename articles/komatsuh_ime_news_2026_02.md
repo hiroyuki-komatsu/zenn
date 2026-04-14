@@ -212,6 +212,19 @@ https://blog.64p.org/entry/2026/02/18/150242
 
 https://akaza-im.github.io/akaza/
 
+### fcitx5-hazkey が 0.2.1 に更新
+
+Linux 用 IME、fcitx5-hazkey が 0.2.1 に更新。学習データ関連の修正や、Zenzai のインストールの簡略化、AzooKeyKanaKanjiConverter の更新など
+
+> Release fcitx5-hazkey 0.2.1 · 7ka-Hiira/hazkey
+
+https://github.com/7ka-Hiira/hazkey/releases/tag/0.2.1
+
+
+> XユーザーのHiiraさん: 「hazkey 0.2.1をリリースしました https://t.co/CY7wfrKkXs」 / X
+
+https://x.com/7ka_hiira/status/2020700335636087034
+
 ### MZ-IME が v1.0.0.7 に更新
 
 Windows 用 IME、MZ-IME が v1.0.0.7 に更新。Windows 2000, ReactOS などでも動作
@@ -382,6 +395,7 @@ https://note.com/teyede1972/n/n9a4ed7535ca4
 
 https://note.com/shrimin/n/n53b04e092b9e
 
+
 ### Mozc
 
 > ARM 版 Windows 対応「Mozc」で Google 日本語入力 を代替する – What I Know ～ワッタイナ
@@ -450,6 +464,7 @@ https://zenn.dev/hqb/articles/2026-02-let-us-skk
 * VOCHAT BOXX
 * Sumire
 * Akaza
+* fcitx5-hazkey
 * MZ-IME
 * MacTcode
 * 日本語入力アプリ by scopedptr
