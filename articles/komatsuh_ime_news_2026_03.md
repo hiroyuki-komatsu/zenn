@@ -255,6 +255,18 @@ https://x.com/naokiri344/status/2037718502300373075
 
 
 ## 開発中の IME
+### azooKey for Windows
+Windows 用 azooKey が v0.1.0-alpha.1 としてプレリリース
+
+> fkunn1326/azooKey-Windows
+
+https://github.com/fkunn1326/azooKey-Windows
+
+
+> Xユーザーのfkunn1326さん: 「azooKey for Windowsのalpha版を公開します！ まだ動作は不安定ですが、興味があれば試してみてください！ https://t.co/WLHXqleS6m」 / X
+https://x.com/fkunn1326/status/1905800554384904635
+
+
 ### rtry
 Windows 用 Try-Code (T-Code 拡張3打鍵漢字直接入力)
 
