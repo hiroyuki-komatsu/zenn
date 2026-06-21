@@ -13,6 +13,8 @@ published_at: "2026-05-24 20:00"
 小松弘幸 ([@komatsuh:bsky](https://bsky.app/profile/komatsuh.bsky.social), [@komatsuh:twitter](https://twitter.com/komatsuh))
 
 * [2026年3月分](https://zenn.dev/komatsuh/articles/komatsuh_ime_news_2026_03)
+* [2026年5月分](https://zenn.dev/komatsuh/articles/komatsuh_ime_news_2026_05)
+
 
 ## 主なニュース
 
