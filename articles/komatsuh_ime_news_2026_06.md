@@ -174,15 +174,6 @@ https://github.com/enfance-prog/TypeCorrectionTrainingData-for-JapaneseIME
 
 https://x.com/enfance_222/status/2070449569801048531
 
-## 開発中の IME
-
-### JIME — Mac風ライブ変換 Windows IME
-
-Windows でライブ変換を提供する IME
-
-> dinzzer/jime: windows日本語入力用ライブ変換ime
-
-https://github.com/dinzzer/jime/tree/master
 
 ## IME の更新情報
 
