@@ -64,7 +64,7 @@ Mozc の問題の報告や機能の要望等は、GitHub の [Issues](https://gi
 * 「語彙集合および変換結果に関する方針」の策定
 * コード: コーディングスタイルの変更
 * コード: バージョン表記ファイルの移動
-* ビルド: GYP ビルドの完全削除 ([#1438](https://github.com/google/mozc/issues/1438))
+* ビルド: GYP ビルドの完全削除
 * ビルド: Google Benchmark への対応
 * ビルド: Python test への対応
 
@@ -148,13 +148,13 @@ Python のユニットテストの OSS 化に対応しました。ビルドツ�
 * 絵文字候補を顔文字候補よりも優先して表示
 * ユーザー辞書の優先順位を登録数に応じて変更
 * 助詞を省略した文での変換精度を改善 (さかなくう → 魚食う) (デフォルトでは無効)
-* 入力履歴の保存方法を 62 日間から、データサイズに応じた保存に変更 ([12f6d98493d63c0992c2d179b3a433df565e283e](https://github.com/google/mozc/commit/12f6d98493d63c0992c2d179b3a433df565e283e))
-* 数字入力の後は助数詞 (「個」「本」など) を優先 ([662147864d8a902f49bee7aa7a02d377c0bbd58d](https://github.com/google/mozc/commit/662147864d8a902f49bee7aa7a02d377c0bbd58d))
+* 入力履歴の保存方法を 62 日間から、データサイズに応じた保存に変更 ([12f6d98](https://github.com/google/mozc/commit/12f6d98493d63c0992c2d179b3a433df565e283e))
+* 数字入力の後は助数詞 (「個」「本」など) を優先 ([6621478](https://github.com/google/mozc/commit/662147864d8a902f49bee7aa7a02d377c0bbd58d))
  
 ### 変換機能
 
 * 日時変換のカスタマイズで `{HOUR}` と `{MINUTE}` フォーマットに対応 ([56e9a20](https://github.com/google/mozc/commit/56e9a20), [5614529](https://github.com/google/mozc/commit/5614529))
-* 日時変換のカスタマイズで複数項目に対応 ([396972ca8f221b6bc5e587e9689f030a70826c97](https://github.com/google/mozc/commit/396972ca8f221b6bc5e587e9689f030a70826c97))
+* 日時変換のカスタマイズで複数項目に対応 ([396972c](https://github.com/google/mozc/commit/396972ca8f221b6bc5e587e9689f030a70826c97))
 * 計算機能で `Sin` `Log` などに対応 (`Log(100)=` → `2`)  ([27710f2](https://github.com/google/mozc/commit/27710f2))
 
 ### UI 関連
@@ -178,7 +178,7 @@ Python のユニットテストの OSS 化に対応しました。ビルドツ�
 * Emacs: tab-line 有効時に候補オーバーレイが崩れる問題を修正 ([#1507](https://github.com/google/mozc/issues/1507), [0c8acf4](https://github.com/google/mozc/commit/0c8acf4))
 * Emacs: mozc.el における候補ウィンドウ表示の後方互換性を修正 ([#1427](https://github.com/google/mozc/issues/1427), [891e324](https://github.com/google/mozc/commit/891e324))
 * Linux: _SC_GETPW_R_SIZE_MAX に未対応の Linux 環境でクラッシュする問題を修正 ([#1318](https://github.com/google/mozc/issues/1318))
-* macOS: macOS 26 (Tahoe) でインストーラーが落ちる問題を修正 ([018d8d9ff95019569d9496ec5ab9d1f0b3107c72](https://github.com/google/mozc/commit/018d8d9ff95019569d9496ec5ab9d1f0b3107c72))
+* macOS: macOS 26 (Tahoe) でインストーラーが落ちる問題を修正 ([018d8d9](https://github.com/google/mozc/commit/018d8d9ff95019569d9496ec5ab9d1f0b3107c72))
 * macOS: 辞書ツールで動作が停止する問題を修正 ([#1545](https://github.com/google/mozc/issues/1545))
 * macOS: アプリケーションの起動に失敗する問題を修正 [34c3187](https://github.com/google/mozc/commit/34c3187)
 * macOS: フッター境界線の色を赤から灰色に修正 [0b71173](https://github.com/google/mozc/commit/0b71173)
@@ -196,7 +196,7 @@ Python のユニットテストの OSS 化に対応しました。ビルドツ�
 * Android: ユーザー辞書の保存方法をサーバーを介さない方法に変更 [[2fc02b0](https://github.com/google/mozc/commit/2fc02b0), [7262b53](https://github.com/google/mozc/commit/7262b53), [ff99671](https://github.com/google/mozc/commit/ff99671), [f91f569](https://github.com/google/mozc/commit/f91f569), [1ab7fc8](https://github.com/google/mozc/commit/1ab7fc8), [80eadd0](https://github.com/google/mozc/commit/80eadd0), [c60e7d4](https://github.com/google/mozc/commit/c60e7d4)]
 * 品詞名と品詞IDの紐づけをランタイムに行う PosPatternMatcher を実装 [[cb11f9c](https://github.com/google/mozc/commit/cb11f9c), [b5ac73a](https://github.com/google/mozc/commit/b5ac73a), [88da9b4](https://github.com/google/mozc/commit/88da9b4)]
 * SuggestionFilter / ResultFilter で <NWP> 接頭辞エントリをサポート [d3f6b7c](https://github.com/google/mozc/commit/d3f6b7c)
-* ビット演算による高速化 ([#1568](https://github.com/google/mozc/issues/1568), [#1569](https://github.com/google/mozc/issues/1569), 13fd62b)
+* ビット演算による高速化 ([#1568](https://github.com/google/mozc/issues/1568), [#1569](https://github.com/google/mozc/issues/1569), [13fd62b](https://github.com/google/mozc/commit/13fd62b))
 * Singleton クラスの削除 ([#1461](https://github.com/google/mozc/issues/1461), [#1463](https://github.com/google/mozc/issues/1463), [#1464](https://github.com/google/mozc/issues/1464), [#1465](https://github.com/google/mozc/issues/1465), [#1475](https://github.com/google/mozc/issues/1475), [#1477](https://github.com/google/mozc/issues/1477), [#1478](https://github.com/google/mozc/issues/1478), [#1479](https://github.com/google/mozc/issues/1479), [#1480](https://github.com/google/mozc/issues/1480), [#1490](https://github.com/google/mozc/issues/1490), [#1491](https://github.com/google/mozc/issues/1491), [#1497](https://github.com/google/mozc/issues/1497), [#1498](https://github.com/google/mozc/issues/1498), [#1499](https://github.com/google/mozc/issues/1499), [#1502](https://github.com/google/mozc/issues/1502), [#1509](https://github.com/google/mozc/issues/1509), [#1510](https://github.com/google/mozc/issues/1510), [#1513](https://github.com/google/mozc/issues/1513), [#1514](https://github.com/google/mozc/issues/1514), [#1515](https://github.com/google/mozc/issues/1515), [#1523](https://github.com/google/mozc/issues/1523))
 * 候補ウインドウの描画スタイルの `renderer_style.textproto` による管理 [[751df90](https://github.com/google/mozc/commit/751df90), [be6dd36](https://github.com/google/mozc/commit/be6dd36), [67cede2](https://github.com/google/mozc/commit/67cede2), [afbf1d0](https://github.com/google/mozc/commit/afbf1d0)]
 * ConfigDialog のレイアウトのリファクタリング [[4638ce6](https://github.com/google/mozc/commit/4638ce6), [c79a760](https://github.com/google/mozc/commit/c79a760), [895652c](https://github.com/google/mozc/commit/895652c), [3c327d8](https://github.com/google/mozc/commit/3c327d8)]
@@ -206,9 +206,9 @@ Python のユニットテストの OSS 化に対応しました。ビルドツ�
 * zstring_view の削除 ([61068fe](https://github.com/google/mozc/commit/61068fe))
 * RealtimeDecoder の所有権を predictor 側に移動 ([b465e89](https://github.com/google/mozc/commit/b465e89))
 * FreeList を Arena として再実装 ([730ad5a](https://github.com/google/mozc/commit/730ad5a))
-* RequestNWP コマンドを追加 ([8f1f0ebbbc2899def9420e15edbde44b729b7d75](https://github.com/google/mozc/commit/8f1f0ebbbc2899def9420e15edbde44b729b7d75))
+* RequestNWP コマンドを追加 ([8f1f0eb](https://github.com/google/mozc/commit/8f1f0ebbbc2899def9420e15edbde44b729b7d75))
 * INPUT_MODE_* を COMPOSITION_MODE_* に変更 (例: `INPUT_MODE_HIRAGANA` → `COMPOSITION_MODE_HIRAGANA`)
-* Enum ラベルの `KUTEN` および `TOUTEN` の入れ替わりの修正 ([0429d9659f6c36abc40a1ca82bc6e5c01f938503](https://github.com/google/mozc/commit/0429d9659f6c36abc40a1ca82bc6e5c01f938503))
+* Enum ラベルの `KUTEN` および `TOUTEN` の入れ替わりの修正 ([0429d96](https://github.com/google/mozc/commit/0429d9659f6c36abc40a1ca82bc6e5c01f938503))
 
  ## ビルド関連
 
@@ -245,7 +245,7 @@ GitHub のスターの数が 3,000 を超えました。ありがとうござい
 
 ### さいごに
 
-LLM (生成AI) の発展と普及によって、IME (日本語入力ソフトウェア) の作成も非常に手軽になったと実感しています。個人的な機能や変換傾向を実現は LLM を使えば数日中に実現できてしまいます。多くの方が IME の開発に興味を持って乗り出してくれていることは、個人的にも大変うれしいことです。
+LLM (生成AI) の発展と普及によって、IME (日本語入力ソフトウェア) の作成も非常に手軽になったと実感しています。個人的な機能や変換傾向の実現は LLM を使えば数日中に動くものができてしまいます。多くの方が IME の開発に興味を持って乗り出してくれていることは、個人的にも大変うれしいことです。
 
 このような現在の環境においての Mozc の役割は、Mozc をそのまま使うだけではなく、Mozc を自作実装の基盤にしたり日本語入力ソフトウェアの参考実装としての側面もあるのではと考えています。その場合においても、Mozc の変換精度の向上や、使いやすさの改善などは、今後も引き続き重要であると考えています。
 
