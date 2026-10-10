@@ -148,67 +148,67 @@ Python のユニットテストの OSS 化に対応しました。ビルドツ�
 * 絵文字候補を顔文字候補よりも優先して表示
 * ユーザー辞書の優先順位を登録数に応じて変更
 * 助詞を省略した文での変換精度を改善 (さかなくう → 魚食う) (デフォルトでは無効)
-* 入力履歴の保存方法を 62 日間から、データサイズに応じた保存に変更 (12f6d98493d63c0992c2d179b3a433df565e283e)
-* 数字入力の後は助数詞 (「個」「本」など) を優先 (662147864d8a902f49bee7aa7a02d377c0bbd58d)
+* 入力履歴の保存方法を 62 日間から、データサイズに応じた保存に変更 ([12f6d98493d63c0992c2d179b3a433df565e283e](https://github.com/google/mozc/commit/12f6d98493d63c0992c2d179b3a433df565e283e))
+* 数字入力の後は助数詞 (「個」「本」など) を優先 ([662147864d8a902f49bee7aa7a02d377c0bbd58d](https://github.com/google/mozc/commit/662147864d8a902f49bee7aa7a02d377c0bbd58d))
  
 ### 変換機能
 
-* 日時変換のカスタマイズで `{HOUR}` と `{MINUTE}` フォーマットに対応 (56e9a20, 5614529)
-* 日時変換のカスタマイズで複数項目に対応 (396972ca8f221b6bc5e587e9689f030a70826c97)
-* 計算機能で `Sin` `Log` などに対応 (`Log(100)=` → `2`)  (27710f2)
+* 日時変換のカスタマイズで `{HOUR}` と `{MINUTE}` フォーマットに対応 ([56e9a20](https://github.com/google/mozc/commit/56e9a20), [5614529](https://github.com/google/mozc/commit/5614529))
+* 日時変換のカスタマイズで複数項目に対応 ([396972ca8f221b6bc5e587e9689f030a70826c97](https://github.com/google/mozc/commit/396972ca8f221b6bc5e587e9689f030a70826c97))
+* 計算機能で `Sin` `Log` などに対応 (`Log(100)=` → `2`)  ([27710f2](https://github.com/google/mozc/commit/27710f2))
 
 ### UI 関連
 
-* 変換履歴と予測履歴の削除操作の統合 (14882c3)
+* 変換履歴と予測履歴の削除操作の統合 ([14882c3](https://github.com/google/mozc/commit/14882c3))
 * Linux: 候補ウインドウがダークテーマに対応
-* Linux: 候補ウインドウが候補数と候補位置を示すインジケーターに対応 (#1565)
-* Linux: 候補ウインドウがフッターラベルに対応 (#1580)
-* Linux: 候補ウインドウのスタイルやレイアウトの見た目を macOS / Windows と統一 (#1549, #1551, #1586)
-* Windows: DPIが異なる複数ディスプレイ上で、候補ウインドウの大きさや位置が異なる問題の改善 (#1481)
+* Linux: 候補ウインドウが候補数と候補位置を示すインジケーターに対応 ([#1565](https://github.com/google/mozc/issues/1565))
+* Linux: 候補ウインドウがフッターラベルに対応 ([#1580](https://github.com/google/mozc/issues/1580))
+* Linux: 候補ウインドウのスタイルやレイアウトの見た目を macOS / Windows と統一 ([#1549](https://github.com/google/mozc/issues/1549), [#1551](https://github.com/google/mozc/issues/1551), [#1586](https://github.com/google/mozc/issues/1586))
+* Windows: DPIが異なる複数ディスプレイ上で、候補ウインドウの大きさや位置が異なる問題の改善 ([#1481](https://github.com/google/mozc/issues/1481))
 
  ### インストール関連
 
- * macOS: インストール時にログアウトするように変更 (e8c987a)
- * Windows: 同一バージョンや CPU 不整合時のインストールエラー時のメッセージを改善 (#1410, #1585)
+ * macOS: インストール時にログアウトするように変更 ([e8c987a](https://github.com/google/mozc/commit/e8c987a))
+ * Windows: 同一バージョンや CPU 不整合時のインストールエラー時のメッセージを改善 ([#1410](https://github.com/google/mozc/issues/1410), [#1585](https://github.com/google/mozc/issues/1585))
 
 ## バグ修正
 
-* ATOK 形式のユーザー辞書の読み込みに失敗する問題を修正 (9cf9ede)
-* Android: 先頭に空白を含む候補の入力履歴を削除できない問題を修正 [a8f245e]
-* Emacs: tab-line 有効時に候補オーバーレイが崩れる問題を修正 (#1507) [0c8acf4]
-* Emacs: mozc.el における候補ウィンドウ表示の後方互換性を修正 (#1427) [891e324]
-* Linux: _SC_GETPW_R_SIZE_MAX に未対応の Linux 環境でクラッシュする問題を修正 (#1318)
-* macOS: macOS 26 (Tahoe) でインストーラーが落ちる問題を修正 (018d8d9ff95019569d9496ec5ab9d1f0b3107c72)
-* macOS: 辞書ツールで動作が停止する問題を修正 (#1545)
-* macOS: アプリケーションの起動に失敗する問題を修正 [34c3187]
-* macOS: フッター境界線の色を赤から灰色に修正 [0b71173]
-* macOS: GUI ツールが起動できない問題の修正 [#1412]
-* Windows: Excel 上で再変換できない問題を修正 (#1385)
-* Windows: 特定のアプリケーションで入力中文字列がちらつく問題を修正 (#1389)
-* Windows: 修飾キー単体押しイベントが取得できなくなっていた問題を修正 [#1415]
-* Windows: 候補ウィンドウ上でマウスクリックできない問題を修正 (#1372)
+* ATOK 形式のユーザー辞書の読み込みに失敗する問題を修正 ([9cf9ede](https://github.com/google/mozc/commit/9cf9ede))
+* Android: 先頭に空白を含む候補の入力履歴を削除できない問題を修正 ([a8f245e](https://github.com/google/mozc/commit/a8f245e))
+* Emacs: tab-line 有効時に候補オーバーレイが崩れる問題を修正 ([#1507](https://github.com/google/mozc/issues/1507), [0c8acf4](https://github.com/google/mozc/commit/0c8acf4))
+* Emacs: mozc.el における候補ウィンドウ表示の後方互換性を修正 ([#1427](https://github.com/google/mozc/issues/1427), [891e324](https://github.com/google/mozc/commit/891e324))
+* Linux: _SC_GETPW_R_SIZE_MAX に未対応の Linux 環境でクラッシュする問題を修正 ([#1318](https://github.com/google/mozc/issues/1318))
+* macOS: macOS 26 (Tahoe) でインストーラーが落ちる問題を修正 ([018d8d9ff95019569d9496ec5ab9d1f0b3107c72](https://github.com/google/mozc/commit/018d8d9ff95019569d9496ec5ab9d1f0b3107c72))
+* macOS: 辞書ツールで動作が停止する問題を修正 ([#1545](https://github.com/google/mozc/issues/1545))
+* macOS: アプリケーションの起動に失敗する問題を修正 [34c3187](https://github.com/google/mozc/commit/34c3187)
+* macOS: フッター境界線の色を赤から灰色に修正 [0b71173](https://github.com/google/mozc/commit/0b71173)
+* macOS: GUI ツールが起動できない問題の修正 ([#1412](https://github.com/google/mozc/issues/1412))
+* Windows: Excel 上で再変換できない問題を修正 ([#1385](https://github.com/google/mozc/issues/1385))
+* Windows: 特定のアプリケーションで入力中文字列がちらつく問題を修正 ([#1389](https://github.com/google/mozc/issues/1389))
+* Windows: 修飾キー単体押しイベントが取得できなくなっていた問題を修正 ([#1415](https://github.com/google/mozc/issues/1415))
+* Windows: 候補ウィンドウ上でマウスクリックできない問題を修正 ([#1372](https://github.com/google/mozc/issues/1372))
 
 ## コード関連
 
 * コーディングスタイルの変更 (`string &s` → `string& s`)
 * バージョン表記ファイルの移動 (`src/mozc/version.bzl`)
-* 全角半角の入力履歴の保存先を cform.db から UserHistoryStorage へ移行 [b7277bb]
-* Android: ユーザー辞書の保存方法をサーバーを介さない方法に変更 [2fc02b0, 7262b53, ff99671, f91f569, 1ab7fc8, 80eadd0, c60e7d4]
-* 品詞名と品詞IDの紐づけをランタイムに行う PosPatternMatcher を実装 [cb11f9c, b5ac73a, 88da9b4]
-* SuggestionFilter / ResultFilter で <NWP> 接頭辞エントリをサポート [d3f6b7c]
-* ビット演算による高速化 (#1568, #1569, 13fd62b)
-* Singleton クラスの削除 (#1461, #1463, #1464, #1465, #1475, #1477, #1478, #1479, #1480, #1490, #1491, #1497, #1498, #1499, #1502, #1509, #1510, #1513, #1514, #1515, #1523)
-* 候補ウインドウの描画スタイルの `renderer_style.textproto` による管理 [751df90, be6dd36, 67cede2, afbf1d0]
-* ConfigDialog のレイアウトのリファクタリング [4638ce6, c79a760, 895652c, 3c327d8]
-* ImmutableConverter および DictionaryInterface の ConversionRequest への依存の削除 [2ee4da3, 6ba80c7, b30921c]
-* CalculatorRewriter から Lemon パーサーの削除 [cb95326, e96c1ba]
-* Breakpad 関連のコードの削除 [1078e63]
-* zstring_view の削除 [61068fe]
-* RealtimeDecoder の所有権を predictor 側に移動 [b465e89]
-* FreeList を Arena として再実装 [730ad5a]
-* RequestNWP コマンドを追加 [8f1f0ebbbc2899def9420e15edbde44b729b7d75]
+* 全角半角の入力履歴の保存先を cform.db から UserHistoryStorage へ移行 [b7277bb](https://github.com/google/mozc/commit/b7277bb)
+* Android: ユーザー辞書の保存方法をサーバーを介さない方法に変更 [[2fc02b0](https://github.com/google/mozc/commit/2fc02b0), [7262b53](https://github.com/google/mozc/commit/7262b53), [ff99671](https://github.com/google/mozc/commit/ff99671), [f91f569](https://github.com/google/mozc/commit/f91f569), [1ab7fc8](https://github.com/google/mozc/commit/1ab7fc8), [80eadd0](https://github.com/google/mozc/commit/80eadd0), [c60e7d4](https://github.com/google/mozc/commit/c60e7d4)]
+* 品詞名と品詞IDの紐づけをランタイムに行う PosPatternMatcher を実装 [[cb11f9c](https://github.com/google/mozc/commit/cb11f9c), [b5ac73a](https://github.com/google/mozc/commit/b5ac73a), [88da9b4](https://github.com/google/mozc/commit/88da9b4)]
+* SuggestionFilter / ResultFilter で <NWP> 接頭辞エントリをサポート [d3f6b7c](https://github.com/google/mozc/commit/d3f6b7c)
+* ビット演算による高速化 ([#1568](https://github.com/google/mozc/issues/1568), [#1569](https://github.com/google/mozc/issues/1569), 13fd62b)
+* Singleton クラスの削除 ([#1461](https://github.com/google/mozc/issues/1461), [#1463](https://github.com/google/mozc/issues/1463), [#1464](https://github.com/google/mozc/issues/1464), [#1465](https://github.com/google/mozc/issues/1465), [#1475](https://github.com/google/mozc/issues/1475), [#1477](https://github.com/google/mozc/issues/1477), [#1478](https://github.com/google/mozc/issues/1478), [#1479](https://github.com/google/mozc/issues/1479), [#1480](https://github.com/google/mozc/issues/1480), [#1490](https://github.com/google/mozc/issues/1490), [#1491](https://github.com/google/mozc/issues/1491), [#1497](https://github.com/google/mozc/issues/1497), [#1498](https://github.com/google/mozc/issues/1498), [#1499](https://github.com/google/mozc/issues/1499), [#1502](https://github.com/google/mozc/issues/1502), [#1509](https://github.com/google/mozc/issues/1509), [#1510](https://github.com/google/mozc/issues/1510), [#1513](https://github.com/google/mozc/issues/1513), [#1514](https://github.com/google/mozc/issues/1514), [#1515](https://github.com/google/mozc/issues/1515), [#1523](https://github.com/google/mozc/issues/1523))
+* 候補ウインドウの描画スタイルの `renderer_style.textproto` による管理 [[751df90](https://github.com/google/mozc/commit/751df90), [be6dd36](https://github.com/google/mozc/commit/be6dd36), [67cede2](https://github.com/google/mozc/commit/67cede2), [afbf1d0](https://github.com/google/mozc/commit/afbf1d0)]
+* ConfigDialog のレイアウトのリファクタリング [[4638ce6](https://github.com/google/mozc/commit/4638ce6), [c79a760](https://github.com/google/mozc/commit/c79a760), [895652c](https://github.com/google/mozc/commit/895652c), [3c327d8](https://github.com/google/mozc/commit/3c327d8)]
+* ImmutableConverter および DictionaryInterface の ConversionRequest への依存の削除 [[2ee4da3](https://github.com/google/mozc/commit/2ee4da3), [6ba80c7](https://github.com/google/mozc/commit/6ba80c7), [b30921c](https://github.com/google/mozc/commit/b30921c)]
+* CalculatorRewriter から Lemon パーサーの削除 [[cb95326](https://github.com/google/mozc/commit/cb95326), [e96c1ba](https://github.com/google/mozc/commit/e96c1ba)]
+* Breakpad 関連のコードの削除 ([1078e63](https://github.com/google/mozc/commit/1078e63))
+* zstring_view の削除 ([61068fe](https://github.com/google/mozc/commit/61068fe))
+* RealtimeDecoder の所有権を predictor 側に移動 ([b465e89](https://github.com/google/mozc/commit/b465e89))
+* FreeList を Arena として再実装 ([730ad5a](https://github.com/google/mozc/commit/730ad5a))
+* RequestNWP コマンドを追加 ([8f1f0ebbbc2899def9420e15edbde44b729b7d75](https://github.com/google/mozc/commit/8f1f0ebbbc2899def9420e15edbde44b729b7d75))
 * INPUT_MODE_* を COMPOSITION_MODE_* に変更 (例: `INPUT_MODE_HIRAGANA` → `COMPOSITION_MODE_HIRAGANA`)
-* Enum ラベルの `KUTEN` および `TOUTEN` の入れ替わりの修正 [0429d9659f6c36abc40a1ca82bc6e5c01f938503]
+* Enum ラベルの `KUTEN` および `TOUTEN` の入れ替わりの修正 ([0429d9659f6c36abc40a1ca82bc6e5c01f938503](https://github.com/google/mozc/commit/0429d9659f6c36abc40a1ca82bc6e5c01f938503))
 
  ## ビルド関連
 
@@ -218,12 +218,12 @@ Python のユニットテストの OSS 化に対応しました。ビルドツ�
 * Git サブモジュールの削除
 * Google Benchmark への対応
 * Python test への対応
-* Android: `android_util` を独立したビルドターゲットに分離 [060b96e]
-* Android: `libmozc.so` を 16KB ページサイズに対応 (#1364)
+* Android: `android_util` を独立したビルドターゲットに分離 ([060b96e](https://github.com/google/mozc/commit/060b96e))
+* Android: `libmozc.so` を 16KB ページサイズに対応 ([#1364](https://github.com/google/mozc/issues/1364))
 * macOS: コード署名付きの .dmg ファイル生成に対応
 * macOS: 対応バージョンを macOS 11 から macOS 12 へ変更
-* Windows: Visual Studio 2026 によるビルドに対応 (#1495)
-* Windows: ユニバーサル MSI インストーラービルドのサポート (#1430)[https://github.com/google/mozc/issues/1430]
+* Windows: Visual Studio 2026 によるビルドに対応 ([#1495](https://github.com/google/mozc/issues/1495))
+* Windows: ユニバーサル MSI インストーラービルドのサポート ([#1430](https://github.com/google/mozc/issues/1430))
 
  ## そのほか
 
