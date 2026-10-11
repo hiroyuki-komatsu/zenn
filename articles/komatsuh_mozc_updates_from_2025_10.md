@@ -148,7 +148,6 @@ Python のユニットテストの OSS 化に対応しました。ビルドツ�
 * 絵文字候補を顔文字候補よりも優先して表示
 * ユーザー辞書の優先順位を登録数に応じて変更
 * 助詞を省略した文での変換精度を改善 (さかなくう → 魚食う) (デフォルトでは無効)
-* 入力履歴の保存方法を 62 日間から、データサイズに応じた保存に変更 ([12f6d98](https://github.com/google/mozc/commit/12f6d98493d63c0992c2d179b3a433df565e283e))
 * 数字入力の後は助数詞 (「個」「本」など) を優先 ([6621478](https://github.com/google/mozc/commit/662147864d8a902f49bee7aa7a02d377c0bbd58d))
  
 ### 変換機能
@@ -177,8 +176,6 @@ Python のユニットテストの OSS 化に対応しました。ビルドツ�
 * Android: 先頭に空白を含む候補の入力履歴を削除できない問題を修正 ([a8f245e](https://github.com/google/mozc/commit/a8f245e))
 * Emacs: tab-line 有効時に候補オーバーレイが崩れる問題を修正 ([#1507](https://github.com/google/mozc/issues/1507), [0c8acf4](https://github.com/google/mozc/commit/0c8acf4))
 * Emacs: mozc.el における候補ウィンドウ表示の後方互換性を修正 ([#1427](https://github.com/google/mozc/issues/1427), [891e324](https://github.com/google/mozc/commit/891e324))
-* Linux: _SC_GETPW_R_SIZE_MAX に未対応の Linux 環境でクラッシュする問題を修正 ([#1318](https://github.com/google/mozc/issues/1318))
-* macOS: macOS 26 (Tahoe) でインストーラーが落ちる問題を修正 ([018d8d9](https://github.com/google/mozc/commit/018d8d9ff95019569d9496ec5ab9d1f0b3107c72))
 * macOS: 辞書ツールで動作が停止する問題を修正 ([#1545](https://github.com/google/mozc/issues/1545))
 * macOS: アプリケーションの起動に失敗する問題を修正 [34c3187](https://github.com/google/mozc/commit/34c3187)
 * macOS: フッター境界線の色を赤から灰色に修正 [0b71173](https://github.com/google/mozc/commit/0b71173)
@@ -186,7 +183,6 @@ Python のユニットテストの OSS 化に対応しました。ビルドツ�
 * Windows: Excel 上で再変換できない問題を修正 ([#1385](https://github.com/google/mozc/issues/1385))
 * Windows: 特定のアプリケーションで入力中文字列がちらつく問題を修正 ([#1389](https://github.com/google/mozc/issues/1389))
 * Windows: 修飾キー単体押しイベントが取得できなくなっていた問題を修正 ([#1415](https://github.com/google/mozc/issues/1415))
-* Windows: 候補ウィンドウ上でマウスクリックできない問題を修正 ([#1372](https://github.com/google/mozc/issues/1372))
 
 ## コード関連
 
@@ -219,9 +215,6 @@ Python のユニットテストの OSS 化に対応しました。ビルドツ�
 * Google Benchmark への対応
 * Python test への対応
 * Android: `android_util` を独立したビルドターゲットに分離 ([060b96e](https://github.com/google/mozc/commit/060b96e))
-* Android: `libmozc.so` を 16KB ページサイズに対応 ([#1364](https://github.com/google/mozc/issues/1364))
-* macOS: コード署名付きの .dmg ファイル生成に対応
-* macOS: 対応バージョンを macOS 11 から macOS 12 へ変更
 * Windows: Visual Studio 2026 によるビルドに対応 ([#1495](https://github.com/google/mozc/issues/1495))
 * Windows: ユニバーサル MSI インストーラービルドのサポート ([#1430](https://github.com/google/mozc/issues/1430))
 
