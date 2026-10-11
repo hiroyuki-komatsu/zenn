@@ -205,6 +205,7 @@ Python のユニットテストの OSS 化に対応しました。ビルドツ�
 * RequestNWP コマンドを追加 ([8f1f0eb](https://github.com/google/mozc/commit/8f1f0ebbbc2899def9420e15edbde44b729b7d75))
 * INPUT_MODE_* を COMPOSITION_MODE_* に変更 (例: `INPUT_MODE_HIRAGANA` → `COMPOSITION_MODE_HIRAGANA`)
 * Enum ラベルの `KUTEN` および `TOUTEN` の入れ替わりの修正 ([0429d96](https://github.com/google/mozc/commit/0429d9659f6c36abc40a1ca82bc6e5c01f938503))
+* Windows: Segment Heap の有効化による速度の向上 (#1541, #1572)
 
  ## ビルド関連
 
