@@ -1,0 +1,8 @@
+title: "本のタイトル"
+summary: "本の紹介文"
+topics: ["markdown", "zenn"]
+published: false
+price: 0
+chapters:
+  - chapter1 # チャプター1
+  - chapter2 # チャプター2
